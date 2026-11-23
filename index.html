@@ -47,32 +47,43 @@
       <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-caleta.webp')"></div>
     </div>
     <div class="hero__velo" aria-hidden="true"></div>
-    <div class="contenedor hero__grid">
-      <div class="hero__texto">
+    <div class="contenedor hero__centro">
+      <div class="hero__marca">
         <svg class="hero__logo" viewBox="0 0 900 370" role="img" aria-labelledby="logo-titulo">
-          <title id="logo-titulo">El Quisco</title>
-          <defs>
-            <filter id="pincel-suave" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="5"/></filter>
-            <mask id="mascara-escritura" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="370">
-              <g fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round" stroke-linejoin="round" filter="url(#pincel-suave)">
-                <path class="trazo trazo--1" pathLength="1" d="M-30 -30 L-8 400 L14 -30 L36 400 L58 -30 L80 400 L102 -30 L124 400 L146 -30 L168 400 L190 -30 L212 400 L234 -30 L256 400"/>
-                <path class="trazo trazo--2" pathLength="1" d="M250 -30 L272 400 L294 -30 L316 400 L338 -30 L360 400 L382 -30 L404 400 L426 -30 L448 400 L470 -30 L492 400 L514 -30 L536 400 L558 -30 L580 400 L602 -30 L624 400 L646 -30 L668 400 L690 -30 L712 400 L734 -30 L756 400 L778 -30 L800 400 L822 -30 L844 400 L866 -30 L888 400 L910 -30 L932 400"/>
-              </g>
-            </mask>
-          </defs>
-          <image href="assets/img/logo-el-quisco.webp" width="900" height="370" mask="url(#mascara-escritura)"/>
+            <title id="logo-titulo">El Quisco</title>
+            <defs>
+              <filter id="pincel-suave" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="5"/></filter>
+              <mask id="mascara-escritura" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="370">
+                <g fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round" stroke-linejoin="round" filter="url(#pincel-suave)">
+                  <path class="trazo trazo--1" pathLength="1" d="M-30 -30 L-8 400 L14 -30 L36 400 L58 -30 L80 400 L102 -30 L124 400 L146 -30 L168 400 L190 -30 L212 400 L234 -30 L256 400"/>
+                  <path class="trazo trazo--2" pathLength="1" d="M250 -30 L272 400 L294 -30 L316 400 L338 -30 L360 400 L382 -30 L404 400 L426 -30 L448 400 L470 -30 L492 400 L514 -30 L536 400 L558 -30 L580 400 L602 -30 L624 400 L646 -30 L668 400 L690 -30 L712 400 L734 -30 L756 400 L778 -30 L800 400 L822 -30 L844 400 L866 -30 L888 400 L910 -30 L932 400"/>
+                </g>
+              </mask>
+            </defs>
+            <image href="assets/img/logo-el-quisco.webp" width="900" height="370" mask="url(#mascara-escritura)"/>
         </svg>
-        <h1 id="titulo-hero" class="hero__entrada" style="--retardo:1.9s">Donde la naturaleza tiene nombre.</h1>
-        <p class="hero__bajada hero__entrada" style="--retardo:2.15s">El Quisco no termina en la playa. Hay humedales, miradores, memoria y sabores que se descubren por capas.</p>
-        <div class="hero__acciones hero__entrada" style="--retardo:2.4s">
-          <a class="btn" href="rutas.html">Descubre las rutas</a>
-          <a class="btn btn--secundario" href="#mira">Mira el video</a>
+        <div class="hero__flores decorativa" aria-hidden="true">
+          <span class="hero__flor" style="left:-8%;top:22%;--tam:120px;--giro:-12deg;--retardo:0.4s"><img class="hero__etapa hero__etapa--1" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"><img class="hero__etapa hero__etapa--2" src="assets/img/flor-parcial.webp" alt="" width="360" height="261"><img class="hero__etapa hero__etapa--3 hero__etapa--final" src="assets/img/flor-abierta.webp" alt="" width="360" height="261"></span>
+          <span class="hero__flor" style="left:-13%;top:60%;--tam:58px;--giro:6deg;--retardo:0.4s"><img class="hero__etapa hero__etapa--1 hero__etapa--final" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"></span>
+          <span class="hero__flor" style="left:-3%;top:88%;--tam:82px;--giro:10deg;--retardo:0.4s"><img class="hero__etapa hero__etapa--1" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"><img class="hero__etapa hero__etapa--2 hero__etapa--final" src="assets/img/flor-parcial.webp" alt="" width="360" height="261"></span>
+          <span class="hero__flor" style="left:16%;top:-10%;--tam:66px;--giro:-8deg;--retardo:0.85s"><img class="hero__etapa hero__etapa--1" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"><img class="hero__etapa hero__etapa--2 hero__etapa--final" src="assets/img/flor-parcial.webp" alt="" width="360" height="261"></span>
+          <span class="hero__flor" style="left:40%;top:-12%;--tam:52px;--giro:-4deg;--retardo:1.52s"><img class="hero__etapa hero__etapa--1 hero__etapa--final" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"></span>
+          <span class="hero__flor" style="left:22%;top:104%;--tam:74px;--giro:12deg;--retardo:1.02s"><img class="hero__etapa hero__etapa--1" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"><img class="hero__etapa hero__etapa--2" src="assets/img/flor-parcial.webp" alt="" width="360" height="261"><img class="hero__etapa hero__etapa--3 hero__etapa--final" src="assets/img/flor-abierta.webp" alt="" width="360" height="261"></span>
+          <span class="hero__flor" style="left:50%;top:108%;--tam:56px;--giro:4deg;--retardo:1.8s"><img class="hero__etapa hero__etapa--1 hero__etapa--final" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"></span>
+          <span class="hero__flor" style="left:72%;top:100%;--tam:96px;--giro:-6deg;--retardo:2.42s"><img class="hero__etapa hero__etapa--1" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"><img class="hero__etapa hero__etapa--2" src="assets/img/flor-parcial.webp" alt="" width="360" height="261"><img class="hero__etapa hero__etapa--3 hero__etapa--final" src="assets/img/flor-abierta.webp" alt="" width="360" height="261"></span>
+          <span class="hero__flor" style="left:98%;top:-6%;--tam:62px;--giro:10deg;--retardo:3.14s"><img class="hero__etapa hero__etapa--1 hero__etapa--final" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"></span>
+          <span class="hero__flor" style="left:106%;top:32%;--tam:116px;--giro:16deg;--retardo:3.2s"><img class="hero__etapa hero__etapa--1" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"><img class="hero__etapa hero__etapa--2" src="assets/img/flor-parcial.webp" alt="" width="360" height="261"><img class="hero__etapa hero__etapa--3 hero__etapa--final" src="assets/img/flor-abierta.webp" alt="" width="360" height="261"></span>
+          <span class="hero__flor" style="left:109%;top:76%;--tam:72px;--giro:-10deg;--retardo:3.2s"><img class="hero__etapa hero__etapa--1" src="assets/img/flor-capullo.webp" alt="" width="360" height="404"><img class="hero__etapa hero__etapa--2 hero__etapa--final" src="assets/img/flor-parcial.webp" alt="" width="360" height="261"></span>
         </div>
       </div>
-      <div class="hero__ilustracion hero__entrada" style="--retardo:.6s">
-        <img class="ilustracion hero__cactus" src="assets/img/cactus-khiska-tres-flores.webp" alt="Cactus ilustrado en acuarela con tres flores rosadas abiertas y capullos por abrir" width="900" height="710">
+      <h1 id="titulo-hero" class="hero__entrada" style="--retardo:2.9s">Donde la naturaleza tiene nombre.</h1>
+      <p class="hero__bajada hero__entrada" style="--retardo:3.15s">El Quisco no termina en la playa. Hay humedales, miradores, memoria y sabores que se descubren por capas.</p>
+      <div class="hero__acciones hero__entrada" style="--retardo:3.4s">
+        <a class="btn" href="rutas.html">Descubre las rutas</a>
+        <a class="btn btn--secundario" href="#mira">Mira el video</a>
       </div>
     </div>
+    <img class="hero__cactus ilustracion decorativa" src="assets/img/cactus-khiska-una-flor.webp" alt="" width="458" height="730">
     <a class="hero__bajar decorativa" href="#para-ti"><span class="visually-hidden">Ir a la siguiente sección</span><span class="hero__bajar-flecha" aria-hidden="true"></span></a>
     <button class="hero__pausa decorativa" type="button" aria-pressed="false">Pausar movimiento</button>
   </section>

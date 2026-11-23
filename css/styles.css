@@ -523,17 +523,16 @@ html.lectura-facil a { text-decoration-thickness: 2px; }
 
 /* ==========================================================================
    Portada animada (paso 4 · entrega 1)
-   Fondo: video aéreo si hay uno en data-video; si no, ilustraciones del
+   Fondo: video aéreo si hay uno en KHISKA_FONDO; si no, ilustraciones del
    territorio con movimiento lento. El logo se "escribe" con una máscara
-   sobre la imagen original (no se redibuja).
+   sobre la imagen original (no se redibuja) y a su alrededor se abren flores.
    ========================================================================== */
 .hero {
   min-height: calc(100svh - 64px);
   display: flex; align-items: center;
-  padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(4.5rem, 8vw, 6rem);
+  padding: clamp(2.5rem, 6vh, 4.5rem) 0 clamp(4.5rem, 9vh, 6rem);
   isolation: isolate;
 }
-.hero__grid { position: relative; z-index: 2; width: min(100% - 2 * var(--gutter), var(--ancho)); }
 .hero__fondo { position: absolute; inset: -8% 0 0; z-index: 0; overflow: hidden; will-change: transform; }
 .hero__escena, .hero__video {
   position: absolute; inset: 0; width: 100%; height: 100%;
@@ -546,50 +545,88 @@ html.lectura-facil a { text-decoration-thickness: 2px; }
 .hero__escena:nth-child(4) { animation-delay: 21s; }
 @keyframes escena {
   0%   { opacity: 0;   transform: scale(1.06) translate3d(0, 0, 0); }
-  6%   { opacity: .42; }
-  25%  { opacity: .42; }
+  6%   { opacity: .55; }
+  25%  { opacity: .55; }
   32%  { opacity: 0;   transform: scale(1.18) translate3d(-2%, -1.5%, 0); }
   100% { opacity: 0;   transform: scale(1.18) translate3d(-2%, -1.5%, 0); }
 }
-.hero__video { opacity: .38; transition: opacity 1.2s; }
+.hero__video { opacity: .45; transition: opacity 1.2s; }
 .hero--con-video .hero__escena { display: none; }
 .hero__velo {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(90deg, var(--papel) 0%, rgba(250, 247, 238, .9) 32%, rgba(250, 247, 238, .45) 62%, rgba(250, 247, 238, .2) 100%),
-    linear-gradient(0deg, var(--papel) 0%, rgba(250, 247, 238, 0) 22%);
-}
-@media (max-width: 860px) {
-  .hero { min-height: auto; }
-  .hero__velo { background: linear-gradient(180deg, rgba(250, 247, 238, .25) 0%, rgba(250, 247, 238, .8) 42%, var(--papel) 100%); }
+    radial-gradient(ellipse 62% 58% at 50% 50%, rgba(250, 247, 238, .94) 0%, rgba(250, 247, 238, .78) 48%, rgba(250, 247, 238, .25) 100%),
+    linear-gradient(0deg, var(--papel) 0%, rgba(250, 247, 238, 0) 20%);
 }
 
+/* Centro: logo grande + titular */
+.hero__centro { position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.hero__centro h1 { font-size: clamp(1.7rem, 4.4vw, 2.9rem); margin: clamp(2rem, 6vh, 3.2rem) 0 .35em; }
+.hero__bajada { font-size: clamp(1.05rem, 2.1vw, 1.25rem); color: var(--texto-suave); max-width: 52ch; margin-inline: auto; }
+.hero__acciones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; }
+.hero__centro .hero__acciones { justify-content: center; }
+.hero__marca { position: relative; width: min(700px, 80vw, calc(44svh * 2.43)); margin-top: clamp(1rem, 4vh, 2.5rem); }
+.hero__logo { display: block; width: 100%; height: auto; overflow: visible; }
+
 /* Logo que se escribe */
-.hero__logo { display: block; width: min(500px, 100%); height: auto; margin: 0 0 1.2rem -6px; overflow: visible; }
 .trazo { stroke-dasharray: 1 1; stroke-dashoffset: 1; animation: escribir 1.15s cubic-bezier(.55, .1, .4, 1) .35s forwards; }
 .trazo--2 { animation-duration: 1.7s; animation-delay: 1.45s; }
 @keyframes escribir { to { stroke-dashoffset: 0; } }
 
-/* Entrada escalonada del texto y el cactus */
+/* Flores que se abren alrededor del logo: capullo → parcial → abierta */
+.hero__flores { position: absolute; inset: 0; pointer-events: none; }
+.hero__flor {
+  position: absolute; width: var(--tam); aspect-ratio: 1;
+  translate: -50% -50%; rotate: var(--giro);
+  animation: brotar .7s cubic-bezier(.3, 1.5, .5, 1) var(--retardo) both,
+             flotar 6s ease-in-out calc(var(--retardo) + 1.2s) infinite;
+}
+.hero__etapa { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
+.hero__etapa--1 { scale: .72; animation: aparecer .25s var(--retardo) both; }
+.hero__etapa--1:not(.hero__etapa--final) { animation: aparecer .25s var(--retardo) both, desaparecer .35s calc(var(--retardo) + .5s) forwards; }
+.hero__etapa--2 { animation: aparecer .35s calc(var(--retardo) + .45s) both; }
+.hero__etapa--2:not(.hero__etapa--final) { animation: aparecer .35s calc(var(--retardo) + .45s) both, desaparecer .35s calc(var(--retardo) + .95s) forwards; }
+.hero__etapa--3 { animation: aparecer .45s calc(var(--retardo) + .9s) both; }
+@keyframes brotar { from { scale: 0; opacity: 0; } to { scale: 1; opacity: 1; } }
+@keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+@keyframes desaparecer { to { opacity: 0; } }
+@keyframes flotar { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-6px) rotate(4deg); } }
+
+/* Entrada escalonada del texto */
 .hero__entrada { animation: entrar .9s cubic-bezier(.2, .7, .2, 1) var(--retardo, 0s) both; }
 @keyframes entrar { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
-.hero__ilustracion { z-index: 2; will-change: transform; }
-.hero__cactus { transform-origin: 50% 100%; animation: mecer 7s ease-in-out 1.5s infinite; }
-@keyframes mecer { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(1.2deg) translateY(-4px); } }
+
+/* Khiska crece desde la esquina */
+.hero__cactus {
+  position: absolute; z-index: 1; right: clamp(.5rem, 4vw, 4rem); bottom: 0;
+  width: auto; height: clamp(240px, 46vh, 460px);
+  transform-origin: 50% 100%; will-change: transform;
+  animation: crecer 1.6s cubic-bezier(.2, .8, .2, 1) .3s both, mecer 8s ease-in-out 2.2s infinite;
+}
+@keyframes crecer { from { transform: translateY(40%) scaleY(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes mecer { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(1.4deg); } }
+@media (max-width: 1100px) { .hero__cactus { height: clamp(200px, 30vh, 300px); right: .5rem; opacity: .9; } }
+@media (max-width: 760px) {
+  .hero { min-height: auto; padding-top: 3.5rem; }
+  .hero__marca { width: 78vw; }
+  .hero__flor { width: calc(var(--tam) * .5); }
+  .hero__cactus { display: none; }
+  .hero__velo { background: radial-gradient(ellipse 90% 60% at 50% 45%, rgba(250, 247, 238, .9) 0%, rgba(250, 247, 238, .7) 60%, rgba(250, 247, 238, .35) 100%), linear-gradient(0deg, var(--papel) 0%, rgba(250, 247, 238, 0) 20%); }
+}
 
 /* Indicador para bajar y botón de pausa */
 .hero__bajar {
   position: absolute; z-index: 3; left: 50%; bottom: 1.2rem; transform: translateX(-50%);
   width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%;
-  color: var(--verde-oscuro); animation: entrar .9s 2.8s both;
+  color: var(--verde-oscuro); animation: entrar .9s 3.8s both;
 }
 .hero__bajar-flecha {
   width: 14px; height: 14px; border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor;
-  transform: rotate(45deg); animation: rebote 2.2s ease-in-out 3.5s infinite;
+  transform: rotate(45deg); animation: rebote 2.2s ease-in-out 4.5s infinite;
 }
 @keyframes rebote { 0%, 100% { translate: 0 -3px; } 50% { translate: 0 5px; } }
 .hero__pausa {
-  position: absolute; z-index: 3; right: var(--gutter); bottom: 1.2rem;
+  position: absolute; z-index: 3; left: var(--gutter); bottom: 1.2rem;
   min-height: 36px; padding: .3em .9em; border-radius: 999px; cursor: pointer;
   border: 1px solid var(--linea); background: rgba(255, 253, 248, .85); color: var(--texto-suave);
   font-size: .82rem; font-weight: 500; backdrop-filter: blur(4px);
@@ -597,16 +634,19 @@ html.lectura-facil a { text-decoration-thickness: 2px; }
 .hero__pausa:hover { color: var(--verde-tinta); border-color: var(--salvia); }
 .hero--pausado .hero__escena,
 .hero--pausado .hero__cactus,
+.hero--pausado .hero__flor,
 .hero--pausado .hero__bajar-flecha { animation-play-state: paused; }
-@media (max-width: 860px) { .hero__bajar { display: none; } }
+@media (max-width: 760px) { .hero__bajar { display: none; } }
 
 /* Lectura fácil y movimiento reducido: todo quieto y legible */
 html.lectura-facil .hero__velo, html.lectura-facil .hero__pausa { display: none; }
 html.lectura-facil .hero { min-height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .trazo { animation: none; stroke-dashoffset: 0; }
-  .hero__entrada, .hero__cactus, .hero__bajar, .hero__bajar-flecha { animation: none; }
+  .hero__entrada, .hero__cactus, .hero__bajar, .hero__bajar-flecha, .hero__flor { animation: none; }
+  .hero__etapa, .hero__etapa:not(.hero__etapa--final) { animation: none; opacity: 0; }
+  .hero__etapa--final { opacity: 1; }
   .hero__escena { animation: none; opacity: 0; }
-  .hero__escena:first-child { opacity: .4; transform: scale(1.06); }
+  .hero__escena:first-child { opacity: .5; transform: scale(1.06); }
   .hero__pausa { display: none; }
 }

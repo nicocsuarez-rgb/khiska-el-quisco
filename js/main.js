@@ -309,7 +309,7 @@
   if (hero) {
     var quieto = window.matchMedia("(prefers-reduced-motion: reduce)");
     var fondo = hero.querySelector(".hero__fondo");
-    var cactus = hero.querySelector(".hero__ilustracion");
+    var cactus = hero.querySelector(".hero__cactus");
     var pausa = hero.querySelector(".hero__pausa");
     var video = null;
     var cfg = window.KHISKA_FONDO || {};
@@ -344,7 +344,7 @@
       var y = window.scrollY;
       if (y > window.innerHeight * 1.2) return;
       if (fondo) fondo.style.transform = "translate3d(0," + (y * 0.3).toFixed(1) + "px,0)";
-      if (cactus) cactus.style.translate = "0 " + (y * -0.08).toFixed(1) + "px";
+      if (cactus) cactus.style.translate = "0 " + (y * 0.12).toFixed(1) + "px";
     };
     window.addEventListener("scroll", function () {
       if (quieto.matches || pendiente) return;
