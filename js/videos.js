@@ -9,3 +9,11 @@ window.KHISKA_VIDEOS = [
     poster: "assets/video/poster-v00.jpg"
   }
 ];
+
+/* Video de fondo de la portada (toma aérea de El Quisco, horizontal, sin audio).
+   Déjalo en assets/video/ y escribe su ruta en "video". Mientras esté vacío,
+   la portada muestra las ilustraciones del territorio en movimiento. */
+window.KHISKA_FONDO = {
+  video: "",
+  poster: ""
+};

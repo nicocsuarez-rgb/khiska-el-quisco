@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icons/favicon.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/img/logo-el-quisco.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "El Quisco · Experiencia Khiska", "inLanguage": "es-CL"}, {"@type": "TouristDestination", "name": "El Quisco", "description": "Comuna costera de la Región de Valparaíso, Chile.", "includesAttraction": [{"@type": "TouristAttraction", "name": "Humedal Urbano El Batro"}]}]}</script>
 </head>
@@ -39,20 +40,41 @@
 
 <main id="contenido">
   <section class="hero" aria-labelledby="titulo-hero">
+    <div class="hero__fondo decorativa" aria-hidden="true">
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-mirador-neptuno.webp')"></div>
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-el-batro.webp')"></div>
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-isla-negra.webp')"></div>
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-caleta.webp')"></div>
+    </div>
+    <div class="hero__velo" aria-hidden="true"></div>
     <div class="contenedor hero__grid">
-      <div>
-        <img class="hero__logo" src="assets/img/logo-el-quisco.webp" alt="El Quisco" width="900" height="370" fetchpriority="high">
-        <h1 id="titulo-hero">Donde la naturaleza tiene nombre.</h1>
-        <p class="hero__bajada">El Quisco no termina en la playa. Hay humedales, miradores, memoria y sabores que se descubren por capas.</p>
-        <div class="hero__acciones">
+      <div class="hero__texto">
+        <svg class="hero__logo" viewBox="0 0 900 370" role="img" aria-labelledby="logo-titulo">
+          <title id="logo-titulo">El Quisco</title>
+          <defs>
+            <filter id="pincel-suave" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="5"/></filter>
+            <mask id="mascara-escritura" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="370">
+              <g fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round" stroke-linejoin="round" filter="url(#pincel-suave)">
+                <path class="trazo trazo--1" pathLength="1" d="M-30 -30 L-8 400 L14 -30 L36 400 L58 -30 L80 400 L102 -30 L124 400 L146 -30 L168 400 L190 -30 L212 400 L234 -30 L256 400"/>
+                <path class="trazo trazo--2" pathLength="1" d="M250 -30 L272 400 L294 -30 L316 400 L338 -30 L360 400 L382 -30 L404 400 L426 -30 L448 400 L470 -30 L492 400 L514 -30 L536 400 L558 -30 L580 400 L602 -30 L624 400 L646 -30 L668 400 L690 -30 L712 400 L734 -30 L756 400 L778 -30 L800 400 L822 -30 L844 400 L866 -30 L888 400 L910 -30 L932 400"/>
+              </g>
+            </mask>
+          </defs>
+          <image href="assets/img/logo-el-quisco.webp" width="900" height="370" mask="url(#mascara-escritura)"/>
+        </svg>
+        <h1 id="titulo-hero" class="hero__entrada" style="--retardo:1.9s">Donde la naturaleza tiene nombre.</h1>
+        <p class="hero__bajada hero__entrada" style="--retardo:2.15s">El Quisco no termina en la playa. Hay humedales, miradores, memoria y sabores que se descubren por capas.</p>
+        <div class="hero__acciones hero__entrada" style="--retardo:2.4s">
           <a class="btn" href="rutas.html">Descubre las rutas</a>
           <a class="btn btn--secundario" href="#mira">Mira el video</a>
         </div>
       </div>
-      <div class="hero__ilustracion">
-        <img class="ilustracion" src="assets/img/cactus-khiska-tres-flores.webp" alt="Cactus ilustrado en acuarela con tres flores rosadas abiertas y capullos por abrir" width="900" height="710">
+      <div class="hero__ilustracion hero__entrada" style="--retardo:.6s">
+        <img class="ilustracion hero__cactus" src="assets/img/cactus-khiska-tres-flores.webp" alt="Cactus ilustrado en acuarela con tres flores rosadas abiertas y capullos por abrir" width="900" height="710">
       </div>
     </div>
+    <a class="hero__bajar decorativa" href="#para-ti"><span class="visually-hidden">Ir a la siguiente sección</span><span class="hero__bajar-flecha" aria-hidden="true"></span></a>
+    <button class="hero__pausa decorativa" type="button" aria-pressed="false">Pausar movimiento</button>
   </section>
 
   <div class="franja-color decorativa" aria-hidden="true"></div>

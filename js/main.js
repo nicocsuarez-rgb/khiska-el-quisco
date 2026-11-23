@@ -303,4 +303,53 @@
     });
     actualizar();
   }
+
+  /* ---------- Portada animada: video de fondo, paralaje y pausa ---------- */
+  var hero = document.querySelector(".hero");
+  if (hero) {
+    var quieto = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var fondo = hero.querySelector(".hero__fondo");
+    var cactus = hero.querySelector(".hero__ilustracion");
+    var pausa = hero.querySelector(".hero__pausa");
+    var video = null;
+    var cfg = window.KHISKA_FONDO || {};
+    var ahorro = navigator.connection && navigator.connection.saveData;
+
+    if (fondo && cfg.video && !quieto.matches && !ahorro) {
+      video = document.createElement("video");
+      video.className = "hero__video";
+      video.muted = true; video.loop = true; video.playsInline = true; video.autoplay = true;
+      video.setAttribute("muted", ""); video.setAttribute("playsinline", "");
+      if (cfg.poster) video.poster = cfg.poster;
+      video.src = cfg.video;
+      video.addEventListener("canplay", function () { hero.classList.add("hero--con-video"); }, { once: true });
+      video.addEventListener("error", function () { video.remove(); video = null; hero.classList.remove("hero--con-video"); });
+      fondo.appendChild(video);
+    }
+
+    if (pausa) {
+      pausa.addEventListener("click", function () {
+        var pausado = !hero.classList.contains("hero--pausado");
+        hero.classList.toggle("hero--pausado", pausado);
+        pausa.setAttribute("aria-pressed", String(pausado));
+        pausa.textContent = pausado ? "Reanudar movimiento" : "Pausar movimiento";
+        if (video) { if (pausado) video.pause(); else video.play().catch(function () {}); }
+      });
+    }
+
+    /* Paralaje suave: el fondo baja más lento que el contenido */
+    var pendiente = false;
+    var moverPortada = function () {
+      pendiente = false;
+      var y = window.scrollY;
+      if (y > window.innerHeight * 1.2) return;
+      if (fondo) fondo.style.transform = "translate3d(0," + (y * 0.3).toFixed(1) + "px,0)";
+      if (cactus) cactus.style.translate = "0 " + (y * -0.08).toFixed(1) + "px";
+    };
+    window.addEventListener("scroll", function () {
+      if (quieto.matches || pendiente) return;
+      pendiente = true;
+      window.requestAnimationFrame(moverPortada);
+    }, { passive: true });
+  }
 })();
