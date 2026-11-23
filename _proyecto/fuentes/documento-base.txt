@@ -1,0 +1,182 @@
+None‎
+ESTADO DEL PROYECTO – EL QUISCO / EXPERIENCIA KHISKA
+Versión 2 · Actualizado al 3 de noviembre de 2026
+(Este documento manda sobre versiones anteriores. Se actualiza solo con cambios aprobados.)
+
+1. CONTEXTO ACADÉMICO
+- Origen del caso: Taller de Estrategia y Planificación Digital (MDC1106), docente Daniel
+Palomero.
+- Agencia C.C.C.: Fernanda Cruz, Benjamín Cerda y Nicolás Cáceres.
+- Examen transversal de: Taller de Estrategia y Planificación Digital, Innovación Digital,
+Community Manager y Marketing de Influencers, y Estrategia de Medios Aplicada.
+- Docentes, códigos y pautas de los demás ramos: [POR CONFIRMAR].
+- Innovación Digital (comunicado, sin pauta escrita): prototipado y recorrido de las etapas del
+ramo, incluido un customer journey sustentado en lo investigado.
+
+2. PAUTA VIGENTE: EP3 – TALLER DE ESTRATEGIA (34% de la asignatura) [HECHO RESPALDADO]
+"Producción y entrega de campaña digital para marcas territoriales". Encargo grupal con
+presentación de 10 minutos.
+Fecha de entrega: [POR CONFIRMAR]. Relación con el examen transversal: [POR CONFIRMAR].
+
+Pack Digital Final:
+1. Propuesta comunicacional definitiva (diagnóstico, objetivos, públicos, concepto, mensajes,
+canales y acciones justificadas).
+2. Grilla actualizada: calendario por plataforma, formatos, fechas, objetivos, mensajes, copys,
+CTA, hashtags y acciones orgánicas y pagadas.
+3. Piezas gráficas definitivas, adaptadas a cada plataforma.
+4. Producción audiovisual final y fotografía original de la localidad.
+5. Sitio web o recurso digital FUNCIONAL (enlace o paquete de archivos).
+6. Presupuesto final que distinga producción de inversión publicitaria.
+7. KPIs y proyección de ROI y ROAS con los datos simulados del docente, más optimización y
+seguimiento.
+8. Herramientas digitales e IA usadas, con ejemplos de prompts y justificación.
+
+Formato: presentación ejecutiva, carpeta de producción por plataforma, grilla en Excel o Sheets,
+sitio (enlace o archivos), propuesta y presupuesto actualizados, y planilla de proyección con
+supuestos.
+Regla clave: es producción, no prototipado. No se aceptan mockups ni wireframes en reemplazo
+de piezas definitivas. La calidad debe permitir presentarlo ante VCM Duoc UC y la Municipalidad
+de El Quisco.
+
+3. ARCHIVOS FUENTE VIGENTES
+- Propuesta comunicacional actualizada, entregada el 12 de octubre de 2026.
+- Grilla de contenidos El Quisco (julio a septiembre).
+- Presupuesto académico referencial.
+
+4. SÍNTESIS DE LA PROPUESTA (12/10/2026)
+Concepto rector: "El Quisco: donde la naturaleza tiene nombre".
+Recurso creativo: "Pincha tu curiosidad" (instrucción de descubrimiento, no compite con el
+concepto).
+Frase del sistema: "Explora una ruta. Completa la experiencia. Haz florecer tu Khiska".
+
+Problema comunicacional: la distancia entre conocer un atractivo y saber cómo vivir una
+experiencia. La comunicación previa asocia El Quisco con playa y verano.
+
+Insights (interpretaciones del diagnóstico, no resultados de encuesta):
+1. Conocer El Quisco como destino de playa no significa conocer sus otras capas.
+2. La curiosidad necesita una siguiente acción clara para convertirse en recorrido.
+3. Lo vivido puede ser una razón para volver si la persona reconoce qué descubrió y qué le
+queda por explorar.
+
+Hallazgo estratégico: no basta con mostrar más atractivos; hay que construir un recorrido
+comprensible entre descubrir, elegir, vivir y volver.
+
+DAFO cualitativo:
+- Fortalezas: naturaleza, patrimonio, gastronomía y comunidad.
+- Debilidades: información dispersa, imagen estacional y rutas sin definición operativa.
+- Oportunidades: articular panoramas, relatos y agenda en una landing, y convertir la primera
+exploración en continuidad.
+- Amenazas: prometer rutas o beneficios no habilitados, visitas incompatibles con el cuidado del
+entorno e información desactualizada.
+Decisión derivada: centralizar la experiencia sin reemplazar el territorio por tecnología.
+
+Objetivo general: ampliar la percepción de El Quisco como destino de naturaleza, cultura y
+comunidad durante todo el año.
+Objetivos específicos: instalar el concepto, derivar a la landing, explicar Khiska, dar
+protagonismo a habitantes y oficios, y ofrecer razones para volver. No se fijaron porcentajes por
+falta de línea base.
+
+Públicos:
+- Visitantes de escapada y familias: descubrimiento e inicio.
+- Propietarios de segunda vivienda y visitantes habituales: volver fuera del verano.
+- Residentes y jóvenes locales: memoria, recomendaciones y participación.
+- Pescadores, artesanos y emprendedores: dan sentido; su participación comercial requiere
+acuerdos.
+
+5. EXPERIENCIA KHISKA
+Lógica: descubrir una ruta → elegirla → preparar la visita → comenzar → completar → guardar
+el avance → descubrir otra experiencia.
+- El cactus representa el progreso personal. CADA FLOR ES UNA RUTA COMPLETA E INDIVIDUAL.
+- Estados: capullo cerrado (no iniciada), flor parcialmente abierta (iniciada), flor abierta
+(completada según el método de validación), flor con beneficio señalado (solo si existe un
+acuerdo) y cactus con varias flores (historial).
+- La flor no desaparece al canjear: el recuerdo de la ruta no se consume.
+- Contempla: consulta de rutas sin registro, registro para guardar progreso, Pasaporte Khiska, QR
+solo en puntos definidos y con destino útil, beneficios locales posibles y guardado en Wallet
+(proyectado).
+- Escanear un QR no demuestra que se completó una ruta: la finalización necesita un criterio
+verificable y simple [POR DEFINIR].
+- Cada ficha de ruta debe tener: nombre, territorio, hitos, duración, dificultad, recomendaciones
+y condiciones de acceso.
+- Lugares mencionados en los antecedentes (El Batro, Las Petras, Mirador Neptuno, Isla Negra,
+Punta de Tralca, El Totoral y la caleta): NO equivalen a rutas confirmadas. Catálogo definitivo:
+[POR CONFIRMAR].
+
+ESTADO REAL: propuesta académica con mockups. No hay plataforma operativa, comercios
+adheridos, canjes ni integración con Wallet. La etimología de "Khiska" no se afirma sin fuente.
+
+6. LANDING
+Orden: header y menú → hero → panoramas y rutas → Instagram y comunidad → Experiencia
+Khiska → calendario de eventos → footer institucional.
+- Diseño priorizado para celular, con versión de escritorio.
+- Logo grande en el hero, no duplicado en la esquina.
+- Tarjetas de rutas con descripción al interactuar (toque y teclado, no solo hover).
+- Las rutas se pueden consultar antes de registrarse.
+- CTA principal: "Descubre las rutas". Secundarios: "Ver ruta", "Comenzar experiencia" y
+"Guardar mi progreso".
+- Instagram: cuenta turística indicada por el equipo, @miodestinoelquisco [VERIFICAR la grafía
+exacta]. La integración depende de acceso y permisos.
+- Calendario expandible y contraíble, solo con actividades confirmadas.
+
+7. GRILLA PREVIA (julio a septiembre; año [POR CONFIRMAR])
+- Julio, "Despertar": manifiesto, capas territoriales, explicación de Khiska, escucha comunitaria y
+presentación de la landing.
+- Agosto, "Recorrer": tutoriales, preparación, registro, Pasaporte, QR, relato de ruta y contenido
+local.
+- Septiembre, "Florecer y volver": flores, testimonios autorizados, beneficios confirmados,
+agenda, nuevas rutas y recap trimestral.
+- 39 entradas: 36 sociales y 3 módulos de landing (13 por mes).
+- Canales: Instagram 17, Facebook 9, TikTok 6, YouTube 4 y landing 3.
+- Rol de cada canal: Instagram (relato visual, carruseles, reels y participación), TikTok (curiosidad
+y POV), Facebook (utilidad, comunidad y agenda), YouTube (relatos y recorridos, incluida una
+pieza de 3 a 5 minutos) y landing (convierte el interés en acción).
+- Pilares: naturaleza e identidad; rutas y orientación práctica; memoria y cultura; sabor y oficios;
+comunidad; progreso y retorno.
+- Columnas actuales: semana, canal, formato, objetivo, audiencia, pilar, idea o gancho, copy
+sugerido, CTA, destino, recurso visual, relación con landing o Khiska, y KPI.
+
+8. PRESUPUESTO PREVIO (académico referencial, antes de impuestos)
+- P1 Coordinación: $120.000 · P2 Diseño estático: $300.000 · P3 Edición de 14 videos cortos:
+$350.000 · P4 Edición de 3 videos de YouTube: $210.000 · P5 Fotografía y grabación (2 sesiones):
+$150.000 · P6 Prototipo visual de landing y Khiska: $180.000 · P7 Publicación, comunidad y
+reportes: $180.000 · P8 Herramientas: $30.000 · P9 Pauta pagada: $0.
+- Base: $1.520.000 + contingencia del 10% ($152.000) = $1.672.000.
+- Por mes: julio $709.500, agosto $544.500 y septiembre $418.000 (con contingencia).
+- Supuestos: equipo con equipos propios, herramientas gratuitas primero, sin backend, Wallet
+real, algoritmo, QR físicos ni infraestructura de canjes.
+- No recuperar presupuestos profesionales descartados.
+
+9. MEDICIÓN PREVIA
+Tres niveles: atención al contenido, uso de la plataforma y experiencia territorial.
+Indicadores: retención, respuestas y clics a la landing; aperturas de fichas e inicios; registros y
+consulta de progreso; rutas completadas sobre rutas iniciadas (misma cohorte); usuarios que
+vuelven y empiezan otra ruta; y participación local documentada.
+La proyección previa es cualitativa: no se inventan resultados turísticos.
+
+10. BRECHAS FRENTE A LA EP3 [HIPÓTESIS del análisis documental; validar con el equipo]
+- Grilla: está organizada por semana y no por fechas; no tiene columna de hashtags ni de
+orgánico/pagado; los copys son "sugeridos" y algunos dependen de datos por validar. → Hay
+que pasar a fechas, copys finales, CTA y hashtags.
+- Sitio: el presupuesto define un "prototipo visual" (P6); la EP3 exige un sitio funcional y
+navegable. → Definir qué funciona de verdad y qué se simula de forma explícita (por ejemplo, el
+progreso de Khiska como demostración).
+- Presupuesto y medios: la pauta es $0, pero la EP3 pide inversión en medios y ROAS. → Decidir
+si se incorpora una pauta pagada acotada [PROPUESTA, requiere aprobación].
+- KPIs: hoy no hay metas numéricas por falta de línea base. → Construir la proyección con los
+datos simulados del docente, presentada como simulación.
+- Audiovisual: P3 y P4 se presupuestaron como "edición sin rodaje", con dos sesiones de captura
+(P5). → Confirmar si alcanza para el material original y final que exige la EP3.
+- IA y herramientas: falta documentarlas. → Registrar herramientas y prompts usados (incluido
+Claude).
+- Presentación: falta un guion de 10 minutos con demostración del sitio.
+- Producción real: revisión del 27/10 y estado de piezas, fotos y videos [POR CONFIRMAR].
+11. PENDIENTES ABIERTOS
+- Fecha de entrega y presentación de la EP3, y su relación con el examen transversal.
+- Datos simulados del docente para calcular ROI y ROAS.
+- Pautas de Innovación Digital, Community Manager y Estrategia de Medios.
+- Observaciones de la revisión del 27 de octubre.
+- Catálogo definitivo de rutas y criterio para validar que una ruta se completó.
+- Evidencia de la investigación original (usuarios, método y resultados).
+- Decisión sobre la inversión pagada.
+- Grafía exacta de la cuenta de Instagram turística.
+

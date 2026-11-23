@@ -1,0 +1,149 @@
+El Quisco: donde la naturaleza tiene nombre
+Presupuesto académico referencial · Julio, agosto y septiembre · Año de ejecución por confirmar
+
+1. Alcance y supuestos
+
+Valoración del trabajo de producción y presentación de la campaña orgánica y del prototipo visual
+Khiska. No equivale necesariamente al desembolso del equipo. Todos los valores son estimaciones
+académicas antes de impuestos; el tratamiento tributario queda fuera de este ejercicio.
+
+   1.​ Equipo pequeño con equipos existentes; dos sesiones locales de captura, sin arriendos ni
+       grandes traslados.
+
+   2.​ Plantillas y activos del pack reutilizados; cinco carruseles de 5–6 láminas y tres secuencias
+       Stories de tres cuadros.
+
+   3.​ Edición básica: 14 videos cortos de hasta 60 s y tres YouTube de 3–5 min; dos testimonios se
+       presentan como piezas estáticas y UGC requiere autorización.
+
+   4.​ Khiska se representa mediante prototipo visual: no backend, Wallet real, algoritmo,
+       instalación física de QR ni infraestructura de canjes.
+
+   5.​ Herramientas gratuitas primero; reserva de $10.000 mensual para
+       almacenamiento/exportación, sin imputar licencias existentes.
+     2. Presupuesto resumido
+
+Partida             Qué incluye                     Unidad       Cant.    Unitario     Subtot     KPI / función
+                                                                          CLP          al CLP
+
+P1 Coordinación     Ajustes de textos, guiones y    hora         12       $10.000      $120.000   Coherencia de CTA / preparación
+y preparación       CTA                                                                           de
+                    existentes.                                                                   contenidos
+
+P2 Diseño           5 carruseles, 3 Stories, 11     paquete      1        $300.000     $300.000   Guardados / respuestas
+estático            editoriales y
+                    adaptaciones.
+
+P3 Edición de       14 videos cortos: edición,      pieza        14       $25.000      $350.000   Retención / clics
+video corto         subtítulos y
+                    capturas; sin rodaje.
+
+P4 Edición          3 videos YouTube y              pieza        3        $70.000      $210.000   Tiempo de reproducción
+YouTube             miniaturas; sin
+                    rodaje.
+
+P5 Fotografía y     2 sesiones locales, foto y      sesión       2        $75.000      $150.000   Material propio y autorizado
+grabación básica    material
+                    compartido; sin edición.
+
+
+P6 Prototipo        Landing, cactus/flores,         paquete      1        $180.000     $180.000   Claridad de navegación          /
+visual landing y    Pasaporte,                                                                    comprensión
+Khiska              Wallet/QR demostrativos,                                                      de la experiencia
+                    calendario y
+                    3 módulos.
+
+P7 Publicación,     Publicación, comunidad          mes          3        $60.000      $180.000   Interacciones       /    ajustes
+comunidad y         básica,                                                                       mensuales
+reportes            actualizaciones y 3 reportes.
+
+
+P8 Herramientas     Almacenamiento o                mes          3        $10.000      $30.000    Organización    y   entrega    de
+                    exportaciones;                                                                archivos
+                    reserva.
+
+P9 Pauta pagada     $0: campaña orgánica.           campaña      1        $0           $0         No aplica
+
+
+
+     Base: $1.520.000. Producción P2–P6: $1.190.000. Coordinación/gestión P1+P7: $300.000.
+
+     Herramientas P8: $30.000. Pauta P9: $0. Estos desgloses ya están dentro de la base.
+
+     Contingencia: 10% × $1.520.000 = $152.000. Total antes de impuestos: $1.672.000.
+3. Cobertura de la grilla
+Conteo verificado: 13 entradas por mes; 36 sociales y 3 módulos de landing. Cada entrada se asigna
+una vez a producción; coordinación y gestión son tareas distintas.
+
+                       Tipo de contenido / acción                            Entradas           Paquete
+
+ Carruseles                                                                      5                 P2
+
+ Secuencias Stories                                                              3                 P2
+
+ Otros contenidos: participativa, álbum, guía, evento, 2 testimonios            11                 P2
+ estáticos, gastronomía, UGC, calendario y 2 recaps
+
+ Reels Instagram                                                                 7                 P3
+
+ Videos TikTok                                                                   6                 P3
+
+ YouTube Short                                                                   1                 P3
+
+ Videos YouTube                                                                  3                 P4
+
+ Módulos landing: Pasaporte, próxima ruta y resumen de progreso                  3                 P6
+
+ Total                                                                          39           36 sociales + 3
+                                                                                                 landing
+
+P1 prepara los contenidos y P7 acompaña su publicación/actualización y evaluación. Las sesiones P5
+abastecen a los paquetes de edición; no incluyen nuevamente ese trabajo. P6 reutiliza gráficos: no
+cobra una plataforma completa ni generación duplicada de activos.
+
+4. Distribución por mes
+
+
+ Concepto             Julio               Agosto            Septiembre               Total
+
+
+
+ Base                 $645.000            $495.000          $380.000                 $1.520.000
+
+
+
+ Contingencia         $64.500             $49.500           $38.000                  $152.000
+ 10%
+
+
+
+ Total                $709.500            $544.500          $418.000                 $1.672.000
+
+La contingencia se distribuye como 10% de cada base mensual; el diseño inicial se concentra en julio y las
+tareas recurrentes se reparten entre los tres meses.
+5. Justificación breve
+La inversión conecta objetivos, acciones, recursos e indicadores, siguiendo la Sesión 8. Julio financia
+la preparación visual y los contenidos de descubrimiento; agosto, tutoriales y demostraciones para
+comprender cómo iniciar una experiencia; septiembre, progreso, testimonios y motivos para volver.
+Se revisan retención, respuestas, clics y claridad del prototipo, sin presentar registros, rutas o canjes
+como resultados reales. Las plantillas, los gráficos existentes y el material audiovisual compartido
+reducen el retrabajo. Se valora el trabajo creativo aunque lo aporte el equipo, pero solo se costea el
+prototipo académico: la representación de Wallet, QR y beneficios no financia su operación. La
+partida de gestión incluye tres reportes para proponer ajustes, en coherencia con los criterios de
+métricas y mejora de la pauta.
+
+6. Versión para el video
+                             Categoría                                       Monto CLP
+
+ Coordinación y gestión (P1+P7)                                               $300.000
+
+ Producción de contenidos (P2–P5)                                            $1.010.000
+
+ Prototipo Khiska (P6)                                                        $180.000
+
+ Herramientas y pauta (P8+P9; pauta $0)                                        $30.000
+
+ Contingencia (10%)                                                           $152.000
+
+ Total antes de impuestos                                                    $1.672.000
+

@@ -1,0 +1,1586 @@
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+Documento central · El Quisco / Experiencia
+Khiska
+  ​Nov 8, 2026       ·   ​@Nico      · Agencia C.C.C.
+
+
+Cómo leer este documento
+Este documento integra lo que ya existe de Khiska con las exigencias de Innovación Digital
+(EV3 y EFT), sin cambiar la grilla ni el contenido aprobado: los vuelve más relevantes y
+verificables. Es una base de trabajo para el equipo, no una entrega final.
+
+Etiquetas
+
+
+  Etiqueta                           Qué significa
+
+  [CONFIRMADO]                       Está en una pauta, en un archivo vigente del equipo
+                                     o en una fuente externa con link y fecha.
+
+  [PROPUESTA]                        Idea de este documento. No es un acuerdo del
+                                     equipo hasta que se apruebe.
+
+  [PENDIENTE]                        Falta un dato, una decisión o una validación. Se
+                                     indica cómo obtenerlo.
+
+
+Fuentes internas usadas, por prioridad
+
+   1. Pauta EP3 de Taller de Estrategia (MDC1106) y clase oficial "3.1.1 Prototipado y
+      estrategia de lanzamiento".
+   2. Resúmenes de Miranda hechos en NotebookLM: "Innovación Digital Territorial" y
+      "Tangibilizar la promesa". Son guías útiles, pero no la pauta oficial de Innovación
+      Digital: sus exigencias quedan como [CONFIRMADO según resumen] hasta
+       contrastarlas con la pauta del ramo.
+   3. Estado del proyecto Khiska v2 (3/11/2026).
+   4. Propuesta comunicacional actualizada (12/10/2026), Grilla de contenidos (julio a
+      septiembre) y Presupuesto académico referencial.
+
+El "Registro de decisiones" no está en el proyecto. Por eso ninguna idea nueva aparece
+como decisión del equipo. Las pautas de Community Manager y de Estrategia de Medios
+Aplicada tampoco están disponibles.
+
+
+
+
+                                                                                           Page 1 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+1. Checklist de cumplimiento
+Khiska ya cumple en concepto, narrativa, canales y mensajes. Lo que más falta es lo que la
+EV3 evalúa con más peso: datos vigentes con fuente, alianzas, viabilidad municipal, user
+personas, proceso documentado y un prototipo navegable que demuestre los flujos.
+
+Estado: Cumple / Parcial / Falta. "Fuente" indica de dónde sale la exigencia: M1 =
+"Innovación Digital Territorial", M2 = "Tangibilizar la promesa", 3.1.1 = clase oficial, EP3 =
+pauta de Taller.
+
+
+EV3 · Paso 1: prototipo simulado (15 h pedagógicas, 40%, según M1)
+
+ Exigencia                               Fuente Estado          Qué tenemos            Qué falta o mejorar     Etiqueta
+
+ Prototipo en Figma,                     M1          Parcial    Mockups, recursos      Prototipo navegable     [PENDIENTE]
+ Canva o Miro                                                   ilustrados y un        con los flujos
+                                                                boceto de Instagram    principales
+
+ Prompts de IA                           M1          Falta      Nada registrado        Registro de prompts:    [PENDIENTE]
+ documentados                                                   (brecha ya anotada     se inicia en el anexo
+                                                                en Estado v2)          de este documento
+
+ Evidencia de proceso:                   M1          Parcial    Bocetos y piezas en    Fotos o capturas de     [PENDIENTE]
+ capturas, bocetos,                                             el proyecto            las sesiones y la
+ brainstorming                                                                         evolución de la idea
+
+ Flujos principales                      M1          Parcial    Flujo escrito:         Llevar ese flujo a      [PENDIENTE]
+ visibles (ej. cómo el                                          descubrir, elegir,     pantallas enlazadas
+ turista encuentra un                                           iniciar, completar,
+ hito)                                                          abrir flor
+
+ Un solo foco                            M1          Cumple Khiska resuelve            Declararlo en una       [PROPUESTA]
+ estratégico ("evitar una                                   turismo y                  línea en el documento
+ app por moda")                                             patrimonio, no             y el pitch
+                                                            trámites
+
+ Soluciones simples y                    M1          Parcial    Diseño para celular;   Modo de lectura fácil   [PROPUESTA]
+ accesibles                                                     tarjetas con toque y   y pruebas de
+                                                                teclado; rutas sin     accesibilidad
+                                                                registro
+
+
+
+EV3 · Paso 2: diagnóstico, insight, alianzas y lanzamiento
+
+ Exigencia                                 Fuente Estado Qué tenemos                       Qué falta o         Etiqueta
+                                                                                           mejorar
+
+ Contexto territorial y                    M1         Parcial   DAFO cualitativo; cifras   Datos vigentes      [PENDIENTE]
+ comportamiento digital                                         antiguas descartadas       con fuente, fecha y
+ del usuario                                                    por falta de fuente        link (sección 2)
+
+
+
+
+                                                                                                                     Page 2 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+ Exigencia                                 Fuente Estado Qué tenemos                             Qué falta o            Etiqueta
+                                                                                                 mejorar
+
+ Un insight clave                          M1           Parcial    Tres insights                 Elegir uno como        [PROPUESTA]
+                                                                   interpretativos y un          insight central y
+                                                                   hallazgo                      apoyarlo con datos
+
+ Alianzas públicas o                       M1           Falta      Solo menciones                Mapa de aliados        [PENDIENTE]
+ privadas                                                          generales (portal             con rol y aporte
+                                                                   municipal, comercios          (sección 8)
+                                                                   con acuerdo)
+
+ Datos de consumidor de                    M1           Falta      Sin datos vigentes            Ver sección 2          [PENDIENTE]
+ máximo 2 años
+
+ Datos de tecnología de                    M1           Falta      Sin datos vigentes            Ver sección 2          [PENDIENTE]
+ máximo 1 año
+
+
+
+EV3 · Paso 3: viabilidad, factibilidad y riesgos
+
+ Exigencia                            Fuente Estado Qué tenemos                             Qué falta o mejorar         Etiqueta
+
+ Tiempo y costos                      M1             Parcial    Presupuesto                 Costos de                   [PENDIENTE]
+ ajustados a un                                                 académico de                implementación
+ gobierno local                                                 campaña: $1.672.000         municipal por fases (QR,
+                                                                antes de impuestos          tótem, hosting,
+                                                                                            mantención)
+
+ Recursos técnicos:                   M1             Falta      Supuesto: sin               Consultar al municipio;     [PENDIENTE]
+ qué tiene el municipio                                         backend, sin QR             separar "tiene /
+ y qué debe adquirir o                                          físicos, sin Wallet real    necesita"
+ licitar
+
+ Barreras sociales                    M1             Falta      No analizado                Ver matriz (sección 9)      [PENDIENTE]
+ (brecha digital,
+ conectividad rural)
+
+ Plan de mitigación                   M1             Falta      No definido                 Ver matriz (sección 9)      [PROPUESTA]
+ (versión offline,
+ tótems, asistencia
+ presencial)
+
+
+
+User personas
+
+ Exigencia                            Fuente Estado               Qué tenemos              Qué falta o mejorar        Etiqueta
+
+ Personas que reflejen                M1             Parcial      Cuatro públicos          Fichas de persona          [PROPUESTA]
+ públicos diversos                                                definidos en la          provisionales (sección
+                                                                  propuesta                4), marcadas sin
+                                                                                           investigación
+
+
+
+
+                                                                                                                                 Page 3 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+ Exigencia                            Fuente Estado          Qué tenemos         Qué falta o mejorar     Etiqueta
+
+ Prototipo que se                     M1             Falta   No demostrado       Pantallas con lectura   [PROPUESTA]
+ adapte a distintas                                                              fácil, texto grande y
+ realidades cognitivas                                                           acceso sin cuenta
+ y tecnológicas
+
+ Turista: información                 M1             Cumple Las rutas se         Mostrarlo en el         [CONFIRMADO]
+ sin crear cuenta                                           consultan antes de   prototipo
+                                                            registrarse
+
+
+
+Checklist de agencia (verificación final, M1)
+
+  Exigencia                                      Estado      Comentario                                  Etiqueta
+
+  Enfoque 100%                                   Parcial     Los beneficios con comercios deben          [PROPUESTA]
+  municipal                                                  presentarse como economía local del
+                                                             territorio, no como campaña
+                                                             comercial
+
+  Proceso evidenciado                            Falta       Prompts, bocetos, herramientas y            [PENDIENTE]
+                                                             brainstorming
+
+  Prototipo funcional y                          Falta       Ver sección 5                               [PENDIENTE]
+  adaptado
+
+  Datos actualizados                             Falta       Ver sección 2                               [PENDIENTE]
+
+  Viabilidad comprobada                          Falta       Ver sección 9                               [PENDIENTE]
+
+  Integración total con el                       Parcial     Grilla y landing ya conectan con            [PROPUESTA]
+  EFT                                                        Khiska; falta que la EV3 justifique el
+                                                             resto
+
+
+
+Cinco criterios de inmersión (3.1.1 y M2)
+
+  Criterio                      Estado                  Qué tenemos              Qué falta               Etiqueta
+
+  Multisensorial                Falta                   Solo identidad visual    Audio de voces          [PROPUESTA]
+                                                                                 locales en puntos
+                                                                                 de ruta y una señal
+                                                                                 al abrir la flor (ver
+                                                                                 sección 6)
+
+  Interactiva                   Parcial                 Tarjetas que revelan     Respuesta visible a     [PROPUESTA]
+                                                        información;             cada acción (flor
+                                                        estados del cactus       que se abre, sello)
+
+
+
+                                                                                                                    Page 4 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Criterio                      Estado               Qué tenemos            Qué falta                Etiqueta
+
+  Participativa                 Parcial              Encuestas y            Elegir intereses al      [PROPUESTA]
+                                                     preguntas a la         inicio y proponer
+                                                     comunidad en la        lugares desde la
+                                                     grilla                 web
+
+  Sin fricciones                Parcial              Rutas sin registro;    QR que abre la           [PROPUESTA]
+                                                     diseño para celular    web sin descargar
+                                                                            una app; registro
+                                                                            solo para guardar
+
+  Narrativa                     Cumple en            Concepto rector,       Demostrar el hilo        [PROPUESTA]
+                                concepto             frase del sistema y    red social →
+                                                     cactus                 landing → ruta →
+                                                                            flor en el prototipo
+
+
+
+Tríada de lanzamiento (3.1.1 y M2)
+
+  Eje                   Estado             Qué tenemos                 Qué falta                   Etiqueta
+
+  Canales               Cumple             Grilla de 39 entradas:      Sumar puntos físicos        [CONFIRMADO]
+                                           Instagram 17, Facebook      (QR, tótem, oficina de
+                                           9, TikTok 6, YouTube 4,     turismo)
+                                           landing 3
+
+  Mensajes              Cumple             Concepto, "Pincha tu        Ninguno de fondo            [CONFIRMADO]
+                                           curiosidad", frase del
+                                           sistema y CTA por
+                                           momento
+
+  Alianzas              Falta              Sin aliados definidos       Ver sección 8               [PENDIENTE]
+
+
+
+Tensiones que el equipo debe resolver
+Estas contradicciones están en las propias fuentes. No se resuelven aquí en silencio.
+
+   1. Producción o prototipo. La EP3 exige piezas definitivas y un sitio funcional, y no
+       acepta mockups ni wireframes. La EV3 pide un prototipo simulado. [PROPUESTA] Un
+       solo producto: la landing funcional cumple la EP3 y, a la vez, es el prototipo de alta
+       fidelidad de la EV3. Lo que no existe (registro real, validación de ruta, Wallet) se
+       muestra como demostración rotulada. Figma o Canva documenta el proceso y los
+       flujos. Requiere aprobación del equipo y, ojalá, de ambos docentes.
+
+
+
+
+                                                                                                                Page 5 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+   2. Dos clics o tres. M1 pide flujos de máximo 2 clics para el vecino mayor; M2 habla de la
+       regla de los 3 clics. [PROPUESTA] Diseñar para 2 en las tareas críticas: ver una ruta y
+       abrir el Pasaporte.
+   3. Antigüedad de los datos. M1 pide datos de consumidor de hasta 2 años, pero su
+      lámina de integración dice "insight y datos (< 1 año)". [PROPUESTA] Preferir datos de 1
+       año o menos y nunca pasar de 2.
+   4. Ramos del EFT. M1 dibuja el EFT con tres ramos (MDC1106, MDC1107 y MDC1108). El
+       Estado v2 lista cuatro, incluida Estrategia de Medios Aplicada. [PENDIENTE]
+       Confirmar con la pauta oficial.
+   5. Pauta pagada. La pauta pagada es $0, pero la EP3 pide inversión en medios y ROAS. Ya
+       figura como brecha en el Estado v2. [PENDIENTE] Decisión del equipo.
+
+
+2. Diagnóstico territorial e insight
+El Quisco tiene una comuna conectada pero envejecida, una oferta turística concentrada
+en verano y un patrimonio natural recién protegido. Khiska debe resolver una sola vertical
+municipal: turismo y patrimonio natural y cultural, no trámites ni alertas. [PROPUESTA]
+
+
+Datos de consumidor y ciudadano (máximo 2 años)
+
+  Dato                                  Cifra                Fecha        Fuente       Etiqueta
+
+  Población de El                       18.971 habitantes,   Censo 2024   BCN,         [CONFIRMADO]
+  Quisco                                +18,9% frente a                   Reporte
+                                        2017                              comunal
+                                                                          2026 (INE)
+
+  Personas de 65                        25,1% en El          Censo 2024   BCN (INE)    [CONFIRMADO]
+  años o más                            Quisco; 14% en el
+                                        país
+
+  Índice de adultos                     162,9 en El          Censo 2024   BCN (INE)    [CONFIRMADO]
+  mayores                               Quisco; 79 en el
+                                        país
+
+  Población con                         13,3% en El          Censo 2024   BCN (INE)    [CONFIRMADO]
+  discapacidad (5                       Quisco; 11,1% en
+  años o más)                           el país
+
+  Empresas de                           296 de 1.701         2024         BCN (SII)    [CONFIRMADO]
+  alojamiento y                         empresas de la
+  comidas                               comuna
+
+
+
+
+                                                                                                  Page 6 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Dato                                  Cifra                  Fecha         Fuente            Etiqueta
+
+  Ocupación de                          66,6% del 10 al 15     2025          Sernatur:         [CONFIRMADO]
+  alojamientos,                         de febrero; 30,9%                    febrero y
+  Litoral de los                        del 30 de junio al                   invierno
+  Poetas                                5 de julio
+
+  Hogares con                           96,6% del total;       Campo jun-    Subtel, XII       [CONFIRMADO]
+  internet                              83,2% en hogares       sep 2025      Encuesta de
+                                        solo de personas                     Acceso y Uso
+                                        mayores
+
+  Personas de 60                        13,8% nunca ha         Campo jun-    Subtel            [CONFIRMADO]
+  años o más                            usado internet;        sep 2025
+                                        42,9% puede
+                                        hacer pagos en
+                                        línea por sí mismo
+
+  Humedal Urbano                        Reconocido por el      29/09/2025    BCN Ley           [CONFIRMADO]
+  El Batro                              Ministerio del                       Chile
+                                        Medio Ambiente
+                                        (Res. Ex. 6.648) a
+                                        solicitud del
+                                        municipio
+
+
+La protección de El Batro es un dato del territorio, no la confirmación de una ruta.
+Cualquier recorrido ahí debe acordarse con el municipio y respetar la protección.
+[PENDIENTE]
+
+
+Datos de tecnología y digital (máximo 1 año)
+
+  Dato                                Cifra                  Fecha      Fuente              Etiqueta
+
+  Usuarios de                         19,1 millones;         Oct 2026   DataReportal,       [CONFIRMADO]
+  internet en Chile                   95,6% de la                       Digital 2027:
+                                      población                         Chile
+
+  Plataformas                         WhatsApp               GWI, 2.º   DataReportal        [CONFIRMADO]
+  usadas el último                    90,8%,                 trim.
+  mes (internautas                    Instagram              2026
+  de 16+)                             84,9%,
+                                      Facebook
+                                      80,1%, YouTube
+                                      69,0%, TikTok
+                                      68,8%
+
+
+
+
+                                                                                                          Page 7 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Dato                                Cifra              Fecha      Fuente           Etiqueta
+
+  Velocidad móvil                     79,51 Mbps         Fines de   DataReportal     [CONFIRMADO]
+  mediana                                                2026
+                                                         (Ookla)
+
+  Smartphone en                       99,1%              2025       Subtel           [CONFIRMADO]
+  hogares con
+  internet
+
+  Uso de internet                     41,1% de           2025       Subtel           [CONFIRMADO]
+  en la calle o en                    quienes usan
+  plazas con datos                    internet fuera
+  móviles                             del hogar
+
+  Uso de IA (por sí                   40,6% del total;   2025       Subtel           [CONFIRMADO]
+  mismo)                              9,5% de las
+                                      personas de 60
+                                      o más
+
+  Tendencia global                    "Trip snacking":   Oct 2026   Expedia Group,   [CONFIRMADO,
+  de viaje                            escapadas                     Unpack '27       dato global, no de
+                                      cortas de una                                  Chile]
+                                      noche entre
+                                      vacaciones
+                                      largas
+
+
+Los datos Subtel se levantaron en 2025 y se publicaron en noviembre de 2025. Sirven
+como dato de consumidor; como dato de tecnología están en el límite del año.
+[PENDIENTE confirmar con la docente qué fecha cuenta: levantamiento o publicación]
+
+
+Qué nos dicen estos datos
+   1. La estacionalidad es medible. La ocupación del destino cae a menos de la mitad entre
+       febrero e invierno de 2025. Khiska tiene una razón concreta para invitar fuera del
+       verano.
+   2. El público digital existe, pero el mayor no es minoritario. Uno de cada cuatro
+       habitantes tiene 65 años o más. Un sistema solo digital dejaría fuera a vecinos clave
+       para la memoria y los relatos.
+   3. El celular es la puerta. Casi todos los hogares conectados usan smartphone y buena
+       parte navega con datos en espacios abiertos. Un QR que abre una web, sin descargar
+       app, calza con ese hábito.
+   4. Hay oferta local que puede sumarse. 296 empresas de alojamiento y comida podrían
+       recibir visitantes de ruta, siempre con acuerdo.
+
+
+
+                                                                                                    Page 8 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+   5. El territorio exige cuidado. El reconocimiento de El Batro obliga a diseñar visitas
+       compatibles con su protección.
+
+
+Insight clave
+[PROPUESTA] Elegir como insight central el segundo de la propuesta del 12/10, apoyado
+ahora en datos:
+
+
+    "La curiosidad por El Quisco ya existe; lo que falta es un siguiente paso claro y una
+    razón para volver fuera del verano."
+
+
+Los datos de ocupación respaldan la segunda mitad ("fuera del verano"). La primera mitad
+("la curiosidad ya existe") sigue siendo una interpretación: no hay entrevistas que la
+prueben. [PENDIENTE] Validarla con 5 a 8 conversaciones breves con visitantes y
+residentes, y con la encuesta de Stories ya prevista en la grilla (julio, semana 3).
+
+
+3. Sistema de la experiencia
+Khiska es un ecosistema de dos capas que se apoyan en cada paso: lo digital ordena y
+registra; lo físico da presencia, voz y un objeto que se guarda. Nadie queda fuera por no
+tener smartphone, y nadie necesita una app. [PROPUESTA sobre la base aprobada en la
+propuesta del 12/10]
+
+
+
+
+Sistema phygital Khiska · 5 pasos, 2 capas
+
+Las flechas punteadas indican que en cada paso se puede pasar de una capa a la otra: por
+ejemplo, escanear un afiche o pedir el Pasaporte después de ver una ruta en la web.
+
+
+
+
+                                                                                         Page 9 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+Reglas que no cambian
+       Cada flor del cactus y cada sello del Pasaporte representan una ruta completa e
+       individual. [CONFIRMADO]
+       Los QR van solo en puntos definidos y abren un destino útil. Escanear no equivale a
+       completar. [CONFIRMADO]
+       No se afirman rutas, comercios adheridos, canjes ni Wallet operativos.
+       [CONFIRMADO]
+
+
+Customer journey
+Usuaria y escenario principal: Camila planea una escapada de fin de semana a El Quisco
+fuera del verano. [PROPUESTA]
+
+Recorrido actual (solo con evidencia). No hay investigación con usuarios, así que este
+recorrido es una estructura provisional.
+
+
+  Etapa                   Qué sabemos y de           Vacío                  Cómo validarlo
+                          dónde
+
+  Inspiración             El destino se              Qué la hace pensar     Encuesta de Stories y 5 a
+                          promociona por playas,     en El Quisco fuera     8 conversaciones
+                          poetas e Isla Negra        del verano
+                          (chile.travel)
+
+  Búsqueda                El diagnóstico anterior    Dónde busca y qué      Pedir a 5 personas que
+                          describe información       no encuentra           planifiquen la visita en voz
+                          dispersa (antecedente,                            alta
+                          no investigación nueva)
+
+  Decisión                La ocupación del destino   Por qué no viene en    Conversaciones con
+                          baja de 66,6% en           invierno               visitantes habituales
+                          febrero a 30,9% en
+                          invierno de 2025
+                          (Sernatur)
+
+  Visita                  Sin evidencia              Qué recorre y qué se   Observación en terreno,
+                                                     pierde                 si el equipo puede ir
+
+  Después                 Sin evidencia              Si guarda o comparte   Revisar contenido público
+                                                     lo vivido              etiquetado en la comuna
+
+
+Recorrido propuesto con Khiska. Las emociones son metas de diseño, no resultados
+observados.
+
+
+
+
+                                                                                                 Page 10 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+ Etapa               Punto de                Punto de          Qué hace      Meta de        Pieza de la      Indicador
+                     contacto                contacto físico   Camila        diseño         grilla
+                     digital
+
+ Descubrir           Reel                    Afiche con QR     Ve que El     Curiosidad     Julio S1 y S2    Clics a la
+                     manifiesto,             en el Punto       Quisco                                        landing
+                     TikTok de               Khiska            tiene otras
+                     curiosidad                                capas
+
+ Elegir              Catálogo y              Ficha impresa     Compara y     Confianza      Julio S3 y S4;   Aperturas de
+                     ficha, sin              o descargable     elige una                    agosto S1        ficha
+                     registro                                  ruta
+
+ Vivir               QR en hitos             Hitos de bajo     Recorre y     Asombro y      Agosto S3;       Inicios
+                     con relato en           impacto;          escucha       conexión       julio S4         registrados;
+                     voz local               Pasaporte de                    con el lugar   (Short)          escaneos
+                                             papel
+
+ Completar La flor se                        Sello en el       Completa      Logro          Agosto S4;       Rutas
+           abre en Mi                        Pasaporte         según el                     septiembre       completadas
+                     Khiska                                    criterio                     S1               sobre iniciadas
+                                                               definido
+
+ Volver              Próxima ruta            Comercio local,   Guarda su     Ganas de       Septiembre       Usuarios que
+                     y agenda                solo con          próxima       volver         S2 a S4          inician otra
+                                             acuerdo           ruta o                                        ruta
+                                                               evento
+
+
+
+
+4. User personas provisionales
+Estas cuatro personas cruzan los públicos de la propuesta (12/10) con los arquetipos de
+M1. Son provisionales: no salen de entrevistas. Los nombres son ficticios y las
+necesidades son hipótesis hasta validarlas. [PROPUESTA]
+
+La persona principal para el prototipo y el customer journey es Camila, visitante de
+escapada. [PROPUESTA]
+
+
+                             Camila ·                      Don Héctor ·        Vale · joven         Rosa · oficio y
+                             visitante de                  vecino mayor        local                comercio local
+                             escapada
+                             (principal)
+
+  Público de la              Visitantes de                 Residentes y        Residentes y         Pescadores,
+  propuesta                  escapada y                    propietarios de     jóvenes              artesanos y
+                             familias                      segunda             locales              emprendedores
+                                                           vivienda
+
+
+
+
+                                                                                                                     Page 11 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+                             Camila ·                Don Héctor ·         Vale · joven      Rosa · oficio y
+                             visitante de            vecino mayor         local             comercio local
+                             escapada
+                             (principal)
+
+  Arquetipo                  Turista                 Vecino mayor         Joven nativo      Comerciante local
+  M1                                                                      digital
+
+  Dato de                    Ocupación del           25,1% de la          68,8% de          296 empresas de
+  contexto                   destino: 66,6%          comuna tiene 65      internautas       alojamiento y
+                             en febrero y            años o más           usa TikTok;       comida en 2024
+                             30,9% en                                     84,9%
+                             invierno de                                  Instagram
+                             2025
+
+  Necesidad                  Saber qué               Leer sin esfuerzo    Participar        Ser visible para
+  (hipótesis)                hacer, cuánto           y no perderse en     rápido,           quien ya está
+                             toma y cómo             menús                compartir y       recorriendo
+                             empezar, sin                                 sentir que su
+                             crear cuenta                                 aporte cuenta
+
+  Frustración                Información             Letra chica, jerga   Contenido         Promociones que
+  (hipótesis)                dispersa; todo          técnica, pasos       turístico que     nadie valida ni
+                             apunta a la             de más               no la             respalda
+                             playa                                        representa
+
+  Qué le da                  Rutas                   Modo lectura         Proponer          Aparecer cerca de
+  Khiska                     consultables sin        fácil, Pasaporte     lugares,          la ruta solo con
+                             registro, ficha         en papel, punto      compartir su      acuerdo y
+                             clara, flor al          presencial           flor, encuestas   condiciones claras
+                             completar
+
+  Adaptación                 Máximo 2                Texto grande,        Acceso            Módulo "Sabores y
+  del                        toques hasta la         alto contraste,      directo a         oficios" rotulado
+  prototipo                  ficha; botón            máximo 2 toques      compartir y a     como
+                             "Comenzar"              en tareas            "Propón un        demostración
+                             visible                 críticas             lugar"
+
+  Cómo                       5 pruebas con           3 a 5 pruebas        Encuesta de       3 conversaciones
+  validarla                  visitantes              acompañadas          Stories (julio    con
+                             reales o                con personas de      S3) y 3           emprendedores de
+                             personas que            60+                  pruebas           la comuna
+                             planean una
+                             escapada
+
+
+Todas las cifras de "Dato de contexto" vienen de la sección 2. Describen el territorio, no a
+estas personas.
+
+
+                                                                                                         Page 12 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+5. Prototipo: pantallas y flujos
+El prototipo debe demostrar una cosa: que una persona pasa de la curiosidad a completar
+una ruta y abrir su flor, sin fricción y con ganas de volver. Se propone construirlo en Figma
+(exigencia de M1) a partir de la landing y los recursos ya hechos. [PROPUESTA]
+
+Nivel de fidelidad. Alta fidelidad navegable, según la clase 3.1.1 y M2. Así el mismo diseño
+sirve de base al sitio funcional de la EP3. Lo que no existe (registro real, validación de ruta,
+Wallet, beneficios) se muestra como demostración rotulada. [PROPUESTA; ver tensión 1
+de la sección 1]
+
+
+Pantallas
+
+ #           Pantalla            Necesidad           Hipótesis          Tarea de        Evidencia           Ajuste posible    Criterio de
+                                                                        prueba          observable                            inmersión
+
+ P1          Inicio (hero        Entender            Si el hero         "Encuentra      Toca "Descubre      Reescribir el     Narrativa
+             de la               qué es esto         muestra el         cómo            las rutas" sin      titular o subir
+             landing)            en segundos         cactus y un        empezar a       ayuda               el CTA
+                                                     solo CTA, la       explorar"
+                                                     persona sabe
+                                                     qué hacer
+
+ P2          ¿Qué te da          Sentir que la       Elegir intereses   "Elige lo que   Elige o salta sin   Quitar la         Participativa
+             curiosidad?         experiencia         aumenta la         te gustaría     dudar;              pantalla si
+             (opcional, se       es para mí          sensación de       descubrir"      comentarios         frena
+             puede                                   control                            espontáneos
+             saltar)
+
+ P3          Catálogo de         Comparar            Las tarjetas con   "Elige una      Llega a una ficha   Cambiar           Sin fricciones
+             rutas               opciones            duración y         ruta para       en máximo 2         orden o datos
+                                 rápido              dificultad         este sábado"    toques              visibles en la
+                                                     permiten elegir                                        tarjeta
+                                                     sin abrir todas
+
+ P4          Ficha de ruta       Prepararse          La ficha           "Dime si        Responde con        Agregar o         Sin fricciones
+                                 con                 completa           podrías hacer   datos de la ficha   reordenar
+                                 confianza           reduce la          esta ruta con                       datos
+                                                     incertidumbre      tu familia"                         prácticos
+
+ P5          En ruta: hito       Sentir el           Un relato en       "Escanea el     Activa el audio;    Acortar el        Multisensorial
+             con QR              lugar, no           voz local hace     hito y          lo describe         relato o
+                                 solo verlo          el paso más        escucha"        después con sus     agregar
+                                                     memorable                          palabras            transcripción
+
+ P6          Completar la        Saber que lo        Ver la flor        "Termina la     Reacción visible    Ajustar           Interactiva y
+             ruta                logré               abrirse            ruta"           al ver la flor      animación,        narrativa
+                                                     confirma el                                            sonido o texto
+                                                     logro                                                  de cierre
+
+ P7          Mi Khiska           Ver lo vivido       El cactus con      "Muéstrame      Identifica          Reforzar la       Narrativa
+             (cactus y           y lo que            capullos invita    qué rutas te    capullos sin        leyenda de
+             Pasaporte)          falta               a otra ruta        faltan"         ayuda               estados
+
+
+
+
+                                                                                                                                   Page 13 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+ #           Pantalla            Necesidad           Hipótesis        Tarea de        Evidencia          Ajuste posible   Criterio de
+                                                                      prueba          observable                          inmersión
+
+ P8          Tu próxima          Tener una           Una sugerencia   "¿Qué harías    Elige una ruta o   Mostrar          Participativa
+             experiencia         razón para          concreta más     en tu próxima   evento             menos
+             y agenda            volver              una fecha        visita?"                           opciones
+                                                     motivan el
+                                                     retorno
+
+ P9          Modo                Leer sin            Texto grande y   Tareas P3 y     Completa en        Aumentar         Sin fricciones
+             lectura fácil       esfuerzo            menos            P7 en modo      máximo 2           contraste o
+             (en todas las                           elementos        fácil           toques             simplificar
+             pantallas)                              permiten a un
+                                                     vecino mayor
+                                                     completar
+                                                     tareas
+
+ P10         Propón un           Aportar a mi        Poder proponer   "Sugiere un     Envía la           Reducir          Participativa
+             lugar               comuna              genera           lugar para      propuesta          campos
+                                                     pertenencia      una ruta        (demostración)
+                                                                      futura"
+
+
+
+
+Flujos principales
+   1. Camila encuentra y elige una ruta sin registrarse: P1 → P2 (opcional) → P3 → P4. Meta:
+       llegar a la ficha en máximo 2 toques desde el catálogo.
+   2. Camila vive y completa la ruta: P4 → "Comenzar" → P5 en cada hito definido → P6
+       (validación por definir) → P7.
+   3. Don Héctor consulta en modo fácil: activa P9 → P3 → P4 → descarga la versión
+       imprimible de la ruta.
+   4. Camila decide volver: P7 → P8 → guarda la próxima ruta o evento.
+   5. Vale aporta: P10 desde la landing o desde una publicación de la grilla.
+
+
+Recursos de inmersión y por qué están (nada decorativo)
+
+  Recurso                                              Para qué sirve                            Riesgo y control
+
+  Audio de voces locales en                            Conecta el lugar con su                   Requiere autorización y
+  hitos                                                gente; da sentido al                      transcripción para
+                                                       concepto "donde la                        accesibilidad
+                                                       naturaleza tiene nombre"
+
+  Flor que se abre con sonido                          Confirma un logro real: una               Se puede silenciar; nunca
+  suave y vibración breve                              ruta completa                             aparece sin ruta completada
+
+  Estados del cactus (capullo,                         Muestra progreso y lo que                 Una flor = una ruta completa,
+  parcial, abierta)                                    falta                                     sin excepciones
+
+
+
+
+                                                                                                                               Page 14 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Recurso                                            Para qué sirve                      Riesgo y control
+
+  Elección de intereses                              Da control y ordena el              Siempre se puede saltar
+                                                     catálogo
+
+
+
+Cómo aprender con el prototipo
+       Prueba interna del equipo: revisa que los flujos funcionen. No cuenta como validación
+       con público.
+       Prueba con público [PENDIENTE]: 5 personas tipo Camila y 3 a 5 tipo Don Héctor. Se
+       registra si completan cada tarea, cuántos toques usan, dónde dudan y qué dicen en
+       voz alta.
+       Resultado esperado: una lista de ajustes por pantalla, con antes y después, como
+       evidencia de iteración para la EV3.
+
+
+6. Mejoras propuestas, conectadas a la grilla
+Ninguna mejora cambia la grilla ni crea piezas nuevas: cada una le da más sentido a una
+entrada que ya existe. Todas son [PROPUESTA] hasta que el equipo las apruebe.
+
+
+ #           Situación                Requisito o        Cambio           Beneficio         Impacto en       Pieza de la
+             actual                   evidencia          propuesto                          otros ramos      grilla que se
+                                                                                                             fortalece
+
+ A1          El Pasaporte             M1 pide mitigar    Pasaporte        Incluye a quien   Medios: el       Agosto S2,
+             es solo digital          la brecha          Khiska en        no usa            pasaporte es     módulo
+                                      digital; 25,1%     papel con        smartphone;       un medio         Pasaporte;
+                                      de la comuna       ilustración      da un objeto      propio físico.   septiembre S1,
+                                      tiene 65+          botánica y un    recordable        CM: contenido    reel de la flor
+                                                         sello por ruta                     de "unboxing"
+                                                         completa
+
+ A2          Los hitos solo           Criterio           Audio de         Hace              CM: los          Julio S4, Short
+             informan                 multisensorial     voces locales    memorable el      mismos audios    "Este lugar
+                                      (3.1.1, M2);       al escanear el   lugar y da        alimentan        también se
+                                      caso Limache       QR de un hito,   protagonismo      Shorts y         entiende
+                                      2026               con              a la comunidad    relatos          escuchando";
+                                                         transcripción                                       septiembre
+                                                                                                             S3, relato largo
+
+ A3          Diseño para              M1: vecino         Modo lectura     Prototipo         Taller: mejora   Julio S3,
+             celular, sin             mayor, máximo      fácil y tareas   "adaptado"        accesibilidad    TikTok "Así
+             modo de                  2 clics            críticas en      según el          del sitio EP3    eliges una ruta
+             accesibilidad                               máximo 2         checklist de                       en menos de
+                                                         toques           agencia                            un minuto"
+
+
+
+
+                                                                                                                    Page 15 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+ #           Situación                Requisito o      Cambio           Beneficio         Impacto en       Pieza de la
+             actual                   evidencia        propuesto                          otros ramos      grilla que se
+                                                                                                           fortalece
+
+ A4          La encuesta              Criterio         La pantalla P2   Lo que la         CM: cierra el    Julio S3,
+             de Stories               participativo    usa las          comunidad         ciclo de         Stories "¿Qué
+             prioriza rutas,                           mismas           vota se ve en     escucha          te gustaría
+             pero no                                   categorías       la web                             descubrir
+             conecta con                               que la                                              primero?"
+             la web                                    encuesta de
+                                                       Stories
+
+ A5          La flor se abre Criterio                  Flor que se      El logro se       CM: clip de      Agosto S4,
+             solo            interactivo y             abre con         siente, no solo   reacción para    TikTok "Llegué
+             visualmente     multisensorial            sonido suave     se ve             redes            con
+                                                       y vibración                                         curiosidad, me
+                                                       breve,                                              fui con una
+                                                       silenciable                                         flor";
+                                                                                                           septiembre S1
+
+ A6          Las ideas de             Criterio         Formulario       Los aportes       CM: material     Julio S2,
+             la comunidad             participativo;   "Propón un       quedan            para             publicación
+             llegan solo              M1 pide          lugar" en la     ordenados         respuestas y     participativa;
+             por                      participación    landing          para futuras      UGC              julio S4,
+             comentarios              cívica                            rutas                              álbum;
+                                                                                                           septiembre
+                                                                                                           S4, encuesta
+                                                                                                           final
+
+ A7          La ficha                 M1: zonas de     Versión          Funciona sin      Medios: pieza    Agosto S1,
+             depende de la            baja             imprimible o     señal             descargable      guía "Antes de
+             conexión                 conectividad     descargable                        medible          salir: qué
+                                                       de cada ruta                                        revisar"
+                                                       (versión lite)
+
+ A8          No hay                   Amenaza del      Código del       Cuida el          Taller:          Julio S1,
+             pautas de                DAFO; El Batro   visitante        territorio y      argumento de     carrusel
+             cuidado del              es humedal       Khiska en        refuerza el       sostenibilidad   "¿Qué
+             entorno                  urbano           fichas y en el   enfoque                            dimensión de
+                                      protegido        Pasaporte        municipal                          El Quisco
+                                      (2025)                                                               conoces?";
+                                                                                                           agosto S1, guía
+                                                                                                           práctica
+
+ A9          No hay                   M1: tótems o     Punto Khiska     Puente físico     Medios: punto    Agosto S3,
+             atención                 asistencia       en la oficina    entre             de contacto      evento en
+             presencial               presencial       de turismo u     personas y        físico           Facebook;
+                                                       otro espacio     web                                calendario
+                                                       municipal:
+                                                       retiro de
+                                                       Pasaporte,
+                                                       sello y ayuda
+
+
+
+
+                                                                                                                  Page 16 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+ #           Situación                Requisito o     Cambio            Beneficio         Impacto en        Pieza de la
+             actual                   evidencia       propuesto                           otros ramos       grilla que se
+                                                                                                            fortalece
+
+ A10         El sistema               Diferenciador   Kit replicable:   Convierte el      EFT:              Septiembre
+             está pensado             del equipo:     manual de         proyecto en       argumento de      S5, recap
+             solo para El             que otras       marca,            un modelo;        transferencia a   trimestral
+             Quisco                   comunas         plantilla de      valor para        la comuna y la    (solo si hay
+                                      quieran         ficha de ruta,    VCM               región            resultados
+                                      copiarlo        criterios de                                          reales)
+                                                      validación y
+                                                      código del
+                                                      sitio
+
+
+Para decidir rápido: A1, A3 y A7 resuelven la brecha digital que exige M1. A2 y A5 cubren el
+criterio multisensorial, hoy el más débil. A10 es el que mejor expresa el diferenciador del
+equipo.
+
+
+7. Referentes reales
+Hay pasaportes, sellos, QR y audiorrelatos funcionando en Chile y en el mundo, pero casi
+ninguno une ruta completa, relato local, objeto físico y progreso digital en un solo sistema.
+Ese hueco es el espacio de Khiska. [PROPUESTA, interpretación de los casos]
+
+
+  Caso                            Quién y dónde        Qué hace                     Qué tomamos         Fuente
+                                                                                    para Khiska
+
+  Pasaporte                       Servicio             Libreta con                  El pasaporte        Meganoticias,
+  Patrimonial                     Nacional del         timbres, stickers o          físico como         15/05/2026
+                                  Patrimonio           firmas en museos,            bitácora;
+                                  Cultural, Chile      bibliotecas y                posible vínculo
+                                  (2026)               archivos; más de             con espacios
+                                                       30 puntos de                 patrimoniales
+                                                       retiro; se puede
+                                                       usar todo el año
+
+  Pasaporte                       CONAF,               Sello en 17 parques          Inscripción por     Rewilding
+  Ruta de los                     Sernatur y           nacionales;                  QR más sello        Chile,
+  Parques de la                   Fundación            bitácora de flora y          físico; registrar   09/03/2022
+  Patagonia                       Rewilding Chile      fauna; inscripción           especies
+                                  (2022)               con QR en puntos             refuerza "la
+                                                       de retiro; invita a          naturaleza
+                                                       visitar en                   tiene nombre"
+                                                       temporada baja
+
+
+
+
+                                                                                                                   Page 17 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Caso                            Quién y dónde      Qué hace              Qué tomamos        Fuente
+                                                                           para Khiska
+
+  Pasaporte                       Corporación        Guía sin sellos con   Aprendizaje:       PDF del
+  Turístico                       Regional de        emprendimientos       un beneficio       pasaporte,
+  Mundial Sub-                    Turismo de la      y ofertas; aclara     sin acuerdo es     2025
+  20                              Región de          que las ofertas no    un riesgo.
+                                  Valparaíso, con    son convenios con     Khiska solo
+                                  la                 la Corporación        comunica
+                                  Municipalidad                            beneficios con
+                                  de Valparaíso,                           acuerdo
+                                  el CORE y el
+                                  GORE (2025)
+
+  Audioguías                      Municipalidad      Recorrido             Audio de voces     G5 Noticias,
+  con QR, Museo                   de Limache         autónomo con QR;      locales en los     28/09/2026
+  Palmira                         (2026)             relatos en primera    hitos (mejora
+  Romano                                             persona y diseño      2)
+                                                     sonoro
+
+  Audiorrelatos                   Metro de           Estaciones y          El QR como         CNN Chile,
+  con QR en                       Santiago y         trenes                puerta a una       mayo 2026
+  Metro                           Audioteca          intervenidos con      voz, no a un
+                                  Gabriela           QR para escuchar      folleto
+                                  Mistral (2026)     relatos
+
+  Rutas                           Ministerio de      85 recorridos con     Estándar para      ChileAtiende
+  Patrimoniales                   Bienes             señalética de         la ficha de ruta
+                                  Nacionales,        mínimo impacto,       y la señalética
+                                  Chile              topoguía,             de bajo
+                                                     audioguías y app      impacto
+
+  CopenPay                        Wonderful          Premia acciones       Premiar el         EU Tourism
+                                  Copenhagen,        sostenibles del       cuidado del        Platform,
+                                  Dinamarca          turista. En 2025:     territorio.        16/09/2025
+                                  (piloto 2024;      70% dice que          Además
+                                  segunda            mantendrá esos        publicaron un
+                                  edición 2025)      hábitos, arriendo     marco
+                                                     de bicicletas         replicable para
+                                                     +59%, satisfacción    otras ciudades:
+                                                     98%                   el modelo del
+                                                                           kit Khiska
+                                                                           (mejora 10)
+
+
+
+
+                                                                                                       Page 18 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Caso                            Quién y dónde      Qué hace               Qué tomamos         Fuente
+                                                                            para Khiska
+
+  Pasaportes                      Organismos de      Pases con check-in     Medir inicios y     Casos
+  digitales de                    turismo de         y premios. SoIN        rutas               publicados
+  Bandwango                       EE.UU. y           Tourism pasó de        completadas.        por la
+                                  Canadá (casos      papel a digital: 494   Un check-in         empresa
+                                  2025-2026)         inscripciones y 496    muestra
+                                                     check-ins el primer    participación,
+                                                     mes                    no gasto, como
+                                                                            advierte Loop
+
+  Viña Pass                       Tesis de           Pasaporte digital      Hay prototipos      Repositorio
+                                  Ingeniería Civil   municipal con QR y     similares en la     USM
+                                  Telemática,        beneficios en          región. Khiska
+                                  USM (marzo         locales adheridos.     se diferencia
+                                  2026)              Es académico, no       por la ruta
+                                                     operativo              completa y la
+                                                                            experiencia, no
+                                                                            por el
+                                                                            descuento
+
+
+Los casos de Bandwango los publica la propia empresa: sirven como referencia de
+mecánica, no como evidencia independiente de resultados.
+
+
+8. Alianzas y lanzamiento
+Khiska necesita tres tipos de aliados: quien valida el territorio, quien amplifica y quien
+financia. Ninguna alianza está acordada: todas son posibilidades con respaldo público de
+que el actor existe y trabaja en el tema. [PENDIENTE contacto en todas]
+
+
+Mapa de posibles aliados
+
+  Actor                          Tipo                Rol posible en    Por qué tiene          Fuente
+                                                     Khiska            sentido
+
+  Municipalidad                  Público,            Valida rutas,     Solicitó el            Res. Ex. 6.648,
+  de El Quisco                   mandante            define el         reconocimiento         MMA
+  (turismo,                                          criterio para     del humedal El
+  medio                                              completarlas,     Batro
+  ambiente,                                          aloja el Punto
+  adulto mayor)                                      Khiska
+
+
+
+
+                                                                                                         Page 19 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Actor                          Tipo                Rol posible en     Por qué tiene       Fuente
+                                                     Khiska             sentido
+
+  Sernatur                       Público             Información        Sernatur impulsa    Memoria 5.º
+  Región de                                          turística,         esa distinción      Congreso de
+  Valparaíso                                         difusión,          con la              Municipalidades
+                                                     vínculo con la     Subsecretaría de    Turísticas, 2025
+                                                     distinción         Turismo y
+                                                     "Municipalidad     SUBDERE
+                                                     Turística"
+
+  Corporación                    Público-            Amplificador       Hizo el pasaporte   Pasaporte Sub-
+  Regional de                    privado, sin        regional; escala   regional del        20; DIPRES 2026
+  Turismo de la                  fines de lucro      el modelo a        Mundial Sub-20 y
+  Región de                                          otras comunas      figura en las
+  Valparaíso                                                            transferencias
+                                                                        del GORE 2026
+
+  Gobierno                       Público,            Fondos para        El FIC-R ya         G5 Noticias,
+  Regional de                    financiamiento      piloto o           financió un         28/07/2026
+  Valparaíso                                         escalamiento:      programa de
+                                                     FIC-R, FRPD y      turismo
+                                                     Fondo 8% para      sostenible en
+                                                     organizaciones     Concón-
+                                                                        Mantagua,
+                                                                        ejecutado por la
+                                                                        PUCV
+
+  Ministerio y                   Público             Criterios de       El Batro es         BCN; G5
+  SEREMI del                                         visita para el     humedal urbano      Noticias
+  Medio                                              humedal;           reconocido
+  Ambiente                                           Fondo de           desde 2025
+                                                     Protección
+                                                     Ambiental para
+                                                     organizaciones
+
+  Servicio                       Público             Posible vínculo    Ya opera un         Meganoticias,
+  Nacional del                                       con el             pasaporte con       15/05/2026
+  Patrimonio                                         Pasaporte          sellos en todo
+  Cultural                                           Patrimonial        Chile
+
+  Subtel y                       Público             Talleres para      Subtel              Subtel
+  programas de                                       que vecinos        recomienda
+  alfabetización                                     mayores usen       políticas de
+  digital                                            Khiska             alfabetización
+                                                                        digital (2025)
+
+
+
+
+                                                                                                       Page 20 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Actor                          Tipo                Rol posible en   Por qué tiene       Fuente
+                                                     Khiska           sentido
+
+  Fundación                      Privado sin         Validador        Isla Negra está     chile.travel
+  Pablo Neruda                   fines de lucro,     cultural;        en El Quisco y es
+  (Casa Museo                    cultura             contenidos       el ícono del
+  Isla Negra)                                        para relatos     Litoral de los
+                                                                      Poetas
+
+  Organización                   Sociedad civil      Validador        Aparece             Expediente
+  Defensa El                                         comunitario y    impulsando          MMA, 2024
+  Batro                                              guardianes del   estudios del
+                                                     humedal          sector en el
+                                                                      expediente del
+                                                                      MMA
+
+  Alojamientos,                  Privado             Beneficios y     296 empresas de     BCN (SII)
+  restaurantes,                                      relatos, solo    alojamiento y
+  pescadores y                                       con acuerdo      comida en la
+  artesanos                                          escrito          comuna (2024)
+
+  Duoc UC,                       Académico           Entrega formal   M1 indica que los   Resumen de
+  Vinculación                                        del proyecto a   proyectos se        Miranda (M1)
+  con el Medio                                       la               entregan a VCM
+                                                     municipalidad    y a las
+                                                                      municipalidades,
+                                                                      sin compromiso
+                                                                      de ejecución
+
+
+No se incluyen nombres de autoridades ni cargos: se identificarán al momento del
+contacto.
+
+
+Tríada de lanzamiento
+
+  Eje                   Qué usa Khiska                                Etiqueta
+
+  Canales               Instagram, Facebook, TikTok y YouTube         Digitales [CONFIRMADO]; físicos
+                        según la grilla; landing; puntos físicos:     [PROPUESTA]
+                        hitos con QR, Pasaporte en papel y
+                        Punto Khiska
+
+
+
+
+                                                                                                         Page 21 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Eje                   Qué usa Khiska                            Etiqueta
+
+  Mensajes              Promesa: "El Quisco: donde la             [CONFIRMADO]
+                        naturaleza tiene nombre". Beneficio:
+                        saber qué recorrer y guardar lo vivido.
+                        Necesidad: pasar de la curiosidad a la
+                        acción. Instrucción: "Explora una ruta.
+                        Completa la experiencia. Haz florecer
+                        tu Khiska"
+
+  Alianzas              Validadores (municipio, MMA,              [PENDIENTE]
+                        Fundación Neruda, Defensa El Batro),
+                        amplificadores (Sernatur, Corporación
+                        Regional de Turismo) y financiadores
+                        (GORE)
+
+
+
+Secuencia de lanzamiento sobre la grilla existente
+   1. Antes de julio: piloto. Una sola ruta confirmada por el municipio, con hitos, audio y
+      Pasaporte. Sin ruta confirmada no se lanza. [PROPUESTA]
+   2. Julio, "Despertar": la grilla instala el concepto; se suman A4 (encuesta conectada a la
+       web) y A6 ("Propón un lugar").
+   3. Agosto, "Recorrer": tutoriales, Pasaporte y QR; se suman el Pasaporte en papel, el
+       audio y el Punto Khiska.
+   4. Septiembre, "Florecer y volver": flores, testimonios autorizados y agenda; se
+       presenta el kit replicable a la Corporación Regional de Turismo y a VCM.
+
+
+9. Matriz de viabilidad, factibilidad y riesgos
+Khiska es viable si crece por fases y cada fase depende de una condición cumplida, no de
+una fecha. El único costo calculado hoy es el académico ($1.672.000 antes de impuestos).
+Los costos de implementación municipal están [PENDIENTE de cotizar] y no se inventan
+aquí.
+
+
+
+
+                                                                                        Page 22 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+Fases, costos y recursos técnicos
+
+ Fase                  Qué incluye             Costo                Qué tiene el        Qué habría que        Condición para
+                                                                    municipio           adquirir o licitar    avanzar
+
+ 0.                    Landing                 $1.672.000 antes     No aplica           Nada                  Aprobación del
+ Académica             funcional,              de impuestos,                                                  equipo y
+ (EP3, EV3,            prototipo               incluye P6                                                     presentación
+ EFT)                  Figma, piezas           prototipo por                                                  ante comisión
+                       de la grilla            $180.000
+                                               [CONFIRMADO,
+                                               presupuesto
+                                               vigente]
+
+ 1. Piloto con         Hitos con               [PENDIENTE           Sitio web           Impresión,            Ruta
+ una ruta              QR, audio de            cotizar]             municipal existe;   señalética de bajo    confirmada por
+                       1 ruta,                                      oficina de          impacto, hosting y    el municipio y
+                       Pasaporte en                                 turismo             dominio               criterio de
+                       papel, Punto                                 [PENDIENTE                                finalización
+                       Khiska,                                      confirmar]                                definido
+                       hosting de la
+                       web
+
+ 2. Catálogo           Más rutas,              [PENDIENTE           [PENDIENTE]         Desarrollo de         Resultados del
+ ampliado              beneficios              cotizar]                                 registro real,        piloto y
+                       con acuerdo,                                                     integración Wallet,   acuerdos
+                       Wallet                                                           convenios             firmados con
+                                                                                                              comercios
+
+ 3. Modelo             Kit Khiska              [PENDIENTE]          [PENDIENTE]         Documentación y       Interés de la
+ replicable            para otras                                                       licencia de uso       Corporación
+                       comunas                                                                                Regional de
+                                                                                                              Turismo u otra
+                                                                                                              comuna
+
+
+Fuentes posibles de financiamiento para las fases 1 a 3: FIC-R, FRPD o Fondo 8% del GORE
+de Valparaíso, según bases vigentes. [PENDIENTE revisar bases]
+
+
+Barreras sociales y riesgos
+
+ Riesgo                          Evidencia                  Prob.   Impacto Mitigación                   Etiqueta
+
+ Vecinos mayores                 25,1% de 65+ en la         Alta    Alto        Pasaporte en papel,      [PROPUESTA]
+ quedan fuera                    comuna; 13,8% de                               modo lectura fácil,
+                                 las personas de 60+                            Punto Khiska,
+                                 nunca usó internet                             talleres
+
+ Sin señal en                    9,2% de población          Media Medio         Versión imprimible o     [PENDIENTE medir
+ algunos tramos                  rural; cobertura por                           descargable de cada      en terreno]
+                                 ruta desconocida                               ruta
+
+
+
+
+                                                                                                                        Page 23 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+ Riesgo                          Evidencia               Prob.   Impacto Mitigación               Etiqueta
+
+ Prometer rutas                  Ninguna ruta está       Alta    Alto    Fichas solo con          [CONFIRMADO,
+ que no existen                  confirmada                              datos confirmados;       regla del proyecto]
+                                                                         piloto antes del
+                                                                         lanzamiento
+
+ Presión sobre el                Humedal urbano          Media Alto      Código del visitante;    [PROPUESTA]
+ humedal El Batro                reconocido en 2025                      criterios acordados
+                                                                         con el municipio y el
+                                                                         MMA
+
+ Beneficios sin                  Ningún comercio         Media Alto      Comunicar                [CONFIRMADO,
+ respaldo                        adherido; el caso                       beneficios solo con      regla del proyecto]
+                                 Sub-20 aclaró que                       acuerdo escrito
+                                 sus ofertas no eran
+                                 convenios
+
+ Validación de ruta              Escanear un QR no       Alta    Medio   Elegir un método         [PENDIENTE
+ poco confiable                  prueba que se                           simple: código en el     decisión del equipo]
+                                 completó la ruta                        hito final, sello
+                                                                         presencial o
+                                                                         combinación
+
+ Contenido                       Amenaza del DAFO        Media Medio     Responsable              [PROPUESTA]
+ desactualizado                                                          municipal y revisión
+                                                                         mensual
+
+ Datos personales                El registro guardaría   Media Medio     Pedir lo mínimo;         [PENDIENTE revisar
+ de usuarios                     progreso                                consulta sin registro;   normativa vigente]
+                                                                         política de
+                                                                         privacidad clara
+
+ Daño o robo de                  Riesgo habitual de      Media Bajo      Hitos de bajo costo y    [PROPUESTA]
+ señalética                      mobiliario en                           fácil reposición
+                                 exterior
+
+
+
+
+10. Decisiones pendientes y Registro de decisiones
+El equipo debe decidir siete puntos antes de construir el prototipo. Los tres primeros
+bloquean el resto.
+
+       Producción y prototipo: ¿un solo producto (landing funcional = prototipo de alta
+       fidelidad) o dos piezas separadas? Consultar a ambos docentes.
+       Criterio para completar una ruta: código en el hito final, sello presencial o ambos.
+       Ruta piloto: cuál propone el equipo al municipio para confirmar.
+       Mejoras aprobadas: cuáles de A1 a A10 entran (sección 6).
+       Insight central: ¿se adopta la frase propuesta en la sección 2?
+       Persona principal: ¿se confirma a Camila, visitante de escapada?
+
+
+
+
+                                                                                                               Page 24 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+       Pauta pagada: se mantiene en $0 o se agrega una inversión acotada para la EP3.
+
+
+Datos que faltan
+       Pauta oficial de Innovación Digital (EV3 y EFT) para confirmar lo que resume Miranda.
+       Pautas de Community Manager y de Estrategia de Medios Aplicada, y confirmación de
+       cuántos ramos integra el EFT.
+       Prompts usados por Miranda en NotebookLM, para el registro de la EV3.
+       Infraestructura municipal: oficina de turismo, pantallas, wifi público, responsable de
+       contenidos.
+       Cobertura móvil real en los posibles tramos de ruta.
+       Evidencia de la investigación original (usuarios, método, resultados).
+
+
+Líneas propuestas para el Registro de decisiones
+Solo se copian al Registro cuando el equipo las apruebe. Formato sugerido: fecha ·
+decisión · quién aprobó · ramo afectado.
+
+        [fecha] · Khiska se enfoca en la vertical turismo y patrimonio natural y
+       cultural · [equipo] · Innovación, Taller
+
+        [fecha] · Insight central: "La curiosidad por El Quisco ya existe; lo que
+       falta es un siguiente paso claro y una razón para volver fuera del verano"
+       · [equipo] · Todos
+        [fecha] · Persona principal del prototipo y del journey: visitante de
+       escapada (Camila) · [equipo] · Innovación
+
+        [fecha] · El prototipo se construye en Figma en alta fidelidad y sirve de
+       base al sitio EP3; lo no operativo se rotula como demostración · [equipo]
+       · Innovación, Taller
+        [fecha] · Se aprueban las mejoras [lista] · [equipo] · [ramos]
+
+        [fecha] · Criterio para completar una ruta: [método] · [equipo] ·
+       Innovación
+
+
+
+11. Fuentes
+Revisión del 8 de noviembre de 2026. Se abrieron completas las páginas de BCN, Subtel,
+DataReportal, EU Tourism Platform, Meganoticias, Rewilding Chile y el pasaporte Sub-20.
+El resto se tomó del extracto del documento original que entrega el buscador: conviene
+abrirlas y verificarlas antes de la entrega. [PENDIENTE]
+
+Internas del proyecto
+
+
+
+
+                                                                                        Page 25 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+       Pauta EP3, Taller de Estrategia y Planificación Digital (MDC1106).
+       Clase "3.1.1 Prototipado y estrategia de lanzamiento".
+       Miranda, "Innovación Digital Territorial" y "Tangibilizar la promesa" (NotebookLM).
+       Estado del proyecto Khiska v2 (3/11/2026).
+       Propuesta comunicacional actualizada (12/10/2026), Grilla de contenidos y
+       Presupuesto académico referencial.
+
+Datos
+
+       BCN, Reporte comunal El Quisco 2026 (Censo 2024 INE, SII, CASEN).
+       Subtel, XII Encuesta de Acceso, Usos y Usuarios de Internet (noviembre 2025).
+       DataReportal, Digital 2027: Chile (5/11/2026).
+       Sernatur, ocupabilidad vacaciones de verano, 10-15 febrero 2025.
+       Sernatur, ocupabilidad vacaciones de invierno, 30 junio-5 julio 2025.
+       MMA, Res. Ex. 6.648 que reconoce el Humedal Urbano El Batro (29/09/2025).
+       Expedia Group, Unpack '27 (octubre 2026).
+
+Casos
+
+       Meganoticias, Pasaporte Patrimonial 2026 (15/05/2026).
+       Rewilding Chile, Pasaporte Ruta de los Parques de la Patagonia (09/03/2022).
+       Corporación Regional de Turismo de la Región de Valparaíso, Pasaporte Turístico
+       Mundial Sub-20 (2025).
+       G5 Noticias, audioguías del Museo Palmira Romano, Limache (28/09/2026).
+       CNN Chile, audiorrelatos en Metro, Día de los Patrimonios 2026.
+       ChileAtiende, Rutas Patrimoniales.
+       EU Tourism Platform, segunda edición de CopenPay (16/09/2025).
+       Think Digital Travel, CopenPay Whitepaper 2026.
+       CaseStudies.com, SoIN Tourism y Bandwango.
+       Loop, comparación de software de pasaportes digitales (10/08/2026).
+       Repositorio USM, tesis Viña Pass (marzo 2026).
+
+Alianzas
+
+       Sernatur, Memoria 5.º Congreso Nacional de Municipalidades Turísticas (2025).
+       DIPRES, ejecución presupuestaria Inversión Regional Valparaíso 2026.
+       G5 Noticias, programa FIC-R Concón-Mantagua (28/07/2026).
+       G5 Noticias, Fondo de Protección Ambiental 2027.
+       Expediente MMA, solicitud sitio prioritario Quebrada El Batro (junio 2024).
+       chile.travel, Litoral de los Poetas.
+
+
+
+                                                                                       Page 26 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+Anexo. Registro de prompts y búsquedas (EV3)
+M1 exige documentar los prompts de IA usados. Este registro se va completando en cada
+sesión.
+
+
+  Fecha                        Herramienta           Quién     Prompt o búsqueda        Para qué se usó
+
+  08/11/2026                   Claude                Nicolás   Instrucciones del        Marco de
+                               (Anthropic),          Cáceres   proyecto: rol de         trabajo de
+                               proyecto "El                    equipo de                todas las
+                               Quisco: donde la                estrategia, fuentes      sesiones
+                               naturaleza tiene                por prioridad, reglas
+                               nombre"                         de Khiska, etiquetas
+                                                               de evidencia,
+                                                               criterios de
+                                                               prototipo y estilo
+                                                               visual
+
+  08/11/2026                   Claude                Nicolás   "Crear un                Este
+                                                     Cáceres   documento central        documento
+                                                               nuevo que integre
+                                                               todo lo que tenemos
+                                                               con estas nuevas
+                                                               exigencias [...] Cruza
+                                                               el material de
+                                                               Miranda con el
+                                                               estado actual del
+                                                               proyecto y haz un
+                                                               checklist punto por
+                                                               punto [...]
+                                                               Investigación
+                                                               profunda [...] Propón
+                                                               mejoras concretas
+                                                               [...] Entrega el
+                                                               documento central
+                                                               [...]"
+
+  08/11/2026                   Claude                Nicolás   "Te paso los             Lectura de M1 y
+                                                     Cáceres   documentos por           M2
+                                                               acá" (diapositivas de
+                                                               Miranda en PDF)
+
+
+
+
+                                                                                                     Page 27 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Fecha                        Herramienta           Quién    Prompt o búsqueda        Para qué se usó
+
+  08/11/2026                   Claude, búsqueda      Claude   "Subsecretaría de        Datos de
+                               web                            Turismo Chile            diagnóstico
+                                                              turismo interno
+                                                              2025"; "Digital 2026
+                                                              Chile DataReportal";
+                                                              "Censo 2024 El
+                                                              Quisco población
+                                                              INE comuna";
+                                                              "SUBTEL encuesta
+                                                              acceso uso internet
+                                                              2025 adultos
+                                                              mayores brecha
+                                                              digital Chile"
+
+  08/11/2026                   Claude, búsqueda      Claude   "Litoral de los Poetas   Datos de
+                               web                            destino turístico        destino y casos
+                                                              Sernatur 2025";
+                                                              "ZOIT Litoral de los
+                                                              Poetas"; "pasaporte
+                                                              turístico sellos rutas
+                                                              municipio Chile 2025
+                                                              2026 QR";
+                                                              "CopenPay
+                                                              Copenhagen reward
+                                                              sustainable tourists
+                                                              results"
+
+  08/11/2026                   Claude, búsqueda      Claude   "Humedal El Batro El     Datos de
+                               web                            Quisco humedal           territorio,
+                                                              urbano declaratoria";    tendencias y
+                                                              "Expedia Unpack 27       casos
+                                                              travel trends report
+                                                              2027"; "billetera
+                                                              digital Chile 2026
+                                                              encuesta";
+                                                              "Bandwango digital
+                                                              passport destination
+                                                              marketing 2026"
+
+
+
+
+                                                                                                Page 28 of 29
+Documento central · El Quisco / Experiencia Khiska
+
+
+
+
+  Fecha                        Herramienta           Quién     Prompt o búsqueda     Para qué se usó
+
+  08/11/2026                   Claude, búsqueda      Claude    "Fundación Pablo      Alianzas y
+                               web                             Neruda Casa de Isla   casos
+                                                               Negra visitantes
+                                                               2025"; "Gobierno
+                                                               Regional Valparaíso
+                                                               fondo concursable
+                                                               turismo 2026";
+                                                               "audioguía código
+                                                               QR patrimonio ruta
+                                                               municipalidad Chile
+                                                               2026"
+
+  [PENDIENTE]                  NotebookLM            Miranda   Prompts usados        Resúmenes de
+                                                               para generar          exigencias
+                                                               "Innovación Digital
+                                                               Territorial" y
+                                                               "Tangibilizar la
+                                                               promesa"
+
+
+La búsqueda sobre billeteras digitales no arrojó un dato de uso con fuente sólida y fecha
+dentro del año, por eso no se usa en el diagnóstico.
+
+
+
+
+                                                                                                  Page 29 of 29
+

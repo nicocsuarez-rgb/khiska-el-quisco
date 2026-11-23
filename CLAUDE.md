@@ -7,6 +7,9 @@ Publicidad, Duoc UC Viña del Mar. Campaña **"El Quisco: donde la naturaleza ti
 Trabajamos como compañeros, paso a paso: antes de un cambio grande, resume lo que entendiste y
 espera confirmación. Responde en español de Chile, claro y cercano.
 
+**Antes de cualquier tarea grande, lee `_proyecto/contexto.md`** (estado, personas, plan de mejora, videos).
+Las fuentes completas del proyecto están en `_proyecto/fuentes/`.
+
 ## Qué hay en el repositorio
 
 | Carpeta / archivo | Qué es | ¿Se publica? |
@@ -15,7 +18,8 @@ espera confirmación. Responde en español de Chile, claro y cercano.
 | `css/styles.css`, `js/main.js`, `assets/` | Estilos, interacciones, ilustraciones, íconos y fuentes Rubik | Sí |
 | `app/index.html` | **App Khiska** (Mi Khiska, pantallas P1–P10). Un solo archivo con imágenes incrustadas | Sí |
 | `equipo/dossier.html` | **Dossier** de respaldo (datos con fuente, journey, personas, aliados, riesgos) | Sí, pero **nunca enlazado desde el menú del portal** |
-| `_proyecto/` | Registro de decisiones, guía de lenguaje, herramientas | No (Jekyll ignora carpetas con `_`) |
+| `assets/video/` | Videos de la campaña (reel manifiesto) | Sí |
+| `_proyecto/` | Contexto, fuentes (propuesta, grilla, documento central, brandbook), registro de decisiones, guía de lenguaje, herramientas | No (Jekyll ignora carpetas con `_`) |
 
 El portal se abre con doble clic en `index.html`; no necesita servidor.
 Las páginas de `territorios/` se generaron con `_proyecto/herramientas/build.py`; hoy se editan directo en el HTML.
