@@ -273,20 +273,50 @@
       <div class="muestra-flor" data-muestra-flor data-estado="capullo">
         <div class="muestra-flor__escena" aria-hidden="true">
           <img class="muestra-flor__img muestra-flor__img--capullo" src="assets/img/flor-capullo.webp" alt="" width="360" height="404" loading="lazy">
-          <img class="muestra-flor__img muestra-flor__img--parcial" src="assets/img/flor-parcial.webp" alt="" width="360" height="261" loading="lazy">
-          <img class="muestra-flor__img muestra-flor__img--abierta" src="assets/img/flor-abierta.webp" alt="" width="360" height="261" loading="lazy">
+          <img class="muestra-flor__img muestra-flor__img--parcial" src="assets/img/flor-parcial.webp" alt="" width="219" height="232" loading="lazy">
+          <img class="muestra-flor__img muestra-flor__img--abierta" src="assets/img/flor-abierta.webp" alt="" width="280" height="255" loading="lazy">
           <img class="muestra-flor__sello" src="assets/img/sello-ruta-completada.webp" alt="" width="420" height="419" loading="lazy">
         </div>
         <div class="muestra-flor__panel">
           <h3 class="muestra-flor__titulo">Pruébalo: así se abre una flor</h3>
           <ul class="estados" aria-label="Cómo se abre una flor">
             <li class="estado" data-etapa="capullo"><img src="assets/img/flor-capullo.webp" alt="" width="360" height="404" loading="lazy"><strong>Capullo cerrado</strong><span>Ruta por descubrir</span></li>
-            <li class="estado" data-etapa="parcial"><img src="assets/img/flor-parcial.webp" alt="" width="360" height="261" loading="lazy"><strong>Apertura parcial</strong><span>Ruta iniciada</span></li>
-            <li class="estado" data-etapa="abierta"><img src="assets/img/flor-abierta.webp" alt="" width="360" height="261" loading="lazy"><strong>Flor abierta</strong><span>Ruta completada</span></li>
+            <li class="estado" data-etapa="parcial"><img src="assets/img/flor-parcial.webp" alt="" width="219" height="232" loading="lazy"><strong>Apertura parcial</strong><span>Ruta iniciada</span></li>
+            <li class="estado" data-etapa="abierta"><img src="assets/img/flor-abierta.webp" alt="" width="280" height="255" loading="lazy"><strong>Flor abierta</strong><span>Ruta completada</span></li>
           </ul>
           <p class="muestra-flor__estado" aria-live="polite">Capullo cerrado: la ruta todavía no empieza.</p>
           <button class="btn muestra-flor__boton" type="button">Comienza la ruta</button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--app" id="app" aria-labelledby="titulo-app">
+    <div class="contenedor app-promo">
+      <div class="app-promo__texto">
+        <span class="rotulo rotulo--rosa">La app Khiska</span>
+        <h2 id="titulo-app">Lleva Khiska contigo.</h2>
+        <p class="app-promo__bajada">Tu cactus, tus rutas y tu Pasaporte, en el celular. Sin crear cuenta y listo para cuando salgas a recorrer.</p>
+        <ul class="app-promo__lista">
+          <li><img src="assets/icons/icono-hoja.webp" alt="" width="40" height="40"><span><strong>Elige qué te da curiosidad.</strong> Las rutas se ordenan según lo que marques.</span></li>
+          <li><img src="assets/icons/icono-sendero.webp" alt="" width="40" height="40"><span><strong>Prepara tu salida.</strong> Revisa la ficha de cada lugar antes de ir.</span></li>
+          <li><img src="assets/icons/icono-flor.webp" alt="" width="40" height="40"><span><strong>Mira cómo florece tu Khiska.</strong> Cada ruta completada abre una flor y suma un sello.</span></li>
+        </ul>
+        <div class="hero__acciones">
+          <a class="btn" href="app/index.html">Abrir la app</a>
+          <button class="btn btn--secundario" type="button" data-compartir>Compartir El Quisco</button>
+        </div>
+        <p class="app-promo__estado" data-compartir-estado aria-live="polite"></p>
+        <div class="app-promo__qr">
+          <img src="assets/img/app/qr-app.svg" alt="Código QR para abrir la app Khiska en el celular" width="296" height="296" loading="lazy">
+          <p><strong>Ábrela en tu celular.</strong> Escanea el código con la cámara y, ya en la app, elige «Agregar a pantalla de inicio» para tenerla a un toque.</p>
+        </div>
+        <p class="app-promo__tip">En el celular: abre la app y elige «Agregar a pantalla de inicio» en el menú del navegador para tenerla a un toque.</p>
+      </div>
+      <div class="app-telefonos" aria-hidden="true">
+        <div class="telefono telefono--izq"><img src="assets/img/app/app-p1.webp" alt="" width="390" height="844" loading="lazy"></div>
+        <div class="telefono telefono--der"><img src="assets/img/app/app-p2.webp" alt="" width="390" height="844" loading="lazy"></div>
+        <div class="telefono telefono--centro"><img src="assets/img/app/app-p7.webp" alt="" width="390" height="844" loading="lazy"></div>
       </div>
     </div>
   </section>

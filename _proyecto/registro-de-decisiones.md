@@ -22,3 +22,6 @@
 | 23/11/2026 | Entrega 2: animaciones en todo el portal (aparecer al bajar en cascada, cabecera que se compacta, barra de avance, tarjetas que responden al mouse); todo se desactiva con movimiento reducido | Nicolás | Hecho |
 | 23/11/2026 | Franja de colores con fondo transparente, unida a la portada (sin línea blanca) | Nicolás | Hecho |
 | 23/11/2026 | Entrega 3: muestra interactiva "Pruébalo: así se abre una flor" (inicio y Experiencia Khiska) con sello y lluvia de flores al completar; lluvia también al elegir un interés por primera vez y al enviar "Propón un lugar"; se elimina el jardín antiguo con rótulos "(demo)" | Nicolás | Hecho |
+| 23/11/2026 | Flores parcial y abierta recortadas a su contorno real (tenían un halo que las corría a la izquierda) | Nicolás | Hecho |
+| 23/11/2026 | Entrega 4: sección "Lleva Khiska contigo" con capturas limpias de la app (P1, P2, P7, sin rótulos de ejemplo ni Wallet), QR a la app, botón Compartir y consejo de "Agregar a pantalla de inicio" | Nicolás | Hecho |
+| 23/11/2026 | Pendiente para mañana: limpiar la app (quitar "Prototipo", "Modo prueba", "Ejemplo", "por confirmar", Wallet) para que coincida con las capturas del portal | Nicolás | Pendiente |

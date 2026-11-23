@@ -345,7 +345,8 @@
       [".personas-grid > *, .grid-tarjetas > *, .videos > *, .estados > *, .agenda > *, .pie__grid > *", ""],
       [".pasos > li, .formulario > .campo, .formulario > .acciones", "izq"],
       [".seccion__cabecera, .cabecera-pagina > *, .ficha-hero > *, .ficha-cuerpo > *, .curiosidad > *, .comunidad > *, .pasaporte > *, .seccion > .contenedor > .aviso", ""],
-      [".khiska__ilustracion, .ficha-hero__media, .propon__img, .estado-form", "zoom"],
+      [".khiska__ilustracion, .ficha-hero__media, .propon__img, .estado-form, .app-telefonos, .muestra-flor", "zoom"],
+      [".app-promo__lista > li", "izq"],
       [".khiska > div:not(.khiska__ilustracion)", "der"]
     ];
     var marcados = [];
@@ -428,6 +429,20 @@
       if (yaElegiste || c.getAttribute("data-dimension") === "todo") return;
       yaElegiste = true;
       lluviaDeFlores(window.innerWidth < 600 ? 25 : 40);
+    });
+  });
+
+  /* ---------- Compartir el portal ---------- */
+  document.querySelectorAll("[data-compartir]").forEach(function (b) {
+    var aviso = document.querySelector("[data-compartir-estado]");
+    var decir = function (t) { if (aviso) aviso.textContent = t; };
+    b.addEventListener("click", function () {
+      var url = window.location.href.split("#")[0].replace(/index\.html$/, "");
+      var datos = { title: "El Quisco: donde la naturaleza tiene nombre", text: "Descubre El Quisco más allá de la playa y conoce Khiska: una ruta, una flor.", url: url };
+      if (navigator.share) { navigator.share(datos).catch(function () {}); return; }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(function () { decir("¡Enlace copiado! Pégalo donde quieras compartirlo."); }, function () { window.prompt("Copia el enlace:", url); });
+      } else { window.prompt("Copia el enlace:", url); }
     });
   });
 })();

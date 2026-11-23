@@ -705,7 +705,7 @@ html .revelar.visible { opacity: 1; transform: none; }
    ========================================================================== */
 .muestra-flor {
   display: grid; grid-template-columns: minmax(220px, .8fr) 1.2fr; gap: clamp(1.2rem, 4vw, 3rem); align-items: center;
-  margin-top: 2.5rem; padding: clamp(1.2rem, 3vw, 2rem);
+  margin-top: 2.5rem; padding: clamp(1.2rem, 3vw, 2rem); overflow: hidden;
   background: var(--tarjeta); border: 1px solid var(--linea); border-radius: calc(var(--radio) * 1.6); box-shadow: var(--sombra);
 }
 .muestra-flor__escena {
@@ -754,3 +754,43 @@ html.lectura-facil .muestra-flor .estado { opacity: 1; }
   .muestra-flor__img, .muestra-flor__sello { transition: none; }
   .muestra-flor[data-estado="capullo"] .muestra-flor__img--capullo { animation: none; }
 }
+
+/* ==========================================================================
+   Lleva Khiska contigo (paso 4 · entrega 4)
+   ========================================================================== */
+.seccion--app { background: linear-gradient(160deg, var(--salvia-suave) 0%, var(--papel) 70%); overflow: hidden; }
+.app-promo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.app-promo__bajada { font-size: 1.12rem; color: var(--texto-suave); max-width: 44ch; }
+.app-promo__lista { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: .9rem; }
+.app-promo__lista li { display: flex; gap: .8rem; align-items: flex-start; }
+.app-promo__lista img { width: 40px; height: 40px; flex: none; object-fit: contain; }
+.app-promo__estado { min-height: 1.4em; margin: .6rem 0 0; font-size: .92rem; color: var(--verde-tinta); font-weight: 500; }
+.app-promo__qr {
+  display: flex; gap: 1rem; align-items: center; margin-top: 1rem; padding: .9rem;
+  max-width: 440px; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: var(--radio); box-shadow: var(--sombra);
+}
+.app-promo__qr img { width: 112px; height: 112px; flex: none; border-radius: var(--radio-sm); }
+.app-promo__qr p { margin: 0; font-size: .92rem; color: var(--texto-suave); }
+.app-promo__tip { display: none; font-size: .92rem; color: var(--texto-suave); margin-top: 1rem; }
+.app-telefonos { position: relative; height: clamp(420px, 46vw, 580px); }
+.telefono {
+  position: absolute; top: 50%; left: 50%; width: clamp(170px, 18vw, 240px); aspect-ratio: 390 / 844;
+  border: 9px solid #1e1e1e; border-radius: 34px; overflow: hidden; background: #1e1e1e;
+  box-shadow: 0 30px 60px -28px rgba(38, 59, 23, .55), 0 8px 18px -10px rgba(30, 30, 30, .35);
+}
+.telefono::before { content: ""; position: absolute; top: 6px; left: 50%; width: 34%; height: 14px; translate: -50% 0; background: #1e1e1e; border-radius: 10px; z-index: 1; }
+.telefono img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 25px; }
+.telefono--centro { z-index: 2; transform: translate(-50%, -50%); animation: flotar-tel 7s ease-in-out infinite; }
+.telefono--izq { transform: translate(-112%, -46%) rotate(-8deg) scale(.88); animation: flotar-tel 7s ease-in-out -2.3s infinite; }
+.telefono--der { transform: translate(12%, -46%) rotate(8deg) scale(.88); animation: flotar-tel 7s ease-in-out -4.6s infinite; }
+@keyframes flotar-tel { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+@media (max-width: 860px) {
+  .app-promo { grid-template-columns: 1fr; }
+  .app-telefonos { order: -1; height: clamp(340px, 92vw, 460px); }
+  .telefono { width: clamp(140px, 38vw, 190px); }
+  .app-promo__qr { display: none; }
+  .app-promo__tip { display: block; }
+}
+html.lectura-facil .app-telefonos { display: none; }
+html.lectura-facil .app-promo { grid-template-columns: 1fr; }
+@media (prefers-reduced-motion: reduce) { .telefono { animation: none; } }
