@@ -222,7 +222,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 
 /* Franja de color El Quisco */
-.franja-color { height: 26px; background: url("../assets/img/franja-territorio.webp") center / cover; opacity: .9; }
+.franja-color { position: relative; z-index: 2; height: 30px; margin: -15px 0; background: url("../assets/img/franja-territorio-alfa.webp") center / 120% 100% no-repeat; pointer-events: none; }
 
 /* ---------- Pincha tu curiosidad (intereses) ---------- */
 .curiosidad { display: grid; grid-template-columns: .9fr 1.1fr; gap: 2rem; align-items: center; }
