@@ -44,7 +44,7 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
 ## Plan de mejora acordado (23/11/2026)
 
 1. **Montaje** en GitHub + Claude Code. ✔
-2. **Portal:** el sitio pasa a ser el lugar donde se ve, reproduce, encuentra y redirige a todo el contenido
+2. **Portal:** ✔ (23/11) entrada por persona ("¿Cómo quieres vivir El Quisco?"), sección de videos **Mira** (`js/videos.js`), lugares, Khiska, Propón un lugar y agenda. El sitio pasa a ser el lugar donde se ve, reproduce, encuentra y redirige a todo el contenido
    (lugares, Khiska, **videos**, agenda, redes). Organizarlo por lo que necesita cada persona.
 3. **App:** integrarla con la identidad del portal, para que se sientan como una sola experiencia.
 4. **Pulido para el examen:** modo presentación (ver `CLAUDE.md`).
@@ -52,7 +52,7 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
 
 ## Videos
 
-- Hay **un video listo**: `assets/video/reel-el-quisco-no-termina-en-la-playa.mp4` (38 s, 1080×1920),
+- Hay **un video listo**: `assets/video/v00-el-quisco-desde-un-solo-lugar.mp4` (38 s, 1080×1920),
   doblado por Benjamín con IA.
 - Los demás videos de la grilla **no están producidos**. El equipo quiere generarlos **sin grabar**
   (texto, ilustraciones, capturas del portal y la app, voz con IA), como el reel.
@@ -63,8 +63,10 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
   V01 tráiler, V00 (listo), V07 "Elige, prepara y comienza", V12 "Una ruta completada hace florecer tu Khiska".
   Prompt listo en `_proyecto/prompts/producir-videos.md`.
 - El reel V00 tiene **voz IA que lee el mismo texto en pantalla** + música (lo hizo Benjamín).
-- **Influencer (Community Manager):** Francisco "Chapu" Puelles, actor, tuvo el hostal "La Tabla" en El Quisco (surf, skate, escalada; Radio Agricultura, 2018)
-  y hace actividades outdoor como escalada y trekking (Meganoticias, 2022). Dos piezas colaborativas V17 y V18 que él grabaría. Sin su acuerdo no se publica nada con su imagen.
+- **Influencer (Community Manager):** Francisco "Chapu" Puelles, actor y deportista outdoor (escalada y trekking; Meganoticias, 2022).
+  Según Fernanda tiene casa en El Quisco y va a escalar. Su hostal "La Tabla" en El Quisco **ya cerró**: no mencionarlo.
+  Es una **propuesta académica: no se le contacta.** Se presenta como el influencer ideal, con guion y storyboard ilustrado
+  (sin su imagen ni su voz), piezas V17 y V18 de la grilla. Si el proyecto avanza, se le invitaría a grabar.
 - El dossier es privado (`_proyecto/dossier.html`).
 - Regla: no fabricar testimonios ni "vecinos" con voz de IA presentados como reales. Las piezas de
   testimonio/UGC de la grilla necesitan personas reales o cambiar de formato.

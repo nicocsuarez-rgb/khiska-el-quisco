@@ -33,10 +33,10 @@ por_fecha(D(22, 9)).update(copy='Julio despertó la curiosidad, agosto la llevó
 por_fecha(D(19, 9)).update(copy='Tres razones para volver a El Quisco en invierno: menos gente en los senderos, una agenda que sigue después del verano y rutas que todavía no recorres.')
 
 # Chapu (propuesta para Community Manager, sujeta a acuerdo)
-CH = 'PROPUESTA sujeta a acuerdo con Francisco "Chapu" Puelles. Él graba con su celular; nosotros entregamos guion y gráficas. Honorario o canje por definir (impacta el presupuesto).'
+CH = 'PROPUESTA ACADÉMICA, no contactado. Se presenta como influencer ideal con guion y storyboard ilustrado (sin usar su imagen ni su voz). Si el proyecto avanza con la municipalidad, se le invita y él graba con su celular.'
 filas += [
  dict(fecha=D(6, 7), canal='Instagram', formato='Reel colaborativo', pieza='Chapu: lo que no se ve desde la playa', persona='Vale, Camila',
-      objetivo='Sumar una voz conocida que vive el territorio', copy='Chapu conoce El Quisco más allá de la playa: el mar para el surf, las rocas para escalar y los lugares que pocos nombran. Hoy nos cuenta cuál es su rincón favorito. ¿Cuál es el tuyo?',
+      objetivo='Sumar una voz conocida que vive el territorio', copy='Chapu conoce El Quisco más allá de la playa: el mar, las rocas para escalar y los lugares que pocos nombran. Hoy nos cuenta cuál es su rincón favorito. ¿Cuál es el tuyo?',
       cta='Cuéntanos tu rincón', hashtags='#ElQuisco #DondeLaNaturalezaTieneNombre #Khiska #PinchaTuCuriosidad', destino='Portal · Lugares', tipo='Orgánico', inversion=0,
       kpi='Alcance y comentarios', estado='Idea', produccion=CH, guion='V17', link=''),
  dict(fecha=D(13, 8), canal='Instagram', formato='Reel colaborativo', pieza='Chapu hace la primera ruta Khiska', persona='Vale, Camila, Visitante habitual',
@@ -59,10 +59,10 @@ wb = openpyxl.Workbook()
 # ---------- Grilla ----------
 gs = wb.active; gs.title = 'Grilla'
 gs['A1'] = 'Grilla de contenidos · El Quisco: donde la naturaleza tiene nombre'; gs['A1'].font = fT
-cols = [('Fecha', 'fecha', 12), ('Fase', None, 15), ('Canal', 'canal', 15), ('Formato', 'formato', 17), ('Pieza', 'pieza', 32),
-        ('Para quién', 'persona', 22), ('Objetivo', 'objetivo', 24), ('Copy', 'copy', 62), ('CTA', 'cta', 20), ('Hashtags', 'hashtags', 30),
-        ('Lleva a', 'destino', 20), ('Orgánico / Pagado', 'tipo', 12), ('Inversión (CLP)', 'inversion', 13), ('KPI', 'kpi', 20),
-        ('Estado', 'estado', 12), ('Cómo se produce', 'produccion', 44), ('Guion', 'guion', 8), ('Archivo', 'link', 26)]
+for f in filas:
+    if f['hashtags'] and f['hashtags'] not in f['copy'] and not f['hashtags'].startswith('—'): f['copy'] = f['copy'] + '\n\n' + f['hashtags']
+cols = [('Fecha', 'fecha', 12), ('Fase', None, 15), ('Canal', 'canal', 15), ('Formato', 'formato', 17), ('Pieza', 'pieza', 34),
+        ('Para quién', 'persona', 22), ('Objetivo', 'objetivo', 26), ('Copy', 'copy', 70), ('CTA', 'cta', 22)]
 HR = 3
 for i, (n, k, w) in enumerate(cols, 1):
     c = gs.cell(HR, i, n); c.font = fH; c.fill = fill(VERDE); c.alignment = C; gs.column_dimensions[L(i)].width = w
@@ -81,24 +81,42 @@ for r, f in enumerate(filas, HR + 1):
 LAST = 200
 gs.freeze_panes = gs.cell(HR + 1, 6); gs.auto_filter.ref = f'A{HR}:{L(len(cols))}{HR + len(filas)}'
 gs.sheet_view.showGridLines = False
-for rng, opts in [('C', 'Instagram,Instagram Stories,Facebook,TikTok,YouTube,YouTube Shorts,Sitio web'), ('L', 'Orgánico,Pagado'),
-                  ('O', 'Idea,En diseño,Listo,Programado,Publicado')]:
+for rng, opts in [('C', 'Instagram,Instagram Stories,Facebook,TikTok,YouTube,YouTube Shorts,Sitio web')]:
     dv = DataValidation(type='list', formula1=f'"{opts}"', allow_blank=True); dv.add(f'{rng}{HR+1}:{rng}{LAST}'); gs.add_data_validation(dv)
+for r, f in enumerate(filas, HR + 1):
+    gs.row_dimensions[r].height = 110
+# ---------- Producción (misma fila que Grilla) ----------
+pr = wb.create_sheet('Producción'); pr.sheet_view.showGridLines = False
+pr['A1'] = 'Producción · lo que hay detrás de cada pieza'; pr['A1'].font = fT
+pcols = [('Fecha', 12), ('Pieza', 34), ('Lleva a', 22), ('Orgánico / Pagado', 13), ('Inversión (CLP)', 13), ('KPI', 22), ('Estado', 13), ('Cómo se produce', 48), ('Guion', 8), ('Archivo', 30)]
+for i, (n, w) in enumerate(pcols, 1):
+    c = pr.cell(HR, i, n); c.font = fH; c.fill = fill(VERDE); c.alignment = C; pr.column_dimensions[L(i)].width = w
+for r, f in enumerate(filas, HR + 1):
+    vals = [f'=Grilla!A{r}', f'=Grilla!E{r}', f['destino'], f['tipo'], f['inversion'], f['kpi'], f['estado'], f['produccion'], f['guion'], f['link']]
+    for i, v in enumerate(vals, 1):
+        c = pr.cell(r, i, v); c.font = fBold if i <= 2 else fB; c.alignment = W; c.border = BR
+    pr.cell(r, 1).number_format = 'dd/mm/yyyy'; pr.cell(r, 5).number_format = '$#,##0'
+    if f['guion'] in PRIOR:
+        pr.cell(r, 9).fill = fill(ROSA); pr.cell(r, 9).font = Font(name='Arial', size=10, bold=True, color='FFFFFFFF')
+pr.freeze_panes = pr.cell(HR + 1, 3)
+for rng, opts in [('D', 'Orgánico,Pagado'), ('G', 'Idea,En diseño,Listo,Programado,Publicado')]:
+    dv = DataValidation(type='list', formula1=f'"{opts}"', allow_blank=True); dv.add(f'{rng}{HR+1}:{rng}{LAST}'); pr.add_data_validation(dv)
 for estado, color in [('Idea', 'FFF3EEE1'), ('En diseño', 'FFFFF3CC'), ('Listo', SALVIA), ('Programado', 'FFD6EEF8'), ('Publicado', 'FFA7BE9F')]:
-    gs.conditional_formatting.add(f'O{HR+1}:O{LAST}', FormulaRule(formula=[f'$O{HR+1}="{estado}"'], fill=fill(color)))
-gs.conditional_formatting.add(f'L{HR+1}:M{LAST}', FormulaRule(formula=[f'$L{HR+1}="Pagado"'], fill=fill('FFFBE3E6')))
-gs['A2'] = 'Los guiones en rosado son los 4 videos que se producen primero.'; gs['A2'].font = Font(name='Arial', size=9, italic=True, color='FF4A4A42')
+    pr.conditional_formatting.add(f'G{HR+1}:G{LAST}', FormulaRule(formula=[f'$G{HR+1}="{estado}"'], fill=fill(color)))
+pr.conditional_formatting.add(f'D{HR+1}:E{LAST}', FormulaRule(formula=[f'$D{HR+1}="Pagado"'], fill=fill('FFFBE3E6')))
+pr['A2'] = 'En rosado, los 4 videos que se producen primero.'; pr['A2'].font = Font(name='Arial', size=9, italic=True, color='FF4A4A42')
 
 RG = lambda col: f'Grilla!${col}${HR+1}:${col}${LAST}'
+RP = lambda col: f'Producción!${col}${HR+1}:${col}${LAST}'
 
 # ---------- Panel ----------
 p = wb.create_sheet('Panel', 0)
 p['B1'] = 'Panel de la campaña'; p['B1'].font = fT; p.sheet_view.showGridLines = False
 p.column_dimensions['A'].width = 3
 for i, w in enumerate([22, 13, 13, 15, 13, 16], 2): p.column_dimensions[L(i)].width = w
-kp = [('Publicaciones', f'=COUNT({RG("A")})'), ('Publicadas', f'=COUNTIF({RG("O")},"Publicado")'),
-      ('Listas', f'=COUNTIF({RG("O")},"Listo")+COUNTIF({RG("O")},"Programado")'), ('Con pauta', f'=COUNTIF({RG("L")},"Pagado")'),
-      ('Inversión en pauta', f'=SUM({RG("M")})')]
+kp = [('Publicaciones', f'=COUNT({RG("A")})'), ('Publicadas', f'=COUNTIF({RP("G")},"Publicado")'),
+      ('Listas', f'=COUNTIF({RP("G")},"Listo")+COUNTIF({RP("G")},"Programado")'), ('Con pauta', f'=COUNTIF({RP("D")},"Pagado")'),
+      ('Inversión en pauta', f'=SUM({RP("E")})')]
 for i, (n, fml) in enumerate(kp, 2):
     a = p.cell(3, i, n); a.font = fH; a.fill = fill(VERDE); a.alignment = C
     b = p.cell(4, i, fml); b.font = Font(name='Arial', size=18, bold=True, color='FF263B17'); b.alignment = C; b.border = BR
@@ -112,7 +130,7 @@ for j, ch in enumerate(canales + ['Total'], 7):
         v = (f'=COUNTIFS({RG("C")},$B{j},{RG("A")},">="&DATE(2027,{m},1),{RG("A")},"<"&DATE(2027,{m+1},1))' if ch != 'Total' else f'=SUM({L(k)}7:{L(k)}13)')
         p.cell(j, k, v)
     p.cell(j, 6, f'=SUM(C{j}:E{j})')
-    p.cell(j, 7, f'=COUNTIFS({RG("C")},$B{j},{RG("L")},"Pagado")' if ch != 'Total' else '=SUM(G7:G13)')
+    p.cell(j, 7, f'=COUNTIFS({RG("C")},$B{j},{RP("D")},"Pagado")' if ch != 'Total' else '=SUM(G7:G13)')
     for k in range(2, 8): p.cell(j, k).border = BR; p.cell(j, k).font = fBold if (ch == 'Total' or k == 2) else fB
 
 # ---------- Calendario (legible por mes, una pieza por día) ----------

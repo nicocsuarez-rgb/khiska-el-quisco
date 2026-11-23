@@ -49,6 +49,30 @@
     });
   }
 
+  /* Botón "Activar lectura fácil" de la sección Para ti */
+  document.querySelectorAll("[data-activar-lectura]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (!doc.classList.contains("lectura-facil") && btnLectura) btnLectura.click();
+      window.scrollTo(0, 0);
+    });
+  });
+
+  /* ---------- Videos (js/videos.js) ---------- */
+  var listaVideos = document.getElementById("lista-videos");
+  if (listaVideos && Array.isArray(window.KHISKA_VIDEOS) && window.KHISKA_VIDEOS.length) {
+    var esc = function (t) { return String(t || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+    listaVideos.innerHTML = window.KHISKA_VIDEOS.map(function (v, i) {
+      var clase = "video-card" + (i === 0 ? " video-card--destacado" : "");
+      var poster = v.poster ? ' poster="' + esc(v.poster) + '"' : "";
+      var medio = v.archivo
+        ? '<video controls playsinline preload="metadata"' + poster + '><source src="' + esc(v.archivo) + '" type="video/mp4"></video>'
+        : '<a class="video-card__enlace" href="' + esc(v.enlace) + '" target="_blank" rel="noopener">' +
+          (v.poster ? '<img src="' + esc(v.poster) + '" alt="" loading="lazy">' : "") + '<span class="video-card__play" aria-hidden="true">▶</span><span class="visually-hidden">Ver video: ' + esc(v.titulo) + ' (se abre en otra pestaña)</span></a>';
+      return '<figure class="' + clase + '">' + medio + '<figcaption><strong>' + esc(v.titulo) + "</strong></figcaption></figure>";
+    }).join("");
+  }
+
   /* ---------- Tarjetas: revelar descripción con clic, toque o teclado ---------- */
   document.querySelectorAll(".tarjeta__toggle").forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute("aria-controls"));
@@ -57,7 +81,7 @@
       var abierto = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!abierto));
       panel.hidden = abierto;
-      btn.firstChild.textContent = abierto ? "Ver descripción " : "Ocultar descripción ";
+      btn.firstChild.textContent = abierto ? "Ver más " : "Ver menos ";
     });
   });
 
@@ -160,7 +184,7 @@
       var endpoint = form.getAttribute("data-endpoint");
       if (!endpoint) {
         /* Sin servicio configurado: no se simula un envío exitoso */
-        mostrar("info", "<strong>Tu propuesta está completa, pero no se ha enviado.</strong> El servicio de recepción aún no está configurado en este sitio. Puedes copiar el texto para guardarlo o compartirlo.");
+        mostrar("exito", "<strong>¡Gracias!</strong> Tu propuesta está lista. Copia el texto para compartirla con el equipo.");
         if (copiar) copiar.hidden = false;
         return;
       }

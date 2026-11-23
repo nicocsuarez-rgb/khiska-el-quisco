@@ -13,3 +13,6 @@
 | 23/11/2026 | Grilla v3: sin columnas Día/Mes, calendario por mes, tráiler de campaña el 01/07 (V01), reel existente el 15/07 (V00) | Nicolás | Acordado |
 | 23/11/2026 | Se producen primero 4 videos para el portal: V01 tráiler, V00 (listo), V07 tutorial y V12 la flor | Nicolás | Propuesta |
 | 23/11/2026 | Influencer propuesto para Community Manager: Francisco "Chapu" Puelles (propuesta de Fernanda); 2 piezas colaborativas que él grabaría | Equipo | Propuesta, sujeta a acuerdo |
+| 23/11/2026 | Grilla v4: pestaña Grilla solo con lo esencial (hashtags dentro del copy); lo operativo en la pestaña Producción | Nicolás | Acordado |
+| 23/11/2026 | Portal (paso 2) en modo presentación: entrada por persona, sección de videos, sin rótulos de pendiente; el formulario no envía y ofrece copiar | Nicolás | Hecho |
+| 23/11/2026 | Chapu: propuesta académica, no se le contacta; se presenta con guion y storyboard ilustrado | Nicolás | Acordado |
