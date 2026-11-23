@@ -637,3 +637,73 @@ html.lectura-facil .hero { min-height: auto; }
   .hero__escena:first-child { opacity: .5; transform: scale(1.06); }
   .hero__pausa { display: none; }
 }
+
+/* ==========================================================================
+   Movimiento al bajar (paso 4 · entrega 2)
+   main.js marca con .revelar lo que aparece al entrar en pantalla.
+   Sin JavaScript o con movimiento reducido, todo se ve desde el inicio.
+   ========================================================================== */
+html .revelar {
+  opacity: 0; transform: translate3d(0, 28px, 0);
+  transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+html .revelar--zoom { transform: scale(.94) translate3d(0, 16px, 0); }
+html .revelar--izq { transform: translate3d(-36px, 0, 0); }
+html .revelar--der { transform: translate3d(36px, 0, 0); }
+html .revelar.visible { opacity: 1; transform: none; }
+@media print { .revelar { opacity: 1 !important; transform: none !important; } }
+
+/* Rótulo con trazo que se dibuja */
+.rotulo { position: relative; }
+.rotulo::after {
+  content: ""; position: absolute; left: 0; bottom: -.35em; height: 2px; width: 2.2em;
+  background: var(--rosa); border-radius: 2px;
+  transform-origin: left; transition: transform .7s .35s cubic-bezier(.2, .7, .2, 1);
+}
+.revelar:not(.visible) .rotulo::after { transform: scaleX(0); }
+.centrado .rotulo::after { left: 50%; translate: -50% 0; }
+
+/* Barra de avance de lectura */
+.avance {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none;
+  background: linear-gradient(90deg, var(--verde), var(--lima), var(--rosa));
+  transform: scaleX(var(--avance, 0)); transform-origin: left;
+}
+
+/* Cabecera que se compacta al bajar */
+.cabecera { transition: box-shadow .3s, background-color .3s; }
+.cabecera__fila { transition: min-height .3s; }
+.cabecera--compacta { background: rgba(250, 247, 238, .97); box-shadow: 0 6px 20px -14px rgba(38, 59, 23, .45); }
+.cabecera--compacta .cabecera__fila { min-height: 54px; }
+.marca img { transition: transform .5s cubic-bezier(.3, 1.6, .5, 1); }
+.marca:hover img { transform: rotate(-18deg) scale(1.1); }
+
+/* Tarjetas que responden al pasar el mouse */
+.tarjeta, .persona-card, .video-card, .estado, .caja, .mes {
+  transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s, border-color .35s;
+}
+@media (hover: hover) {
+  .tarjeta:hover, .persona-card:hover, .video-card:hover, .estado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 rgba(30, 30, 30, .03), 0 18px 34px -18px rgba(52, 80, 31, .5);
+    border-color: var(--salvia);
+  }
+  .persona-card:hover img, .estado:hover img { transform: rotate(-6deg) scale(1.08); }
+}
+.persona-card img, .estado img { transition: transform .5s cubic-bezier(.3, 1.6, .5, 1); }
+.tarjeta__media { overflow: hidden; }
+.tarjeta__media img { transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
+@media (hover: hover) { .tarjeta:hover .tarjeta__media img { transform: scale(1.06); } }
+.btn { transition: background-color .2s, border-color .2s, transform .2s, box-shadow .2s; }
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px -10px rgba(52, 80, 31, .6); } }
+
+/* Franja de color que se desliza suave */
+.franja-color { background-size: 120% 100%; animation: franja 30s ease-in-out infinite alternate; }
+@keyframes franja { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html .revelar { opacity: 1; transform: none; transition: none; }
+  .franja-color { animation: none; }
+  .tarjeta:hover, .persona-card:hover, .video-card:hover, .estado:hover, .btn:hover { transform: none; }
+}

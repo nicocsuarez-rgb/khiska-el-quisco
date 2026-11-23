@@ -405,4 +405,60 @@
       }, 1900);
     });
   }
+
+  /* ---------- Movimiento al bajar: todo va apareciendo ---------- */
+  var sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cabecera = document.querySelector(".cabecera");
+  var barra = document.createElement("div");
+  barra.className = "avance"; barra.setAttribute("aria-hidden", "true");
+  document.body.appendChild(barra);
+  var marcoPendiente = false;
+  var alBajar = function () {
+    marcoPendiente = false;
+    var y = window.scrollY, total = document.documentElement.scrollHeight - window.innerHeight;
+    if (cabecera) cabecera.classList.toggle("cabecera--compacta", y > 30);
+    barra.style.setProperty("--avance", total > 0 ? Math.min(1, y / total).toFixed(4) : 0);
+  };
+  window.addEventListener("scroll", function () {
+    if (!marcoPendiente) { marcoPendiente = true; window.requestAnimationFrame(alBajar); }
+  }, { passive: true });
+  alBajar();
+
+  if (!sinMovimiento && "IntersectionObserver" in window) {
+    /* [selector, variante]: los hijos de un mismo grupo aparecen en cascada */
+    var grupos = [
+      [".personas-grid > *, .grid-tarjetas > *, .videos > *, .estados > *, .agenda > *, .pie__grid > *", ""],
+      [".pasos > li, .formulario > .campo, .formulario > .acciones", "izq"],
+      [".seccion__cabecera, .cabecera-pagina > *, .ficha-hero > *, .ficha-cuerpo > *, .curiosidad > *, .comunidad > *, .pasaporte > *, .seccion > .contenedor > .aviso", ""],
+      [".khiska__ilustracion, .ficha-hero__media, .propon__img, .estado-form", "zoom"],
+      [".khiska > div:not(.khiska__ilustracion)", "der"]
+    ];
+    var marcados = [];
+    grupos.forEach(function (g) {
+      document.querySelectorAll(g[0]).forEach(function (el) {
+        if (el.closest(".hero") || el.classList.contains("revelar") || el.closest(".revelar")) return;
+        var hermanos = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+        el.classList.add("revelar");
+        if (g[1]) el.classList.add("revelar--" + g[1]);
+        el.style.setProperty("--i", Math.min(hermanos, 5));
+        marcados.push(el);
+      });
+    });
+    var vigia = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        el.classList.add("visible");
+        vigia.unobserve(el);
+        /* Terminado el efecto, el elemento vuelve a su comportamiento normal */
+        setTimeout(function () {
+          el.classList.remove("revelar", "visible", "revelar--zoom", "revelar--izq", "revelar--der");
+          el.style.removeProperty("--i");
+        }, 900 + Math.min(5, +el.style.getPropertyValue("--i") || 0) * 90);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    marcados.forEach(function (el) { vigia.observe(el); });
+    /* Si algo queda oculto (impresión, saltos con ancla), se muestra igual */
+    window.addEventListener("beforeprint", function () { marcados.forEach(function (el) { el.classList.add("visible"); }); });
+  }
 })();
