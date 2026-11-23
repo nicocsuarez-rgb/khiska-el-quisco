@@ -17,7 +17,7 @@ Las fuentes completas del proyecto están en `_proyecto/fuentes/`.
 | `index.html`, `rutas.html`, `experiencia-khiska.html`, `territorios/`, `privacidad.html` | **Portal** para el visitante | Sí (GitHub Pages) |
 | `css/styles.css`, `js/main.js`, `assets/` | Estilos, interacciones, ilustraciones, íconos y fuentes Rubik | Sí |
 | `app/index.html` | **App Khiska** (Mi Khiska, pantallas P1–P10). Un solo archivo con imágenes incrustadas | Sí |
-| `equipo/dossier.html` | **Dossier** de respaldo (datos con fuente, journey, personas, aliados, riesgos) | Sí, pero **nunca enlazado desde el menú del portal** |
+| `_proyecto/dossier.html` | **Dossier** de respaldo (datos con fuente, journey, personas, aliados, riesgos). **Privado del equipo** | **No.** Nunca enlazarlo ni publicarlo desde el portal ni la app |
 | `assets/video/` | Videos de la campaña (reel manifiesto) | Sí |
 | `_proyecto/` | Contexto, fuentes (propuesta, grilla, documento central, brandbook), registro de decisiones, guía de lenguaje, herramientas | No (Jekyll ignora carpetas con `_`) |
 
@@ -47,9 +47,10 @@ Todo lo visible se ve como **producto terminado**:
 - No afirmar plataforma operativa, comercios adheridos, canjes, Wallet ni validación con usuarios.
 - Los lugares (El Batro, Las Petras, Mirador Neptuno, Isla Negra, Punta de Tralca, El Totoral, la caleta)
   son **referentes**, no rutas confirmadas: sin recorridos, duraciones ni dificultades inventadas.
-- Origen del nombre: solo con las fuentes citadas en `equipo/dossier.html`.
+- Origen del nombre: solo con las fuentes citadas en `_proyecto/dossier.html`.
 - La marca se escribe **Khiska**.
-- Dossier y portal son productos distintos.
+- Dossier y portal son productos distintos. El dossier es privado.
+- Influencer propuesto: Francisco "Chapu" Puelles. Nunca usar su imagen o voz generada (ni animar su foto): solo contenido que él grabe, con acuerdo.
 
 ## Lenguaje: "Haz florecer tu Khiska"
 

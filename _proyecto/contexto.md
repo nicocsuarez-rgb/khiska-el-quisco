@@ -59,6 +59,13 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
 - **Grilla v2 (23/11/2026):** `fuentes/grilla-contenidos.xlsx` con audiencias por persona, destinos del portal/app,
   columna "Cómo se produce", pestaña **Estilo de video** (basada en el reel) y **Guiones de video** V00–V16.
   El reel existente es **V00** (15/07, "Ahora El Quisco se puede explorar desde un solo lugar").
+- **Grilla v3:** 41 piezas, tráiler V01 el 01/07, reel existente V00 el 15/07. **Videos prioritarios para el portal:**
+  V01 tráiler, V00 (listo), V07 "Elige, prepara y comienza", V12 "Una ruta completada hace florecer tu Khiska".
+  Prompt listo en `_proyecto/prompts/producir-videos.md`.
+- El reel V00 tiene **voz IA que lee el mismo texto en pantalla** + música (lo hizo Benjamín).
+- **Influencer (Community Manager):** Francisco "Chapu" Puelles, actor, tuvo el hostal "La Tabla" en El Quisco (surf, skate, escalada; Radio Agricultura, 2018)
+  y hace actividades outdoor como escalada y trekking (Meganoticias, 2022). Dos piezas colaborativas V17 y V18 que él grabaría. Sin su acuerdo no se publica nada con su imagen.
+- El dossier es privado (`_proyecto/dossier.html`).
 - Regla: no fabricar testimonios ni "vecinos" con voz de IA presentados como reales. Las piezas de
   testimonio/UGC de la grilla necesitan personas reales o cambiar de formato.
 
