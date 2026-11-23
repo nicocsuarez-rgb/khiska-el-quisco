@@ -352,4 +352,57 @@
       window.requestAnimationFrame(moverPortada);
     }, { passive: true });
   }
+
+  /* ---------- Lluvia de flores: premio y huevo de pascua ----------
+     window.KhiskaLluvia() se puede llamar desde cualquier logro. */
+  var base = (document.currentScript && document.currentScript.src || "").replace(/js\/main\.js.*$/, "");
+  var lluviaDeFlores = function (cantidad) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return 0;
+    cantidad = cantidad || (window.innerWidth < 600 ? 45 : 80);
+    var capa = document.createElement("div");
+    capa.className = "lluvia";
+    capa.setAttribute("aria-hidden", "true");
+    var alto = window.innerHeight, ancho = window.innerWidth, maximo = 0;
+    for (var i = 0; i < cantidad; i++) {
+      var img = document.createElement("img");
+      img.src = base + "assets/img/" + (Math.random() < .72 ? "flor-abierta.webp" : "flor-parcial.webp");
+      img.alt = "";
+      var tam = 26 + Math.random() * 48;
+      img.style.width = tam + "px";
+      capa.appendChild(img);
+      var x = Math.random() * ancho, deriva = (Math.random() - .5) * 220;
+      var giro = (Math.random() < .5 ? -1 : 1) * (180 + Math.random() * 360);
+      var dur = 2600 + Math.random() * 2200, espera = Math.random() * 1300;
+      maximo = Math.max(maximo, dur + espera);
+      img.animate([
+        { transform: "translate(" + x + "px," + (-tam - 20) + "px) rotate(0deg)", opacity: 1 },
+        { transform: "translate(" + (x + deriva * .6) + "px," + (alto * .5) + "px) rotate(" + giro * .5 + "deg)", opacity: 1, offset: .5 },
+        { transform: "translate(" + (x + deriva) + "px," + (alto + 40) + "px) rotate(" + giro + "deg)", opacity: .85 }
+      ], { duration: dur, delay: espera, easing: "cubic-bezier(.35,.1,.55,1)", fill: "both" });
+    }
+    document.body.appendChild(capa);
+    setTimeout(function () { capa.remove(); }, maximo + 200);
+    return maximo;
+  };
+  window.KhiskaLluvia = lluviaDeFlores;
+
+  /* Pinchar a Khiska en la portada: llueven flores y te lleva a "Pincha tu curiosidad" */
+  var cactusPortada = document.querySelector("[data-pinchar]");
+  if (cactusPortada) {
+    cactusPortada.addEventListener("click", function (e) {
+      var destino = document.querySelector(cactusPortada.getAttribute("href"));
+      var dura = lluviaDeFlores();
+      if (!dura || !destino) return;
+      e.preventDefault();
+      if (cactusPortada.classList.contains("pinchado")) return;
+      cactusPortada.classList.add("pinchado");
+      setTimeout(function () {
+        cactusPortada.classList.remove("pinchado");
+        var titulo = destino.querySelector("h2") || destino;
+        titulo.setAttribute("tabindex", "-1");
+        destino.scrollIntoView({ behavior: "smooth", block: "start" });
+        titulo.focus({ preventScroll: true });
+      }, 1900);
+    });
+  }
 })();

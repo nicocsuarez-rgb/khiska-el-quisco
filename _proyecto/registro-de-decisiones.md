@@ -18,3 +18,4 @@
 | 23/11/2026 | Chapu: propuesta académica, no se le contacta; se presenta con guion y storyboard ilustrado | Nicolás | Acordado |
 | 23/11/2026 | Portada animada: el logo de El Quisco se "escribe" con una máscara sobre la imagen original (sin IA de video, para no redibujarlo); fondo de ilustraciones en movimiento hasta tener toma aérea real (`js/videos.js` → `KHISKA_FONDO`) | Nicolás | Hecho |
 | 23/11/2026 | Portada v2: logo "El Quisco" grande al centro, rodeado de flores que se abren (capullo → parcial → abierta) al paso del pincel; cactus de "Una ruta. Una flor." crece en la esquina; se retira el cactus de tres flores | Nicolás (visto bueno del profesor a la v1) | Hecho |
+| 23/11/2026 | Portada v3: logo centrado (sin marco de flores); cactus Khiska más grande y "pinchable": al tocarlo llueven flores (huevo de pascua) y lleva a "Pincha tu curiosidad" | Nicolás | Hecho |
