@@ -56,6 +56,9 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
   doblado por Benjamín con IA.
 - Los demás videos de la grilla **no están producidos**. El equipo quiere generarlos **sin grabar**
   (texto, ilustraciones, capturas del portal y la app, voz con IA), como el reel.
+- **Grilla v2 (23/11/2026):** `fuentes/grilla-contenidos.xlsx` con audiencias por persona, destinos del portal/app,
+  columna "Cómo se produce", pestaña **Estilo de video** (basada en el reel) y **Guiones de video** V00–V16.
+  El reel existente es **V00** (15/07, "Ahora El Quisco se puede explorar desde un solo lugar").
 - Regla: no fabricar testimonios ni "vecinos" con voz de IA presentados como reales. Las piezas de
   testimonio/UGC de la grilla necesitan personas reales o cambiar de formato.
 
