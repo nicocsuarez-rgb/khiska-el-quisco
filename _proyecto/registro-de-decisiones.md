@@ -20,3 +20,5 @@
 | 23/11/2026 | Portada v2: logo "El Quisco" grande al centro, rodeado de flores que se abren (capullo → parcial → abierta) al paso del pincel; cactus de "Una ruta. Una flor." crece en la esquina; se retira el cactus de tres flores | Nicolás (visto bueno del profesor a la v1) | Hecho |
 | 23/11/2026 | Portada v3: logo centrado (sin marco de flores); cactus Khiska más grande y "pinchable": al tocarlo llueven flores (huevo de pascua) y lleva a "Pincha tu curiosidad" | Nicolás | Hecho |
 | 23/11/2026 | Entrega 2: animaciones en todo el portal (aparecer al bajar en cascada, cabecera que se compacta, barra de avance, tarjetas que responden al mouse); todo se desactiva con movimiento reducido | Nicolás | Hecho |
+| 23/11/2026 | Franja de colores con fondo transparente, unida a la portada (sin línea blanca) | Nicolás | Hecho |
+| 23/11/2026 | Entrega 3: muestra interactiva "Pruébalo: así se abre una flor" (inicio y Experiencia Khiska) con sello y lluvia de flores al completar; lluvia también al elegir un interés por primera vez y al enviar "Propón un lugar"; se elimina el jardín antiguo con rótulos "(demo)" | Nicolás | Hecho |
