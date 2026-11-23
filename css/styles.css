@@ -222,7 +222,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 
 /* Franja de color El Quisco */
-.franja-color { height: 26px; background: url("../assets/img/franja-territorio.webp") center / cover; opacity: .9; }
+.franja-color { position: relative; z-index: 2; height: 30px; margin: -15px 0; background: url("../assets/img/franja-territorio-alfa.webp") center / 120% 100% no-repeat; pointer-events: none; }
 
 /* ---------- Pincha tu curiosidad (intereses) ---------- */
 .curiosidad { display: grid; grid-template-columns: .9fr 1.1fr; gap: 2rem; align-items: center; }
@@ -403,16 +403,10 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .demo { background: var(--tarjeta); border: 2px dashed var(--rosa); border-radius: var(--radio); padding: clamp(1.1rem, 3vw, 2rem); }
 .demo__cabecera { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem; margin-bottom: 1.2rem; }
 .jardin { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; list-style: none; padding: 0; margin: 0; }
-.parcela {
   background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio);
   padding: 1rem .8rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: .5rem;
 }
-.parcela__flor { height: 110px; display: grid; place-items: center; }
-.parcela__flor img { max-height: 110px; width: auto; transition: transform .6s cubic-bezier(.2,.8,.2,1.2), opacity .4s; }
-.parcela[data-estado="abierta"] .parcela__flor img { animation: florecer .9s cubic-bezier(.2,.8,.2,1.15); }
 @keyframes florecer { from { transform: scale(.55) rotate(-12deg); opacity: .3; } to { transform: scale(1) rotate(0); opacity: 1; } }
-.parcela h3 { font-size: 1rem; margin: 0; }
-.parcela__estado { font-size: .85rem; color: var(--texto-suave); min-height: 2.6em; margin: 0; }
 .demo__resumen { margin: 1.4rem 0 0; font-weight: 500; color: var(--verde-tinta); }
 .demo__controles { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
 .switch { display: inline-flex; align-items: center; gap: .45rem; font-size: .92rem; cursor: pointer; }
@@ -473,7 +467,6 @@ html.lectura-facil a { text-decoration-thickness: 2px; }
   .ficha-hero, .ficha-cuerpo { grid-template-columns: 1fr; }
   a { color: #000; }
 }
-.parcela.sin-animar .parcela__flor img { animation: none; }
 
 /* Utilidades de espaciado */
 .mt-1 { margin-top: .8rem; }
@@ -490,7 +483,6 @@ html.lectura-facil a { text-decoration-thickness: 2px; }
   .cabecera__acciones { gap: .35rem; }
   .hero__ilustracion { max-width: 240px; }
 }
-.parcela .btn { white-space: normal; width: 100%; }
 .pendiente { white-space: nowrap; }
 
 /* ---------- Portal (paso 2) ---------- */
@@ -520,3 +512,285 @@ html.lectura-facil a { text-decoration-thickness: 2px; }
 .caja__flor { width: 96px; margin-bottom: .4rem; }
 .propon__img { width: 180px; margin-top: 1.5rem; }
 .pasos--grandes { max-width: 640px; font-size: 1.08rem; }
+
+/* ==========================================================================
+   Portada animada (paso 4 · entrega 1)
+   Fondo: video aéreo si hay uno en KHISKA_FONDO; si no, ilustraciones del
+   territorio con movimiento lento. El logo se "escribe" con una máscara
+   sobre la imagen original (no se redibuja) y a su alrededor se abren flores.
+   ========================================================================== */
+.hero {
+  min-height: calc(100svh - 64px);
+  display: flex; align-items: center;
+  padding: clamp(2.5rem, 6vh, 4.5rem) 0 clamp(4.5rem, 9vh, 6rem);
+  isolation: isolate;
+}
+.hero__fondo { position: absolute; inset: -8% 0 0; z-index: 0; overflow: hidden; will-change: transform; }
+.hero__escena, .hero__video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  background: center / cover no-repeat; object-fit: cover;
+  opacity: 0;
+}
+.hero__escena { animation: escena 28s linear infinite; }
+.hero__escena:nth-child(2) { animation-delay: 7s; }
+.hero__escena:nth-child(3) { animation-delay: 14s; }
+.hero__escena:nth-child(4) { animation-delay: 21s; }
+@keyframes escena {
+  0%   { opacity: 0;   transform: scale(1.06) translate3d(0, 0, 0); }
+  6%   { opacity: .55; }
+  25%  { opacity: .55; }
+  32%  { opacity: 0;   transform: scale(1.18) translate3d(-2%, -1.5%, 0); }
+  100% { opacity: 0;   transform: scale(1.18) translate3d(-2%, -1.5%, 0); }
+}
+.hero__video { opacity: .45; transition: opacity 1.2s; }
+.hero--con-video .hero__escena { display: none; }
+.hero__velo {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 62% 58% at 50% 50%, rgba(250, 247, 238, .94) 0%, rgba(250, 247, 238, .78) 48%, rgba(250, 247, 238, .25) 100%),
+    linear-gradient(0deg, var(--papel) 0%, rgba(250, 247, 238, 0) 20%);
+}
+
+/* Centro: logo grande + titular */
+.hero__centro { position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.hero__centro h1 { font-size: clamp(1.7rem, 4.4vw, 2.9rem); margin: clamp(2rem, 6vh, 3.2rem) 0 .35em; }
+.hero__bajada { font-size: clamp(1.05rem, 2.1vw, 1.25rem); color: var(--texto-suave); max-width: 52ch; margin-inline: auto; }
+.hero__acciones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; }
+.hero__centro .hero__acciones { justify-content: center; }
+.hero__marca { position: relative; width: min(720px, 70vw, calc(46svh * 2.43)); margin: clamp(.5rem, 3vh, 2rem) auto 0; }
+.hero__logo { display: block; width: 100%; height: auto; margin: 0 auto; overflow: visible; }
+
+/* Logo que se escribe */
+.trazo { stroke-dasharray: 1 1; stroke-dashoffset: 1; animation: escribir 1.15s cubic-bezier(.55, .1, .4, 1) .35s forwards; }
+.trazo--2 { animation-duration: 1.7s; animation-delay: 1.45s; }
+@keyframes escribir { to { stroke-dashoffset: 0; } }
+
+/* Entrada escalonada del texto */
+.hero__entrada { animation: entrar .9s cubic-bezier(.2, .7, .2, 1) var(--retardo, 0s) both; }
+@keyframes entrar { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
+
+/* Khiska crece desde la esquina y se puede pinchar (huevo de pascua) */
+.hero__cactus {
+  position: absolute; z-index: 3; right: clamp(.5rem, 2.5vw, 3rem); bottom: 0;
+  display: block; width: clamp(150px, calc((100vw - 860px) / 2), min(400px, 40vh)); aspect-ratio: 458 / 730;
+  cursor: pointer; border-radius: 40% 40% 0 0; -webkit-tap-highlight-color: transparent;
+  transform-origin: 50% 100%; will-change: transform;
+  animation: crecer 1.6s cubic-bezier(.2, .8, .2, 1) .3s both, mecer 8s ease-in-out 2.2s infinite;
+}
+.hero__cactus img { width: 100%; height: 100%; object-fit: contain; transform-origin: 50% 100%; transition: transform .35s cubic-bezier(.3, 1.6, .5, 1); }
+.hero__cactus:hover img, .hero__cactus:focus-visible img { transform: scale(1.04) rotate(-1.5deg); }
+.hero__cactus:active img { transform: scale(.96); }
+.hero__cactus.pinchado img { animation: pinchado .6s ease-in-out; }
+@keyframes crecer { from { transform: translateY(40%) scaleY(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes mecer { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(1.4deg); } }
+@keyframes pinchado { 0%, 100% { rotate: 0deg; } 20% { rotate: -5deg; } 45% { rotate: 4deg; } 70% { rotate: -2deg; } }
+@media (max-width: 1100px) { .hero__cactus { width: clamp(110px, calc((100vw - 720px) / 2), 190px); right: .25rem; } }
+@media (max-width: 760px) {
+  .hero { min-height: auto; padding: 3.5rem 0 8.5rem; }
+  .hero__marca { width: 86vw; }
+  .hero__cactus { width: 86px; right: .25rem; }
+  .hero__velo { background: radial-gradient(ellipse 90% 60% at 50% 45%, rgba(250, 247, 238, .9) 0%, rgba(250, 247, 238, .7) 60%, rgba(250, 247, 238, .35) 100%), linear-gradient(0deg, var(--papel) 0%, rgba(250, 247, 238, 0) 20%); }
+}
+
+/* Lluvia de flores (premio y huevo de pascua) */
+.lluvia { position: fixed; inset: 0; z-index: 200; pointer-events: none; overflow: hidden; }
+.lluvia img { position: absolute; top: 0; left: 0; will-change: transform; }
+
+/* Indicador para bajar y botón de pausa */
+.hero__bajar {
+  position: absolute; z-index: 3; left: 50%; bottom: 1.2rem; transform: translateX(-50%);
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%;
+  color: var(--verde-oscuro); animation: entrar .9s 3.8s both;
+}
+.hero__bajar-flecha {
+  width: 14px; height: 14px; border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor;
+  transform: rotate(45deg); animation: rebote 2.2s ease-in-out 4.5s infinite;
+}
+@keyframes rebote { 0%, 100% { translate: 0 -3px; } 50% { translate: 0 5px; } }
+.hero__pausa {
+  position: absolute; z-index: 3; left: var(--gutter); bottom: 1.2rem;
+  min-height: 36px; padding: .3em .9em; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--linea); background: rgba(255, 253, 248, .85); color: var(--texto-suave);
+  font-size: .82rem; font-weight: 500; backdrop-filter: blur(4px);
+}
+.hero__pausa:hover { color: var(--verde-tinta); border-color: var(--salvia); }
+.hero--pausado .hero__escena,
+.hero--pausado .hero__cactus,
+.hero--pausado .hero__bajar-flecha { animation-play-state: paused; }
+@media (max-width: 760px) { .hero__bajar { display: none; } }
+
+/* Lectura fácil y movimiento reducido: todo quieto y legible */
+html.lectura-facil .hero__velo, html.lectura-facil .hero__pausa { display: none; }
+html.lectura-facil .hero { min-height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .trazo { animation: none; stroke-dashoffset: 0; }
+  .hero__entrada, .hero__cactus, .hero__bajar, .hero__bajar-flecha { animation: none; }
+  .hero__escena { animation: none; opacity: 0; }
+  .hero__escena:first-child { opacity: .5; transform: scale(1.06); }
+  .hero__pausa { display: none; }
+}
+
+/* ==========================================================================
+   Movimiento al bajar (paso 4 · entrega 2)
+   main.js marca con .revelar lo que aparece al entrar en pantalla.
+   Sin JavaScript o con movimiento reducido, todo se ve desde el inicio.
+   ========================================================================== */
+html .revelar {
+  opacity: 0; transform: translate3d(0, 28px, 0);
+  transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+html .revelar--zoom { transform: scale(.94) translate3d(0, 16px, 0); }
+html .revelar--izq { transform: translate3d(-36px, 0, 0); }
+html .revelar--der { transform: translate3d(36px, 0, 0); }
+html .revelar.visible { opacity: 1; transform: none; }
+@media print { .revelar { opacity: 1 !important; transform: none !important; } }
+
+/* Rótulo con trazo que se dibuja */
+.rotulo { position: relative; }
+.rotulo::after {
+  content: ""; position: absolute; left: 0; bottom: -.35em; height: 2px; width: 2.2em;
+  background: var(--rosa); border-radius: 2px;
+  transform-origin: left; transition: transform .7s .35s cubic-bezier(.2, .7, .2, 1);
+}
+.revelar:not(.visible) .rotulo::after { transform: scaleX(0); }
+.centrado .rotulo::after { left: 50%; translate: -50% 0; }
+
+/* Barra de avance de lectura */
+.avance {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none;
+  background: linear-gradient(90deg, var(--verde), var(--lima), var(--rosa));
+  transform: scaleX(var(--avance, 0)); transform-origin: left;
+}
+
+/* Cabecera que se compacta al bajar */
+.cabecera { transition: box-shadow .3s, background-color .3s; }
+.cabecera__fila { transition: min-height .3s; }
+.cabecera--compacta { background: rgba(250, 247, 238, .97); box-shadow: 0 6px 20px -14px rgba(38, 59, 23, .45); }
+.cabecera--compacta .cabecera__fila { min-height: 54px; }
+.marca img { transition: transform .5s cubic-bezier(.3, 1.6, .5, 1); }
+.marca:hover img { transform: rotate(-18deg) scale(1.1); }
+
+/* Tarjetas que responden al pasar el mouse */
+.tarjeta, .persona-card, .video-card, .estado, .caja, .mes {
+  transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s, border-color .35s;
+}
+@media (hover: hover) {
+  .tarjeta:hover, .persona-card:hover, .video-card:hover, .estado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 rgba(30, 30, 30, .03), 0 18px 34px -18px rgba(52, 80, 31, .5);
+    border-color: var(--salvia);
+  }
+  .persona-card:hover img, .estado:hover img { transform: rotate(-6deg) scale(1.08); }
+}
+.persona-card img, .estado img { transition: transform .5s cubic-bezier(.3, 1.6, .5, 1); }
+.tarjeta__media { overflow: hidden; }
+.tarjeta__media img { transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
+@media (hover: hover) { .tarjeta:hover .tarjeta__media img { transform: scale(1.06); } }
+.btn { transition: background-color .2s, border-color .2s, transform .2s, box-shadow .2s; }
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px -10px rgba(52, 80, 31, .6); } }
+
+/* Franja de color que se desliza suave */
+.franja-color { background-size: 120% 100%; animation: franja 30s ease-in-out infinite alternate; }
+@keyframes franja { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html .revelar { opacity: 1; transform: none; transition: none; }
+  .franja-color { animation: none; }
+  .tarjeta:hover, .persona-card:hover, .video-card:hover, .estado:hover, .btn:hover { transform: none; }
+}
+
+/* ==========================================================================
+   Muestra de la flor (paso 4 · entrega 3)
+   ========================================================================== */
+.muestra-flor {
+  display: grid; grid-template-columns: minmax(220px, .8fr) 1.2fr; gap: clamp(1.2rem, 4vw, 3rem); align-items: center;
+  margin-top: 2.5rem; padding: clamp(1.2rem, 3vw, 2rem); overflow: hidden;
+  background: var(--tarjeta); border: 1px solid var(--linea); border-radius: calc(var(--radio) * 1.6); box-shadow: var(--sombra);
+}
+.muestra-flor__escena {
+  position: relative; aspect-ratio: 1; width: min(100%, 320px); margin-inline: auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 55%, #fff 0%, var(--salvia-suave) 58%, rgba(227, 235, 220, 0) 72%);
+}
+.muestra-flor__img {
+  position: absolute; inset: 14%; width: 72%; height: 72%; object-fit: contain;
+  opacity: 0; transform: scale(.6) rotate(-14deg);
+  transition: opacity .5s, transform .9s cubic-bezier(.25, 1.5, .5, 1);
+}
+.muestra-flor__img--capullo { inset: 22%; width: 56%; height: 56%; }
+.muestra-flor[data-estado="capullo"] .muestra-flor__img--capullo,
+.muestra-flor[data-estado="parcial"] .muestra-flor__img--parcial,
+.muestra-flor[data-estado="abierta"] .muestra-flor__img--abierta { opacity: 1; transform: none; }
+.muestra-flor[data-estado="capullo"] .muestra-flor__img--capullo { animation: latir 3.2s ease-in-out infinite; }
+@keyframes latir { 0%, 100% { scale: 1; } 50% { scale: 1.04; } }
+.muestra-flor__sello {
+  position: absolute; right: -4%; bottom: -2%; width: 38%; height: auto;
+  opacity: 0; transform: scale(2.2) rotate(-25deg);
+  transition: opacity .25s, transform .45s cubic-bezier(.3, 1.4, .5, 1);
+}
+.muestra-flor[data-estado="abierta"] .muestra-flor__sello { opacity: 1; transform: rotate(-12deg); transition-delay: .55s; }
+.muestra-flor__titulo { margin: 0 0 1rem; font-size: clamp(1.15rem, 2.4vw, 1.4rem); }
+.muestra-flor .estados { margin: 0 0 1rem; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.muestra-flor .estado { padding: .8rem .6rem; opacity: .6; position: relative; }
+.muestra-flor .estado img { height: 56px; }
+.muestra-flor .estado--hecho { opacity: .9; }
+.muestra-flor .estado--hecho::after {
+  content: "✓"; position: absolute; top: .4rem; right: .5rem; width: 1.4rem; height: 1.4rem; border-radius: 50%;
+  display: grid; place-items: center; font-size: .8rem; font-weight: 700; color: #fff; background: var(--verde);
+}
+.muestra-flor .estado--actual { opacity: 1; border-color: var(--verde); box-shadow: 0 0 0 2px var(--verde), var(--sombra); transform: translateY(-3px); }
+.muestra-flor__estado { min-height: 3em; margin: 0 0 1rem; color: var(--verde-tinta); font-weight: 500; }
+html:not(.js) .muestra-flor__boton { display: none; }
+@media (max-width: 760px) {
+  .muestra-flor { grid-template-columns: 1fr; text-align: center; }
+  .muestra-flor__escena { width: min(70%, 240px); }
+  .muestra-flor .estado span { display: none; }
+  .muestra-flor .estado strong { font-size: .85rem; }
+}
+html.lectura-facil .muestra-flor { grid-template-columns: 1fr; }
+html.lectura-facil .muestra-flor .estado { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .muestra-flor__img, .muestra-flor__sello { transition: none; }
+  .muestra-flor[data-estado="capullo"] .muestra-flor__img--capullo { animation: none; }
+}
+
+/* ==========================================================================
+   Lleva Khiska contigo (paso 4 · entrega 4)
+   ========================================================================== */
+.seccion--app { background: linear-gradient(160deg, var(--salvia-suave) 0%, var(--papel) 70%); overflow: hidden; }
+.app-promo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.app-promo__bajada { font-size: 1.12rem; color: var(--texto-suave); max-width: 44ch; }
+.app-promo__lista { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: .9rem; }
+.app-promo__lista li { display: flex; gap: .8rem; align-items: flex-start; }
+.app-promo__lista img { width: 40px; height: 40px; flex: none; object-fit: contain; }
+.app-promo__estado { min-height: 1.4em; margin: .6rem 0 0; font-size: .92rem; color: var(--verde-tinta); font-weight: 500; }
+.app-promo__qr {
+  display: flex; gap: 1rem; align-items: center; margin-top: 1rem; padding: .9rem;
+  max-width: 440px; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: var(--radio); box-shadow: var(--sombra);
+}
+.app-promo__qr img { width: 112px; height: 112px; flex: none; border-radius: var(--radio-sm); }
+.app-promo__qr p { margin: 0; font-size: .92rem; color: var(--texto-suave); }
+.app-promo__tip { display: none; font-size: .92rem; color: var(--texto-suave); margin-top: 1rem; }
+.app-telefonos { position: relative; height: clamp(420px, 46vw, 580px); }
+.telefono {
+  position: absolute; top: 50%; left: 50%; width: clamp(170px, 18vw, 240px); aspect-ratio: 390 / 844;
+  border: 9px solid #1e1e1e; border-radius: 34px; overflow: hidden; background: #1e1e1e;
+  box-shadow: 0 30px 60px -28px rgba(38, 59, 23, .55), 0 8px 18px -10px rgba(30, 30, 30, .35);
+}
+.telefono::before { content: ""; position: absolute; top: 6px; left: 50%; width: 34%; height: 14px; translate: -50% 0; background: #1e1e1e; border-radius: 10px; z-index: 1; }
+.telefono img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 25px; }
+.telefono--centro { z-index: 2; transform: translate(-50%, -50%); animation: flotar-tel 7s ease-in-out infinite; }
+.telefono--izq { transform: translate(-112%, -46%) rotate(-8deg) scale(.88); animation: flotar-tel 7s ease-in-out -2.3s infinite; }
+.telefono--der { transform: translate(12%, -46%) rotate(8deg) scale(.88); animation: flotar-tel 7s ease-in-out -4.6s infinite; }
+@keyframes flotar-tel { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+@media (max-width: 860px) {
+  .app-promo { grid-template-columns: 1fr; }
+  .app-telefonos { order: -1; height: clamp(340px, 92vw, 460px); }
+  .telefono { width: clamp(140px, 38vw, 190px); }
+  .app-promo__qr { display: none; }
+  .app-promo__tip { display: block; }
+}
+html.lectura-facil .app-telefonos { display: none; }
+html.lectura-facil .app-promo { grid-template-columns: 1fr; }
+@media (prefers-reduced-motion: reduce) { .telefono { animation: none; } }

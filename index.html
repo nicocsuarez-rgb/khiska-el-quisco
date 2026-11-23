@@ -15,6 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icons/favicon.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/img/logo-el-quisco.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "El Quisco · Experiencia Khiska", "inLanguage": "es-CL"}, {"@type": "TouristDestination", "name": "El Quisco", "description": "Comuna costera de la Región de Valparaíso, Chile.", "includesAttraction": [{"@type": "TouristAttraction", "name": "Humedal Urbano El Batro"}]}]}</script>
 </head>
@@ -39,20 +40,39 @@
 
 <main id="contenido">
   <section class="hero" aria-labelledby="titulo-hero">
-    <div class="contenedor hero__grid">
-      <div>
-        <img class="hero__logo" src="assets/img/logo-el-quisco.webp" alt="El Quisco" width="900" height="370" fetchpriority="high">
-        <h1 id="titulo-hero">Donde la naturaleza tiene nombre.</h1>
-        <p class="hero__bajada">El Quisco no termina en la playa. Hay humedales, miradores, memoria y sabores que se descubren por capas.</p>
-        <div class="hero__acciones">
-          <a class="btn" href="rutas.html">Descubre las rutas</a>
-          <a class="btn btn--secundario" href="#mira">Mira el video</a>
-        </div>
+    <div class="hero__fondo decorativa" aria-hidden="true">
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-mirador-neptuno.webp')"></div>
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-el-batro.webp')"></div>
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-isla-negra.webp')"></div>
+      <div class="hero__escena" style="background-image:url('assets/img/hero-fondo-caleta.webp')"></div>
+    </div>
+    <div class="hero__velo" aria-hidden="true"></div>
+    <div class="contenedor hero__centro">
+      <div class="hero__marca">
+        <svg class="hero__logo" viewBox="0 0 900 370" role="img" aria-labelledby="logo-titulo">
+            <title id="logo-titulo">El Quisco</title>
+            <defs>
+              <filter id="pincel-suave" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="5"/></filter>
+              <mask id="mascara-escritura" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="370">
+                <g fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round" stroke-linejoin="round" filter="url(#pincel-suave)">
+                  <path class="trazo trazo--1" pathLength="1" d="M-30 -30 L-8 400 L14 -30 L36 400 L58 -30 L80 400 L102 -30 L124 400 L146 -30 L168 400 L190 -30 L212 400 L234 -30 L256 400"/>
+                  <path class="trazo trazo--2" pathLength="1" d="M250 -30 L272 400 L294 -30 L316 400 L338 -30 L360 400 L382 -30 L404 400 L426 -30 L448 400 L470 -30 L492 400 L514 -30 L536 400 L558 -30 L580 400 L602 -30 L624 400 L646 -30 L668 400 L690 -30 L712 400 L734 -30 L756 400 L778 -30 L800 400 L822 -30 L844 400 L866 -30 L888 400 L910 -30 L932 400"/>
+                </g>
+              </mask>
+            </defs>
+            <image href="assets/img/logo-el-quisco.webp" width="900" height="370" mask="url(#mascara-escritura)"/>
+        </svg>
       </div>
-      <div class="hero__ilustracion">
-        <img class="ilustracion" src="assets/img/cactus-khiska-tres-flores.webp" alt="Cactus ilustrado en acuarela con tres flores rosadas abiertas y capullos por abrir" width="900" height="710">
+      <h1 id="titulo-hero" class="hero__entrada" style="--retardo:2.6s">Donde la naturaleza tiene nombre.</h1>
+      <p class="hero__bajada hero__entrada" style="--retardo:2.85s">El Quisco no termina en la playa. Hay humedales, miradores, memoria y sabores que se descubren por capas.</p>
+      <div class="hero__acciones hero__entrada" style="--retardo:3.1s">
+        <a class="btn" href="rutas.html">Descubre las rutas</a>
+        <a class="btn btn--secundario" href="#mira">Mira el video</a>
       </div>
     </div>
+    <a class="hero__cactus decorativa" href="#curiosidad" data-pinchar aria-label="Khiska, el cactus. Pínchalo para descubrir qué te da curiosidad de El Quisco"><img class="ilustracion" src="assets/img/cactus-khiska-una-flor.webp" alt="" width="458" height="730"></a>
+    <a class="hero__bajar decorativa" href="#para-ti"><span class="visually-hidden">Ir a la siguiente sección</span><span class="hero__bajar-flecha" aria-hidden="true"></span></a>
+    <button class="hero__pausa decorativa" type="button" aria-pressed="false">Pausar movimiento</button>
   </section>
 
   <div class="franja-color decorativa" aria-hidden="true"></div>
@@ -250,11 +270,54 @@
           </div>
         </div>
       </div>
-      <ul class="estados" aria-label="Cómo se abre una flor">
-        <li class="estado"><img src="assets/img/flor-capullo.webp" alt="" width="360" height="404" loading="lazy"><strong>Capullo cerrado</strong><span>Ruta por descubrir</span></li>
-        <li class="estado"><img src="assets/img/flor-parcial.webp" alt="" width="360" height="261" loading="lazy"><strong>Apertura parcial</strong><span>Ruta iniciada</span></li>
-        <li class="estado"><img src="assets/img/flor-abierta.webp" alt="" width="360" height="261" loading="lazy"><strong>Flor abierta</strong><span>Ruta completada</span></li>
-      </ul>
+      <div class="muestra-flor" data-muestra-flor data-estado="capullo">
+        <div class="muestra-flor__escena" aria-hidden="true">
+          <img class="muestra-flor__img muestra-flor__img--capullo" src="assets/img/flor-capullo.webp" alt="" width="360" height="404" loading="lazy">
+          <img class="muestra-flor__img muestra-flor__img--parcial" src="assets/img/flor-parcial.webp" alt="" width="219" height="232" loading="lazy">
+          <img class="muestra-flor__img muestra-flor__img--abierta" src="assets/img/flor-abierta.webp" alt="" width="280" height="255" loading="lazy">
+          <img class="muestra-flor__sello" src="assets/img/sello-ruta-completada.webp" alt="" width="420" height="419" loading="lazy">
+        </div>
+        <div class="muestra-flor__panel">
+          <h3 class="muestra-flor__titulo">Pruébalo: así se abre una flor</h3>
+          <ul class="estados" aria-label="Cómo se abre una flor">
+            <li class="estado" data-etapa="capullo"><img src="assets/img/flor-capullo.webp" alt="" width="360" height="404" loading="lazy"><strong>Capullo cerrado</strong><span>Ruta por descubrir</span></li>
+            <li class="estado" data-etapa="parcial"><img src="assets/img/flor-parcial.webp" alt="" width="219" height="232" loading="lazy"><strong>Apertura parcial</strong><span>Ruta iniciada</span></li>
+            <li class="estado" data-etapa="abierta"><img src="assets/img/flor-abierta.webp" alt="" width="280" height="255" loading="lazy"><strong>Flor abierta</strong><span>Ruta completada</span></li>
+          </ul>
+          <p class="muestra-flor__estado" aria-live="polite">Capullo cerrado: la ruta todavía no empieza.</p>
+          <button class="btn muestra-flor__boton" type="button">Comienza la ruta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--app" id="app" aria-labelledby="titulo-app">
+    <div class="contenedor app-promo">
+      <div class="app-promo__texto">
+        <span class="rotulo rotulo--rosa">La app Khiska</span>
+        <h2 id="titulo-app">Lleva Khiska contigo.</h2>
+        <p class="app-promo__bajada">Tu cactus, tus rutas y tu Pasaporte, en el celular. Sin crear cuenta y listo para cuando salgas a recorrer.</p>
+        <ul class="app-promo__lista">
+          <li><img src="assets/icons/icono-hoja.webp" alt="" width="40" height="40"><span><strong>Elige qué te da curiosidad.</strong> Las rutas se ordenan según lo que marques.</span></li>
+          <li><img src="assets/icons/icono-sendero.webp" alt="" width="40" height="40"><span><strong>Prepara tu salida.</strong> Revisa la ficha de cada lugar antes de ir.</span></li>
+          <li><img src="assets/icons/icono-flor.webp" alt="" width="40" height="40"><span><strong>Mira cómo florece tu Khiska.</strong> Cada ruta completada abre una flor y suma un sello.</span></li>
+        </ul>
+        <div class="hero__acciones">
+          <a class="btn" href="app/index.html">Abrir la app</a>
+          <button class="btn btn--secundario" type="button" data-compartir>Compartir El Quisco</button>
+        </div>
+        <p class="app-promo__estado" data-compartir-estado aria-live="polite"></p>
+        <div class="app-promo__qr">
+          <img src="assets/img/app/qr-app.svg" alt="Código QR para abrir la app Khiska en el celular" width="296" height="296" loading="lazy">
+          <p><strong>Ábrela en tu celular.</strong> Escanea el código con la cámara y, ya en la app, elige «Agregar a pantalla de inicio» para tenerla a un toque.</p>
+        </div>
+        <p class="app-promo__tip">En el celular: abre la app y elige «Agregar a pantalla de inicio» en el menú del navegador para tenerla a un toque.</p>
+      </div>
+      <div class="app-telefonos" aria-hidden="true">
+        <div class="telefono telefono--izq"><img src="assets/img/app/app-p1.webp" alt="" width="390" height="844" loading="lazy"></div>
+        <div class="telefono telefono--der"><img src="assets/img/app/app-p2.webp" alt="" width="390" height="844" loading="lazy"></div>
+        <div class="telefono telefono--centro"><img src="assets/img/app/app-p7.webp" alt="" width="390" height="844" loading="lazy"></div>
+      </div>
     </div>
   </section>
 

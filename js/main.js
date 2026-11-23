@@ -186,6 +186,7 @@
         /* Sin servicio configurado: no se simula un envío exitoso */
         mostrar("exito", "<strong>¡Gracias!</strong> Tu propuesta está lista. Copia el texto para compartirla con el equipo.");
         if (copiar) copiar.hidden = false;
+        if (window.KhiskaLluvia) window.KhiskaLluvia();
         return;
       }
       var boton = form.querySelector("[type=submit]");
@@ -195,6 +196,7 @@
         .then(function (r) {
           if (!r.ok) throw new Error("HTTP " + r.status);
           mostrar("exito", "<strong>¡Gracias!</strong> Recibimos tu propuesta. El equipo la revisará antes de considerarla para una ruta futura.");
+          if (window.KhiskaLluvia) window.KhiskaLluvia();
           form.reset();
         })
         .catch(function () {
@@ -217,90 +219,230 @@
     }
   }
 
-  /* ---------- Demostración Mi Khiska (P6, P7, P8) ---------- */
-  var jardin = document.getElementById("jardin-demo");
-  if (jardin) {
-    var base = jardin.getAttribute("data-base") || "";
-    var ESTADOS = {
-      capullo: { img: "assets/img/flor-capullo.webp", texto: "Capullo cerrado · ruta no iniciada", accion: "Iniciar ruta (demo)" },
-      parcial: { img: "assets/img/flor-parcial.webp", texto: "Apertura parcial · ruta iniciada", accion: "Completar ruta (demo)" },
-      abierta: { img: "assets/img/flor-abierta.webp", texto: "Flor abierta · ruta completada", accion: "Reiniciar (demo)" }
+  /* ---------- Portada animada: video de fondo, paralaje y pausa ---------- */
+  var hero = document.querySelector(".hero");
+  if (hero) {
+    var quieto = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var fondo = hero.querySelector(".hero__fondo");
+    var cactus = hero.querySelector(".hero__cactus");
+    var pausa = hero.querySelector(".hero__pausa");
+    var video = null;
+    var cfg = window.KHISKA_FONDO || {};
+    var ahorro = navigator.connection && navigator.connection.saveData;
+
+    if (fondo && cfg.video && !quieto.matches && !ahorro) {
+      video = document.createElement("video");
+      video.className = "hero__video";
+      video.muted = true; video.loop = true; video.playsInline = true; video.autoplay = true;
+      video.setAttribute("muted", ""); video.setAttribute("playsinline", "");
+      if (cfg.poster) video.poster = cfg.poster;
+      video.src = cfg.video;
+      video.addEventListener("canplay", function () { hero.classList.add("hero--con-video"); }, { once: true });
+      video.addEventListener("error", function () { video.remove(); video = null; hero.classList.remove("hero--con-video"); });
+      fondo.appendChild(video);
+    }
+
+    if (pausa) {
+      pausa.addEventListener("click", function () {
+        var pausado = !hero.classList.contains("hero--pausado");
+        hero.classList.toggle("hero--pausado", pausado);
+        pausa.setAttribute("aria-pressed", String(pausado));
+        pausa.textContent = pausado ? "Reanudar movimiento" : "Pausar movimiento";
+        if (video) { if (pausado) video.pause(); else video.play().catch(function () {}); }
+      });
+    }
+
+    /* Paralaje suave: el fondo baja más lento que el contenido */
+    var pendiente = false;
+    var moverPortada = function () {
+      pendiente = false;
+      var y = window.scrollY;
+      if (y > window.innerHeight * 1.2) return;
+      if (fondo) fondo.style.transform = "translate3d(0," + (y * 0.3).toFixed(1) + "px,0)";
+      if (cactus) cactus.style.translate = "0 " + (y * 0.12).toFixed(1) + "px";
+    };
+    window.addEventListener("scroll", function () {
+      if (quieto.matches || pendiente) return;
+      pendiente = true;
+      window.requestAnimationFrame(moverPortada);
+    }, { passive: true });
+  }
+
+  /* ---------- Lluvia de flores: premio y huevo de pascua ----------
+     window.KhiskaLluvia() se puede llamar desde cualquier logro. */
+  var base = (document.currentScript && document.currentScript.src || "").replace(/js\/main\.js.*$/, "");
+  var lluviaDeFlores = function (cantidad) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return 0;
+    cantidad = cantidad || (window.innerWidth < 600 ? 45 : 80);
+    var capa = document.createElement("div");
+    capa.className = "lluvia";
+    capa.setAttribute("aria-hidden", "true");
+    var alto = window.innerHeight, ancho = window.innerWidth, maximo = 0;
+    for (var i = 0; i < cantidad; i++) {
+      var img = document.createElement("img");
+      img.src = base + "assets/img/" + (Math.random() < .72 ? "flor-abierta.webp" : "flor-parcial.webp");
+      img.alt = "";
+      var tam = 26 + Math.random() * 48;
+      img.style.width = tam + "px";
+      capa.appendChild(img);
+      var x = Math.random() * ancho, deriva = (Math.random() - .5) * 220;
+      var giro = (Math.random() < .5 ? -1 : 1) * (180 + Math.random() * 360);
+      var dur = 2600 + Math.random() * 2200, espera = Math.random() * 1300;
+      maximo = Math.max(maximo, dur + espera);
+      img.animate([
+        { transform: "translate(" + x + "px," + (-tam - 20) + "px) rotate(0deg)", opacity: 1 },
+        { transform: "translate(" + (x + deriva * .6) + "px," + (alto * .5) + "px) rotate(" + giro * .5 + "deg)", opacity: 1, offset: .5 },
+        { transform: "translate(" + (x + deriva) + "px," + (alto + 40) + "px) rotate(" + giro + "deg)", opacity: .85 }
+      ], { duration: dur, delay: espera, easing: "cubic-bezier(.35,.1,.55,1)", fill: "both" });
+    }
+    document.body.appendChild(capa);
+    setTimeout(function () { capa.remove(); }, maximo + 200);
+    return maximo;
+  };
+  window.KhiskaLluvia = lluviaDeFlores;
+
+  /* Pinchar a Khiska en la portada: llueven flores y te lleva a "Pincha tu curiosidad" */
+  var cactusPortada = document.querySelector("[data-pinchar]");
+  if (cactusPortada) {
+    cactusPortada.addEventListener("click", function (e) {
+      var destino = document.querySelector(cactusPortada.getAttribute("href"));
+      var dura = lluviaDeFlores();
+      if (!dura || !destino) return;
+      e.preventDefault();
+      if (cactusPortada.classList.contains("pinchado")) return;
+      cactusPortada.classList.add("pinchado");
+      setTimeout(function () {
+        cactusPortada.classList.remove("pinchado");
+        var titulo = destino.querySelector("h2") || destino;
+        titulo.setAttribute("tabindex", "-1");
+        destino.scrollIntoView({ behavior: "smooth", block: "start" });
+        titulo.focus({ preventScroll: true });
+      }, 1900);
+    });
+  }
+
+  /* ---------- Movimiento al bajar: todo va apareciendo ---------- */
+  var sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cabecera = document.querySelector(".cabecera");
+  var barra = document.createElement("div");
+  barra.className = "avance"; barra.setAttribute("aria-hidden", "true");
+  document.body.appendChild(barra);
+  var marcoPendiente = false;
+  var alBajar = function () {
+    marcoPendiente = false;
+    var y = window.scrollY, total = document.documentElement.scrollHeight - window.innerHeight;
+    if (cabecera) cabecera.classList.toggle("cabecera--compacta", y > 30);
+    barra.style.setProperty("--avance", total > 0 ? Math.min(1, y / total).toFixed(4) : 0);
+  };
+  window.addEventListener("scroll", function () {
+    if (!marcoPendiente) { marcoPendiente = true; window.requestAnimationFrame(alBajar); }
+  }, { passive: true });
+  alBajar();
+
+  if (!sinMovimiento && "IntersectionObserver" in window) {
+    /* [selector, variante]: los hijos de un mismo grupo aparecen en cascada */
+    var grupos = [
+      [".personas-grid > *, .grid-tarjetas > *, .videos > *, .estados > *, .agenda > *, .pie__grid > *", ""],
+      [".pasos > li, .formulario > .campo, .formulario > .acciones", "izq"],
+      [".seccion__cabecera, .cabecera-pagina > *, .ficha-hero > *, .ficha-cuerpo > *, .curiosidad > *, .comunidad > *, .pasaporte > *, .seccion > .contenedor > .aviso", ""],
+      [".khiska__ilustracion, .ficha-hero__media, .propon__img, .estado-form, .app-telefonos, .muestra-flor", "zoom"],
+      [".app-promo__lista > li", "izq"],
+      [".khiska > div:not(.khiska__ilustracion)", "der"]
+    ];
+    var marcados = [];
+    grupos.forEach(function (g) {
+      document.querySelectorAll(g[0]).forEach(function (el) {
+        if (el.closest(".hero") || el.classList.contains("revelar") || el.closest(".revelar")) return;
+        var hermanos = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+        el.classList.add("revelar");
+        if (g[1]) el.classList.add("revelar--" + g[1]);
+        el.style.setProperty("--i", Math.min(hermanos, 5));
+        marcados.push(el);
+      });
+    });
+    var vigia = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        el.classList.add("visible");
+        vigia.unobserve(el);
+        /* Terminado el efecto, el elemento vuelve a su comportamiento normal */
+        setTimeout(function () {
+          el.classList.remove("revelar", "visible", "revelar--zoom", "revelar--izq", "revelar--der");
+          el.style.removeProperty("--i");
+        }, 900 + Math.min(5, +el.style.getPropertyValue("--i") || 0) * 90);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    marcados.forEach(function (el) { vigia.observe(el); });
+    /* Si algo queda oculto (impresión, saltos con ancla), se muestra igual */
+    window.addEventListener("beforeprint", function () { marcados.forEach(function (el) { el.classList.add("visible"); }); });
+  }
+
+  /* ---------- Muestra de la flor: capullo → parcial → abierta ---------- */
+  var acorde = function () {
+    try {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      var ctx = new Ctx(), t = ctx.currentTime;
+      [523.25, 659.25, 783.99, 1046.5].forEach(function (f, i) {
+        var o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = "sine"; o.frequency.value = f;
+        g.gain.setValueAtTime(0, t + i * .08);
+        g.gain.linearRampToValueAtTime(.06, t + i * .08 + .02);
+        g.gain.exponentialRampToValueAtTime(.0001, t + i * .08 + .7);
+        o.connect(g); g.connect(ctx.destination); o.start(t + i * .08); o.stop(t + i * .08 + .75);
+      });
+      if (navigator.vibrate) navigator.vibrate(40);
+    } catch (e) { /* audio no disponible */ }
+  };
+  document.querySelectorAll("[data-muestra-flor]").forEach(function (m) {
+    var PASOS = {
+      capullo: { texto: "Capullo cerrado: la ruta todavía no empieza.", boton: "Comienza la ruta", sigue: "parcial" },
+      parcial: { texto: "Apertura parcial: vas en camino. Termina el recorrido para abrirla.", boton: "Completa la ruta", sigue: "abierta" },
+      abierta: { texto: "¡Flor abierta! Completaste la ruta y sumaste un sello a tu Pasaporte.", boton: "Ver otra vez", sigue: "capullo" }
     };
     var ORDEN = ["capullo", "parcial", "abierta"];
-    var parcelas = jardin.querySelectorAll(".parcela");
-    var resumen = document.getElementById("demo-resumen");
-    var siguiente = document.getElementById("demo-siguiente");
-    var sonido = document.getElementById("demo-sonido");
-    var guardado = {};
-    try { guardado = JSON.parse(store.get("khiska-demo") || "{}") || {}; } catch (e) { guardado = {}; }
-
-    var tono = function () {
-      if (!sonido || !sonido.checked) return;
-      try {
-        var Ctx = window.AudioContext || window.webkitAudioContext;
-        var ctx = new Ctx(), t = ctx.currentTime;
-        [523.25, 659.25, 783.99].forEach(function (f, i) {
-          var o = ctx.createOscillator(), g = ctx.createGain();
-          o.type = "sine"; o.frequency.value = f;
-          g.gain.setValueAtTime(0, t + i * .09);
-          g.gain.linearRampToValueAtTime(.08, t + i * .09 + .02);
-          g.gain.exponentialRampToValueAtTime(.0001, t + i * .09 + .6);
-          o.connect(g); g.connect(ctx.destination); o.start(t + i * .09); o.stop(t + i * .09 + .65);
-        });
-        if (navigator.vibrate) navigator.vibrate(40);
-      } catch (e) { /* audio no disponible */ }
-    };
-
-    var pintar = function (p, est, animar) {
-      var d = ESTADOS[est];
-      var img = p.querySelector(".parcela__flor img");
-      p.setAttribute("data-estado", est);
-      if (!animar) p.classList.add("sin-animar");
-      img.src = base + d.img;
-      p.querySelector(".parcela__estado").textContent = d.texto;
-      var b = p.querySelector("button");
-      b.textContent = d.accion;
-      b.setAttribute("aria-label", d.accion + ": " + p.querySelector("h3").textContent);
-    };
-
-    var actualizar = function () {
-      var total = parcelas.length, hechas = 0, iniciadas = 0;
-      parcelas.forEach(function (p) {
-        var e = p.getAttribute("data-estado");
-        if (e === "abierta") hechas++;
-        if (e === "parcial") iniciadas++;
+    var boton = m.querySelector(".muestra-flor__boton");
+    var texto = m.querySelector(".muestra-flor__estado");
+    var pintar = function (est) {
+      m.setAttribute("data-estado", est);
+      texto.textContent = PASOS[est].texto;
+      boton.textContent = PASOS[est].boton;
+      m.querySelectorAll(".estado").forEach(function (li) {
+        var i = ORDEN.indexOf(li.getAttribute("data-etapa")), actual = ORDEN.indexOf(est);
+        li.classList.toggle("estado--actual", i === actual);
+        li.classList.toggle("estado--hecho", i < actual);
+        if (i === actual) li.setAttribute("aria-current", "step"); else li.removeAttribute("aria-current");
       });
-      var faltan = total - hechas;
-      resumen.textContent = "Flores abiertas: " + hechas + " de " + total + ". " +
-        (iniciadas ? "Rutas en curso: " + iniciadas + ". " : "") +
-        (faltan === 0 ? "Completaste todas las rutas de la demostración." : "Te " + (faltan === 1 ? "queda 1 ruta" : "quedan " + faltan + " rutas") + " por descubrir.");
-      if (siguiente) siguiente.hidden = hechas === 0;
     };
-
-    parcelas.forEach(function (p) {
-      var id = p.getAttribute("data-ruta");
-      var est = ORDEN.indexOf(guardado[id]) !== -1 ? guardado[id] : "capullo";
-      pintar(p, est, false);
-      p.querySelector("button").addEventListener("click", function () {
-        var actual = p.getAttribute("data-estado");
-        var nuevo = ORDEN[(ORDEN.indexOf(actual) + 1) % ORDEN.length];
-        p.classList.remove("sin-animar");
-        pintar(p, nuevo, true);
-        if (nuevo === "abierta") tono();
-        guardado[id] = nuevo;
-        store.set("khiska-demo", JSON.stringify(guardado));
-        actualizar();
-      });
+    boton.addEventListener("click", function () {
+      var nuevo = PASOS[m.getAttribute("data-estado")].sigue;
+      pintar(nuevo);
+      if (nuevo === "abierta") { acorde(); lluviaDeFlores(); }
     });
+    pintar("capullo");
+  });
 
-    var reset = document.getElementById("demo-reiniciar");
-    if (reset) reset.addEventListener("click", function () {
-      guardado = {};
-      store.del("khiska-demo");
-      parcelas.forEach(function (p) { pintar(p, "capullo", false); });
-      actualizar();
-      resumen.focus();
+  /* Lluvia al elegir por primera vez qué te gustaría descubrir */
+  var yaElegiste = false;
+  document.querySelectorAll(".chips .chip").forEach(function (c) {
+    c.addEventListener("click", function () {
+      if (yaElegiste || c.getAttribute("data-dimension") === "todo") return;
+      yaElegiste = true;
+      lluviaDeFlores(window.innerWidth < 600 ? 25 : 40);
     });
-    actualizar();
-  }
+  });
+
+  /* ---------- Compartir el portal ---------- */
+  document.querySelectorAll("[data-compartir]").forEach(function (b) {
+    var aviso = document.querySelector("[data-compartir-estado]");
+    var decir = function (t) { if (aviso) aviso.textContent = t; };
+    b.addEventListener("click", function () {
+      var url = window.location.href.split("#")[0].replace(/index\.html$/, "");
+      var datos = { title: "El Quisco: donde la naturaleza tiene nombre", text: "Descubre El Quisco más allá de la playa y conoce Khiska: una ruta, una flor.", url: url };
+      if (navigator.share) { navigator.share(datos).catch(function () {}); return; }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(function () { decir("¡Enlace copiado! Pégalo donde quieras compartirlo."); }, function () { window.prompt("Copia el enlace:", url); });
+      } else { window.prompt("Copia el enlace:", url); }
+    });
+  });
 })();
