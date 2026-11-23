@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Reemplaza TU-DOMINIO.cl por el dominio real al publicar
+Sitemap: https://TU-DOMINIO.cl/sitemap.xml

@@ -1,0 +1,2 @@
+# GitHub Pages: publica el portal tal cual, sin procesar ni publicar notas internas
+exclude: [CLAUDE.md, README.md, _proyecto]
