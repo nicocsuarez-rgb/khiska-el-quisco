@@ -28,3 +28,4 @@
 | 24/11/2026 | App rehecha en modo presentación con la identidad del portal (sin "prototipo", "ejemplo", "por confirmar" ni Wallet); usa los 7 lugares del portal y un recorrido genérico de 3 pasos (inicio, camino, cierre) sin inventar duraciones ni dificultades | Nicolás | Hecho |
 | 24/11/2026 | El prototipo con modo prueba se conserva en `app/prototipo.html`, oculto: se abre con 3 toques en la flor del cactus del inicio de la app | Nicolás | Hecho |
 | 24/11/2026 | El portal y la app son para todo público: sin segmentar por género ni preferencias | Nicolás | Acordado |
+| 24/11/2026 | App: la barra inferior se reemplaza por un menú flor (capullo flotante abajo a la derecha que se abre y despliega Inicio, Rutas, Mi Khiska, Agenda y Propón); agenda dentro de la app con los 3 meses y "Agregar a mi calendario" (.ics). Calendario de floración: idea pendiente, requiere especies y meses con fuente | Nicolás | Hecho |
