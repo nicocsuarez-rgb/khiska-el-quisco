@@ -42,6 +42,15 @@ Al terminar cada video:
 - En la grilla, pestaña **Producción**, cambia su estado a "Listo" y escribe la ruta del archivo.
 - Suma una línea en `_proyecto/registro-de-decisiones.md` y actualiza la sección Videos de `_proyecto/contexto.md`.
 
+## Si trabajas con esta carpeta en el Mac (sin GitHub)
+
+- Las capturas actuales de la app y del portal ya están en `_proyecto/produccion/capturas/` (celular, 1170×2532).
+  Para escenas que no estén ahí, abre `index.html` o `app/index.html` en el navegador y graba o captura la pantalla.
+  Para "En ruta" y la flor que se abre, usa las ilustraciones `assets/img/flor-capullo.webp`, `flor-parcial.webp` y `flor-abierta.webp`.
+- No hay commit ni push: deja los videos y pósters en `assets/video/` y actualiza `js/videos.js` dentro de esta carpeta.
+  Nicolás los sube después al repositorio.
+- Si no puedes editar el Excel de la grilla, anota los cambios en `_proyecto/produccion/videos/cambios.md`.
+
 ## Cómo trabajamos
 
-Uno a la vez, partiendo por **V01**. Antes de renderizar, muéstrame el guion escena por escena (tiempo, imagen, texto en pantalla y lo que dice la voz) y espera mi visto bueno. Después de renderizar, revisa cuadros del video, dime qué quedó y qué mejorarías, y espera mi visto bueno antes de seguir con el siguiente. Al final haz commit y push.
+Uno a la vez, partiendo por **V01**. Antes de renderizar, muéstrame el guion escena por escena (tiempo, imagen, texto en pantalla y lo que dice la voz) y espera mi visto bueno. Después de renderizar, revisa cuadros del video, dime qué quedó y qué mejorarías, y espera mi visto bueno antes de seguir con el siguiente. Al final, si estás en el repositorio, haz commit y push.
