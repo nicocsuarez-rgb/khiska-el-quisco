@@ -25,3 +25,6 @@
 | 23/11/2026 | Flores parcial y abierta recortadas a su contorno real (tenían un halo que las corría a la izquierda) | Nicolás | Hecho |
 | 23/11/2026 | Entrega 4: sección "Lleva Khiska contigo" con capturas limpias de la app (P1, P2, P7, sin rótulos de ejemplo ni Wallet), QR a la app, botón Compartir y consejo de "Agregar a pantalla de inicio" | Nicolás | Hecho |
 | 23/11/2026 | Pendiente para mañana: limpiar la app (quitar "Prototipo", "Modo prueba", "Ejemplo", "por confirmar", Wallet) para que coincida con las capturas del portal | Nicolás | Pendiente |
+| 24/11/2026 | App rehecha en modo presentación con la identidad del portal (sin "prototipo", "ejemplo", "por confirmar" ni Wallet); usa los 7 lugares del portal y un recorrido genérico de 3 pasos (inicio, camino, cierre) sin inventar duraciones ni dificultades | Nicolás | Hecho |
+| 24/11/2026 | El prototipo con modo prueba se conserva en `app/prototipo.html`, oculto: se abre con 3 toques en la flor del cactus del inicio de la app | Nicolás | Hecho |
+| 24/11/2026 | El portal y la app son para todo público: sin segmentar por género ni preferencias | Nicolás | Acordado |

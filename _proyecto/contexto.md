@@ -46,7 +46,7 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
 1. **Montaje** en GitHub + Claude Code. ✔
 2. **Portal:** ✔ (23/11) entrada por persona ("¿Cómo quieres vivir El Quisco?"), sección de videos **Mira** (`js/videos.js`), lugares, Khiska, Propón un lugar y agenda. El sitio pasa a ser el lugar donde se ve, reproduce, encuentra y redirige a todo el contenido
    (lugares, Khiska, **videos**, agenda, redes). Organizarlo por lo que necesita cada persona.
-3. **App:** integrarla con la identidad del portal, para que se sientan como una sola experiencia.
+3. **App:** ✔ (24/11) rehecha con la identidad del portal: logo que se escribe, cactus Khiska, 7 lugares, recorrido en 3 pasos, flor que se abre con sello y lluvia de flores, Mi Khiska con Pasaporte. El prototipo con modo prueba quedó en `app/prototipo.html` (acceso: 3 toques en la flor del cactus del inicio).
 4. **Pulido para el examen:** modo presentación (ver `CLAUDE.md`).
 5. **Publicación:** GitHub Pages, https://nicocsuarez-rgb.github.io/khiska-el-quisco/ (activo).
 
