@@ -833,3 +833,13 @@ html.lectura-facil .app-promo { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .floracion__barra, .especie { transition: none; animation: none; } }
 #contenido { overflow-x: clip; }
+
+/* Videos: el primero (tráiler) destacado */
+.videos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+.video-card--destacado { grid-column: 1 / -1; max-width: none; }
+.video-card--destacado figcaption strong { font-size: 1.1rem; }
+@media (min-width: 760px) {
+  .videos { grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 1.2rem; align-items: end; }
+  .video-card--destacado { grid-column: auto; }
+}
+@media (max-width: 759px) { .video-card--destacado { max-width: 420px; justify-self: center; width: 100%; } }

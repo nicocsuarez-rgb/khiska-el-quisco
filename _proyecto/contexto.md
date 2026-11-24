@@ -52,8 +52,11 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
 
 ## Videos
 
-- Hay **un video listo**: `assets/video/v00-el-quisco-desde-un-solo-lugar.mp4` (38 s, 1080×1920),
-  doblado por Benjamín con IA.
+- **Videos listos:** `assets/video/v01-trailer.mp4` (V01 tráiler, 35 s, destacado en el portal) y
+  `assets/video/v00-el-quisco-desde-un-solo-lugar.mp4` (38 s, 1080×1920). Ojo: el archivo v00 de la carpeta
+  no trae voz (solo música y oleaje); la voz oficial IA «Sandra» (locución del video de lanzamiento) está en `_proyecto/produccion/videos/voz-oficial/`.
+  **Listos también V07** (`v07-elige-prepara-comienza.mp4`, 27 s) **y V12** (`v12-haz-florecer-tu-khiska.mp4`, 20 s).
+  V01, V07 y V12 usan la voz oficial «Sandra» (frases en `_proyecto/produccion/videos/frases-voz-sandra.md`).
 - Los demás videos de la grilla **no están producidos**. El equipo quiere generarlos **sin grabar**
   (texto, ilustraciones, capturas del portal y la app, voz con IA), como el reel.
 - **Grilla v2 (23/11/2026):** `fuentes/grilla-contenidos.xlsx` con audiencias por persona, destinos del portal/app,

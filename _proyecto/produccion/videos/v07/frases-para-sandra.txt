@@ -1,0 +1,14 @@
+V07 · Elige, prepara y comienza — frases para generar con la voz «Sandra»
+Un archivo por línea, con el número como nombre (01.mp3, 02.mp3, …). Déjalos en:
+_proyecto/produccion/videos/v07/voz-sandra/
+Tono: cercano y claro, como un tutorial tranquilo. Sin música.
+
+01  Elige, prepara y comienza.
+02  Así funciona Khiska, en tres pasos.
+03  Uno. Elige el lugar que te da curiosidad.
+04  Dos. Prepara: revisa su ficha, también imprimible.
+05  Tres. Comienza: tu flor empieza a abrirse.
+06  Una ruta completa, una flor. Haz florecer tu Khiska.
+07  ¿Qué parte de El Quisco quieres descubrir? Explora en el link de la bio.
+
+«Khiska» se pronuncia «Kiska».

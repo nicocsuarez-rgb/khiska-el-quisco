@@ -1,0 +1,21 @@
+V01 · Tráiler — frases para generar con la voz «Sandra»
+Un archivo por línea, con el número como nombre (01.mp3, 02.mp3, …). Déjalos en:
+_proyecto/produccion/videos/v01/voz-sandra/
+Tono: cercano y tranquilo, como el video de lanzamiento. Sin música (la agrego yo).
+
+01  ¿Creías que El Quisco era solo verano?
+02  El Quisco no termina en la playa.
+03  Humedal El Batro.
+04  Quebrada Las Petras.
+05  Mirador Neptuno.
+06  La caleta.
+07  Y desde hoy, una forma nueva de recorrerlo.
+08  Khiska es tu cactus.
+09  Una ruta. Una flor.
+10  Elige un lugar.
+11  Revisa su ficha.
+12  Mira tu cactus en Mi Khiska.
+13  Pincha tu curiosidad.
+14  ¿Qué parte de El Quisco quieres descubrir? Explora en el link de la bio.
+
+Ojo con la pronunciación de «Khiska»: debe sonar «Kiska». Si la herramienta la lee mal, escribe «Kiska».
