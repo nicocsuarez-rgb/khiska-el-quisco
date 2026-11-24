@@ -843,3 +843,14 @@ html.lectura-facil .app-promo { grid-template-columns: 1fr; }
   .video-card--destacado { grid-column: auto; }
 }
 @media (max-width: 759px) { .video-card--destacado { max-width: 420px; justify-self: center; width: 100%; } }
+
+/* Videos: el que miras (mouse, teclado o reproduciendo) toma protagonismo */
+@media (min-width: 760px) and (hover: hover) {
+  .videos { display: flex; align-items: flex-end; justify-content: center; gap: 1.2rem; }
+  .videos .video-card { flex: 1 1 0; min-width: 0; max-width: calc(56vh * 9 / 16); transition: max-width .55s cubic-bezier(.2,.7,.2,1), flex-grow .55s cubic-bezier(.2,.7,.2,1), box-shadow .35s, opacity .35s; }
+  .videos .video-card--destacado { flex-grow: 1.6; max-width: calc(70vh * 9 / 16); }
+  .videos:hover .video-card, .videos:focus-within .video-card, .videos.videos--reproduciendo .video-card { max-width: calc(46vh * 9 / 16); flex-grow: 1; opacity: .85; }
+  .videos .video-card:hover, .videos .video-card:focus-within, .videos .video-card.video-card--activo,
+  .videos:hover .video-card:hover, .videos.videos--reproduciendo .video-card--activo { max-width: calc(72vh * 9 / 16); flex-grow: 3; opacity: 1; transform: none; box-shadow: 0 2px 0 rgba(30,30,30,.03), 0 26px 50px -24px rgba(52,80,31,.55); }
+}
+@media (prefers-reduced-motion: reduce) { .videos .video-card { transition: none; } }

@@ -1,0 +1,251 @@
+{
+ "v01": [
+  {
+   "a": 0,
+   "b": 3.39,
+   "x": 146,
+   "y": 55,
+   "w": 788,
+   "h": 79,
+   "txt": "¿Creías que El Quisco era solo verano?"
+  },
+  {
+   "a": 3.05,
+   "b": 6.42,
+   "x": 204,
+   "y": 55,
+   "w": 672,
+   "h": 79,
+   "txt": "El Quisco no termina en la playa."
+  },
+  {
+   "a": 6.02,
+   "b": 8.28,
+   "x": 346,
+   "y": 55,
+   "w": 388,
+   "h": 79,
+   "txt": "Humedal El Batro"
+  },
+  {
+   "a": 8.02,
+   "b": 10.42,
+   "x": 312,
+   "y": 55,
+   "w": 456,
+   "h": 79,
+   "txt": "Quebrada Las Petras"
+  },
+  {
+   "a": 10.02,
+   "b": 12.24,
+   "x": 351,
+   "y": 55,
+   "w": 378,
+   "h": 79,
+   "txt": "Mirador Neptuno"
+  },
+  {
+   "a": 12.02,
+   "b": 13.88,
+   "x": 425,
+   "y": 55,
+   "w": 230,
+   "h": 79,
+   "txt": "La caleta"
+  },
+  {
+   "a": 13.97,
+   "b": 18.05,
+   "x": 91,
+   "y": 55,
+   "w": 898,
+   "h": 79,
+   "txt": "Y desde hoy, una forma nueva de recorrerlo."
+  },
+  {
+   "a": 17.6,
+   "b": 20.12,
+   "x": 321,
+   "y": 55,
+   "w": 438,
+   "h": 79,
+   "txt": "Khiska es tu cactus."
+  },
+  {
+   "a": 19.8,
+   "b": 22.47,
+   "x": 339,
+   "y": 55,
+   "w": 402,
+   "h": 79,
+   "txt": "Una ruta. Una flor."
+  },
+  {
+   "a": 22.15,
+   "b": 24.15,
+   "x": 381,
+   "y": 56,
+   "w": 318,
+   "h": 78,
+   "txt": "Elige un lugar"
+  },
+  {
+   "a": 23.75,
+   "b": 25.91,
+   "x": 369,
+   "y": 55,
+   "w": 342,
+   "h": 79,
+   "txt": "Revisa su ficha"
+  },
+  {
+   "a": 25.45,
+   "b": 28.49,
+   "x": 253,
+   "y": 55,
+   "w": 574,
+   "h": 79,
+   "txt": "Mira tu cactus en Mi Khiska"
+  },
+  {
+   "a": 27.99,
+   "b": 30.24,
+   "x": 309,
+   "y": 55,
+   "w": 462,
+   "h": 79,
+   "txt": "Pincha tu curiosidad."
+  },
+  {
+   "a": 30.04,
+   "b": 35.43,
+   "x": 64,
+   "y": 55,
+   "w": 952,
+   "h": 129,
+   "txt": "¿Qué parte de El Quisco quieres descubrir? Explora en el link de la bio."
+  }
+ ],
+ "v07": [
+  {
+   "a": 0,
+   "b": 3.02,
+   "x": 262,
+   "y": 95,
+   "w": 556,
+   "h": 79,
+   "txt": "Elige, prepara y comienza."
+  },
+  {
+   "a": 2.85,
+   "b": 6.2,
+   "x": 181,
+   "y": 95,
+   "w": 718,
+   "h": 79,
+   "txt": "Así funciona Khiska, en tres pasos."
+  },
+  {
+   "a": 5.8,
+   "b": 9.08,
+   "x": 137,
+   "y": 95,
+   "w": 806,
+   "h": 79,
+   "txt": "Uno. Elige el lugar que te da curiosidad."
+  },
+  {
+   "a": 9.6,
+   "b": 14.04,
+   "x": 64,
+   "y": 95,
+   "w": 952,
+   "h": 129,
+   "txt": "Dos. Prepara: revisa su ficha, también imprimible."
+  },
+  {
+   "a": 13.8,
+   "b": 17.87,
+   "x": 119,
+   "y": 95,
+   "w": 842,
+   "h": 79,
+   "txt": "Tres. Comienza: tu flor empieza a abrirse."
+  },
+  {
+   "a": 17.85,
+   "b": 22.35,
+   "x": 64,
+   "y": 95,
+   "w": 952,
+   "h": 129,
+   "txt": "Una ruta completa, una flor. Haz florecer tu Khiska."
+  },
+  {
+   "a": 22.05,
+   "b": 26.96,
+   "x": 64,
+   "y": 95,
+   "w": 952,
+   "h": 129,
+   "txt": "¿Qué parte de El Quisco quieres descubrir? Explora en el link de la bio."
+  }
+ ],
+ "v12": [
+  {
+   "a": 0,
+   "b": 2.36,
+   "x": 296,
+   "y": 95,
+   "w": 488,
+   "h": 79,
+   "txt": "Una ruta completada…"
+  },
+  {
+   "a": 2.2,
+   "b": 5.2,
+   "x": 273,
+   "y": 95,
+   "w": 534,
+   "h": 79,
+   "txt": "…hace florecer tu Khiska."
+  },
+  {
+   "a": 6.05,
+   "b": 8.9,
+   "x": 290,
+   "y": 95,
+   "w": 500,
+   "h": 79,
+   "txt": "La flor no es un premio:"
+  },
+  {
+   "a": 8.4,
+   "b": 11.57,
+   "x": 215,
+   "y": 95,
+   "w": 650,
+   "h": 79,
+   "txt": "es la memoria de lo que viviste."
+  },
+  {
+   "a": 11.65,
+   "b": 13.93,
+   "x": 298,
+   "y": 95,
+   "w": 484,
+   "h": 79,
+   "txt": "Guárdala en Mi Khiska."
+  },
+  {
+   "a": 14.95,
+   "b": 20.34,
+   "x": 64,
+   "y": 95,
+   "w": 952,
+   "h": 129,
+   "txt": "¿Qué parte de El Quisco quieres descubrir? Explora en el link de la bio."
+  }
+ ]
+}

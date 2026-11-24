@@ -71,6 +71,19 @@
           (v.poster ? '<img src="' + esc(v.poster) + '" alt="" loading="lazy">' : "") + '<span class="video-card__play" aria-hidden="true">▶</span><span class="visually-hidden">Ver video: ' + esc(v.titulo) + ' (se abre en otra pestaña)</span></a>';
       return '<figure class="' + clase + '">' + medio + '<figcaption><strong>' + esc(v.titulo) + "</strong></figcaption></figure>";
     }).join("");
+    /* El video que se reproduce toma protagonismo y pausa a los demás */
+    listaVideos.querySelectorAll("video").forEach(function (vid) {
+      vid.addEventListener("play", function () {
+        listaVideos.querySelectorAll("video").forEach(function (o) { if (o !== vid) o.pause(); });
+        listaVideos.querySelectorAll(".video-card").forEach(function (c) { c.classList.toggle("video-card--activo", c.contains(vid)); });
+        listaVideos.classList.add("videos--reproduciendo");
+      });
+      vid.addEventListener("pause", function () {
+        vid.closest(".video-card").classList.remove("video-card--activo");
+        var todos = [].every.call(listaVideos.querySelectorAll("video"), function (o) { return o.paused; });
+        if (todos) listaVideos.classList.remove("videos--reproduciendo");
+      });
+    });
   }
 
   /* ---------- Tarjetas: revelar descripción con clic, toque o teclado ---------- */
