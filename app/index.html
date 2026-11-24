@@ -204,6 +204,15 @@ p { margin: 0 0 .8em; }
 .sellos img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 2px 3px rgba(0,0,0,.3)); animation: estampar .5s cubic-bezier(.3,1.4,.5,1) both; }
 @keyframes estampar { from { transform: scale(2) rotate(-20deg); opacity: 0; } }
 
+/* ---------- Agenda ---------- */
+.meses { list-style: none; padding: 0; margin: 16px 0 0; position: relative; }
+.meses::before { content: ""; position: absolute; left: 27px; top: 20px; bottom: 20px; width: 2px; background: linear-gradient(var(--salvia), var(--rosa)); }
+.meses li { position: relative; display: flex; gap: 14px; align-items: flex-start; padding: 8px 0; }
+.meses img { width: 56px; height: 56px; flex: none; object-fit: contain; border-radius: 50%; background: var(--tarjeta); border: 2px solid var(--linea); padding: 6px; }
+.meses b { color: var(--verde-tinta); }
+.meses p { margin: .2em 0 0; }
+.agenda-form { margin-top: 18px; }
+
 /* ---------- P10 Propón ---------- */
 .campo { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
 .campo label { font-weight: 500; color: var(--verde-tinta); font-size: .95rem; }
@@ -213,14 +222,29 @@ p { margin: 0 0 .8em; }
 .error { color: #9b1c1c; font-size: .88rem; margin: 0; min-height: 1.2em; }
 .exito { background: var(--salvia-suave); border: 1px solid var(--salvia); color: var(--verde-tinta); border-radius: var(--radio); padding: 14px; margin-top: 12px; }
 
-/* ---------- Barra de pestañas ---------- */
-.pestanas { display: grid; grid-template-columns: repeat(4, 1fr); padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px)); background: rgba(255,253,248,.96); backdrop-filter: blur(8px); border-top: 1px solid var(--linea); z-index: 5; }
-.pestanas button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border: 0; background: none; cursor: pointer; font-size: .72rem; color: var(--suave); border-radius: 12px; position: relative; }
-.pestanas svg { width: 24px; height: 24px; transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
-.pestanas button[aria-current="page"] { color: var(--verde-tinta); font-weight: 600; }
-.pestanas button[aria-current="page"] svg { transform: translateY(-2px); color: var(--verde); }
-.pestanas button[aria-current="page"]::before { content: ""; position: absolute; top: -6px; width: 26px; height: 3px; border-radius: 2px; background: var(--rosa); }
-.aviso { position: absolute; left: 50%; bottom: 84px; transform: translateX(-50%); z-index: 30; max-width: 88%; padding: .7em 1.1em; border-radius: 14px; background: var(--verde-tinta); color: #fff; font-size: .9rem; text-align: center; box-shadow: var(--sombra); animation: entrar .3s both; }
+/* ---------- Menú flor: un capullo que se abre ---------- */
+.pantalla { padding-bottom: 110px; }
+.menu-velo { position: absolute; inset: 0; z-index: 14; background: rgba(250,247,238,.72); backdrop-filter: blur(3px); animation: entrar .25s both; }
+.menu-flor { position: absolute; right: 16px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 15; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; pointer-events: none; }
+.menu-flor__boton { pointer-events: auto; position: relative; width: 66px; height: 66px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; background: radial-gradient(circle at 50% 40%, #fff, var(--salvia-suave)); box-shadow: 0 12px 26px -10px rgba(38,59,23,.55), 0 0 0 3px rgba(255,253,248,.9); transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+.menu-flor__boton:active { transform: scale(.92); }
+.menu-flor__boton img { position: absolute; inset: 8px; width: 50px; height: 50px; object-fit: contain; transition: opacity .35s, transform .6s cubic-bezier(.3,1.5,.5,1); }
+.menu-flor__abierta { opacity: 0; transform: scale(.4) rotate(-60deg); }
+.menu-flor__boton[aria-expanded="true"] .menu-flor__capullo { opacity: 0; transform: scale(1.3) rotate(40deg); }
+.menu-flor__boton[aria-expanded="true"] .menu-flor__abierta { opacity: 1; transform: rotate(0); }
+.menu-flor__boton[aria-expanded="false"] .menu-flor__capullo { animation: latir 3.4s ease-in-out infinite; }
+.menu-flor__cuenta { position: absolute; top: -2px; right: -2px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px; background: var(--rosa-tinta); color: #fff; font-size: .75rem; font-weight: 700; display: grid; place-items: center; box-shadow: 0 0 0 2px var(--papel); }
+.menu-flor__lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; pointer-events: none; visibility: hidden; transition: visibility 0s .4s; }
+.menu-flor__lista li { opacity: 0; transform: translateY(24px) scale(.6); transform-origin: right bottom; transition: opacity .25s, transform .35s cubic-bezier(.3,1.5,.5,1); transition-delay: calc(var(--i) * 40ms); }
+.menu-flor--abierto .menu-flor__lista { pointer-events: auto; visibility: visible; transition: none; }
+.menu-flor--abierto .menu-flor__lista li { opacity: 1; transform: none; }
+.menu-flor__lista button { display: flex; align-items: center; gap: 10px; border: 0; background: none; padding: 0; cursor: pointer; font-weight: 500; color: var(--verde-tinta); }
+.menu-flor__texto { padding: .4em .9em; border-radius: 999px; background: var(--tarjeta); box-shadow: var(--sombra); font-size: .95rem; }
+.menu-flor__icono { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; background: var(--c); color: #fff; box-shadow: 0 8px 18px -8px var(--c); margin-right: 8px; transition: transform .25s cubic-bezier(.3,1.6,.5,1); }
+.menu-flor__icono svg { width: 24px; height: 24px; }
+.menu-flor__lista button:hover .menu-flor__icono, .menu-flor__lista button:focus-visible .menu-flor__icono { transform: scale(1.1) rotate(-6deg); }
+.menu-flor__lista button[aria-current="page"] .menu-flor__texto { background: var(--verde-tinta); color: #fff; }
+.aviso { position: absolute; left: 50%; bottom: 100px; transform: translateX(-50%); z-index: 30; max-width: 88%; padding: .7em 1.1em; border-radius: 14px; background: var(--verde-tinta); color: #fff; font-size: .9rem; text-align: center; box-shadow: var(--sombra); animation: entrar .3s both; }
 
 /* ---------- Lluvia de flores ---------- */
 .lluvia { position: absolute; inset: 0; z-index: 25; pointer-events: none; overflow: hidden; }
@@ -254,11 +278,20 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
       <button class="icono" id="facil" type="button" aria-pressed="false" aria-label="Lectura fácil">Aa</button>
     </header>
     <div class="pantallas" id="pantallas" aria-live="polite"></div>
-    <nav class="pestanas" aria-label="Secciones de la app">
-      <button type="button" data-ir="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Inicio</button>
-      <button type="button" data-ir="rutas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Rutas</button>
-      <button type="button" data-ir="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V8M12 12H8a2 2 0 0 1-2-2V7M12 14h4a2 2 0 0 0 2-2V9"/><circle cx="12" cy="5" r="2"/></svg>Mi Khiska</button>
-      <button type="button" data-ir="propon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>Propón</button>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav class="menu-flor" aria-label="Menú de la app">
+      <ul class="menu-flor__lista" id="menu-lista">
+        <li style="--i:4;--c:#55763a"><button type="button" data-ir="inicio"><span class="menu-flor__texto">Inicio</span><span class="menu-flor__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span></button></li>
+        <li style="--i:3;--c:#0087bd"><button type="button" data-ir="rutas"><span class="menu-flor__texto">Rutas</span><span class="menu-flor__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span></button></li>
+        <li style="--i:2;--c:#c9566a"><button type="button" data-ir="mi"><span class="menu-flor__texto">Mi Khiska</span><span class="menu-flor__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V8M12 12H8a2 2 0 0 1-2-2V7M12 14h4a2 2 0 0 0 2-2V9"/><circle cx="12" cy="5" r="2"/></svg></span></button></li>
+        <li style="--i:1;--c:#c27f00"><button type="button" data-ir="agenda"><span class="menu-flor__texto">Agenda</span><span class="menu-flor__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span></button></li>
+        <li style="--i:0;--c:#6f8f2f"><button type="button" data-ir="propon"><span class="menu-flor__texto">Propón un lugar</span><span class="menu-flor__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button></li>
+      </ul>
+      <button class="menu-flor__boton" id="menu-boton" type="button" aria-expanded="false" aria-controls="menu-lista" aria-label="Abrir menú">
+        <img class="menu-flor__capullo" src="../assets/img/flor-capullo.webp" alt="" width="360" height="404">
+        <img class="menu-flor__abierta" src="../assets/img/flor-abierta.webp" alt="" width="280" height="255">
+        <span class="menu-flor__cuenta" id="menu-cuenta" hidden></span>
+      </button>
     </nav>
   </main>
   <p class="credito">Proyecto académico de Agencia C.C.C. · Duoc UC · <a href="../index.html">Volver al portal</a></p>
@@ -423,8 +456,20 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
       (s ? '<p class="suave">Te quedan ' + pend.length + (pend.length === 1 ? " ruta" : " rutas") + ' por descubrir. Esta es la que más se parece a lo que te da curiosidad:</p>' +
         '<div class="rutas"><button class="ruta" type="button" data-ruta="' + s.id + '"><img class="ruta__img" src="' + IMG + 'territorio-' + s.id + '-card.webp" alt=""><span class="ruta__etiqueta">' + esc(s.etiqueta) + '</span><span class="ruta__flor"><img src="' + flor(estado(s.id)) + '" alt=""></span><span class="ruta__cuerpo"><h3>' + esc(s.nombre) + '</h3><p>' + esc(s.bajada) + '</p></span></button></div>'
         : '<p class="suave">Recorriste las siete rutas. Propón un lugar nuevo para que el jardín siga creciendo.</p>') +
-      '<div class="caja"><h3>Cada mes, algo distinto</h3><p class="suave chico" style="margin:0">Revisa la agenda del portal para planear tu vuelta fuera del verano.</p></div>' +
-      '<div class="acciones"><a class="btn btn--bloque" href="../index.html#agenda">Ver la agenda</a><button class="btn btn--sec btn--bloque" type="button" data-ir="propon">Propón un lugar</button></div></section>';
+      '<div class="caja"><h3>Cada mes, algo distinto</h3><p class="suave chico" style="margin:0">Revisa la agenda y suma tu próxima visita a tu calendario.</p></div>' +
+      '<div class="acciones"><button class="btn btn--bloque" type="button" data-ir="agenda">Ver la agenda</button><button class="btn btn--sec btn--bloque" type="button" data-ir="propon">Propón un lugar</button></div></section>';
+  } };
+  V.agenda = { titulo: "Agenda", html: function () {
+    var MESES = [["Julio", "Despertar", "El Quisco no termina en la playa. Un mes para mirar la comuna con otros ojos y elegir qué descubrir primero.", "capullo"],
+      ["Agosto", "Recorrer", "Elige, prepara y comienza: el mes para salir a hacer tu primera ruta.", "parcial"],
+      ["Septiembre", "Florecer y volver", "Con la primavera, una razón para volver: tu cactus todavía tiene capullos por abrir.", "abierta"]];
+    var hoy = new Date().toISOString().slice(0, 10);
+    return '<section class="pantalla"><span class="rotulo rotulo--rosa">Razones para volver</span><h2>Tres meses para descubrir El Quisco fuera del verano</h2>' +
+      '<ol class="meses cascada">' + MESES.map(function (m) { return '<li><img src="' + flor(m[3]) + '" alt=""><div><b>' + m[0] + ' · ' + m[1] + '</b><p class="suave chico">' + m[2] + '</p></div></li>'; }).join("") + '</ol>' +
+      '<div class="caja agenda-form"><h3>Agenda tu próxima visita</h3><p class="suave chico">Elige un lugar y un día. Lo sumamos a tu calendario.</p>' +
+      '<div class="campo"><label for="lugar-visita">Lugar</label><select id="lugar-visita">' + ordenadas().map(function (r) { return '<option value="' + r.id + '"' + (r.id === E.ruta ? " selected" : "") + '>' + esc(r.nombre) + (estado(r.id) === "abierta" ? " · flor abierta" : "") + '</option>'; }).join("") + '</select></div>' +
+      '<div class="campo"><label for="fecha">Día</label><input id="fecha" type="date" min="' + hoy + '"></div>' +
+      '<p class="error" id="error-agenda" aria-live="polite"></p><button class="btn btn--bloque" type="button" id="agendar">Agregar a mi calendario</button></div></section>';
   } };
   V.propon = { titulo: "Propón un lugar", html: function () {
     return '<section class="pantalla"><span class="rotulo rotulo--rosa">Cada ruta tiene algo que contar</span><h2>¿Qué lugar de El Quisco debería tener su flor?</h2>' +
@@ -444,8 +489,10 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
     cont.innerHTML = V[id].html();
     $("#titulo").textContent = V[id].titulo;
     $("#volver").classList.toggle("icono--fantasma", id === "inicio");
-    document.querySelectorAll(".pestanas button").forEach(function (b) {
-      var activo = b.getAttribute("data-ir") === id || (id === "ficha" || id === "enruta" ? b.getAttribute("data-ir") === "rutas" : false) || ((id === "florece" || id === "proxima") && b.getAttribute("data-ir") === "mi");
+    menu(false);
+    var n = hechas(), cuenta = $("#menu-cuenta"); cuenta.hidden = !n; cuenta.textContent = n;
+    document.querySelectorAll(".menu-flor__lista button").forEach(function (b) {
+      var activo = b.getAttribute("data-ir") === id || (id === "ficha" || id === "enruta" || id === "intereses" ? b.getAttribute("data-ir") === "rutas" : false) || ((id === "florece" || id === "proxima") && b.getAttribute("data-ir") === "mi");
       if (activo) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
     cont.scrollTop = 0;
@@ -473,6 +520,35 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
     }, quieto ? 400 : 2100);
   }
 
+  /* ---------- Menú flor ---------- */
+  function menu(abrir) {
+    var boton = $("#menu-boton"); if (!boton) return;
+    $(".menu-flor").classList.toggle("menu-flor--abierto", abrir);
+    $("#menu-velo").hidden = !abrir;
+    boton.setAttribute("aria-expanded", String(abrir));
+    boton.setAttribute("aria-label", abrir ? "Cerrar menú" : "Abrir menú");
+    document.querySelectorAll(".menu-flor__lista button").forEach(function (b) { b.tabIndex = abrir ? 0 : -1; });
+  }
+  $("#menu-velo").addEventListener("click", function () { menu(false); });
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && $("#menu-boton").getAttribute("aria-expanded") === "true") { menu(false); $("#menu-boton").focus(); } });
+
+  /* ---------- Agendar una visita: archivo de calendario (.ics) ---------- */
+  function agendar() {
+    var f = $("#fecha").value, r = ruta($("#lugar-visita").value);
+    if (!f) { $("#error-agenda").textContent = "Elige una fecha para tu visita."; return; }
+    $("#error-agenda").textContent = "";
+    var d = f.replace(/-/g, ""), sig = new Date(f + "T12:00:00"); sig.setDate(sig.getDate() + 1);
+    var d2 = sig.toISOString().slice(0, 10).replace(/-/g, "");
+    var ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Khiska//El Quisco//ES", "BEGIN:VEVENT",
+      "UID:" + Date.now() + "@khiska", "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z",
+      "DTSTART;VALUE=DATE:" + d, "DTEND;VALUE=DATE:" + d2,
+      "SUMMARY:Khiska · " + r.nombre, "DESCRIPTION:" + r.bajada + " Una ruta, una flor.", "LOCATION:" + r.nombre + ", El Quisco", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
+    a.download = "khiska-" + r.id + ".ics"; document.body.appendChild(a); a.click(); a.remove();
+    aviso("Abre el archivo para sumarlo a tu calendario");
+  }
+
   /* ---------- Eventos ---------- */
   var toques = 0, reloj = null;
   document.addEventListener("click", function (ev) {
@@ -483,6 +559,8 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
       if (toques >= 3) { toques = 0; window.location.href = "prototipo.html"; }
       return;
     }
+    if (t.id === "menu-boton") { menu(t.getAttribute("aria-expanded") !== "true"); return; }
+    if (t.id === "agendar") { agendar(); return; }
     if (t.hasAttribute("data-ir")) { ir(t.getAttribute("data-ir")); return; }
     if (t.hasAttribute("data-ruta")) { E.ruta = t.getAttribute("data-ruta"); guardar(); ir("ficha"); return; }
     if (t.hasAttribute("data-interes")) {
