@@ -794,3 +794,42 @@ html.lectura-facil .muestra-flor .estado { opacity: 1; }
 html.lectura-facil .app-telefonos { display: none; }
 html.lectura-facil .app-promo { grid-template-columns: 1fr; }
 @media (prefers-reduced-motion: reduce) { .telefono { animation: none; } }
+
+/* ==========================================================================
+   Calendario de floración
+   ========================================================================== */
+.floracion__grafico { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; align-items: end; height: 190px; margin: 0 0 .4rem; padding: 0; list-style: none; border-bottom: 1px solid var(--linea); }
+.floracion__mes { height: 100%; }
+.floracion__mes button {
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
+  width: 100%; height: 100%; padding: 0 2px; border: 0; background: none; cursor: pointer; border-radius: 6px 6px 0 0;
+}
+.floracion__mes button:hover { background: var(--salvia-suave); }
+.floracion__barra { display: block; width: min(100%, 34px); min-height: 2px; height: var(--h); background: var(--verde); border-radius: 4px 4px 0 0; transition: height .8s cubic-bezier(.2,.7,.2,1), background-color .2s; }
+.floracion__valor { font-size: .78rem; font-weight: 600; color: var(--verde-tinta); margin-bottom: 3px; opacity: 0; transition: opacity .2s; }
+.floracion__mes button:hover .floracion__valor, .floracion__mes button[aria-pressed="true"] .floracion__valor { opacity: 1; }
+.floracion__mes button[aria-pressed="true"] .floracion__barra { background: var(--verde-tinta); }
+.floracion__etiquetas { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; margin: 0 0 1.5rem; padding: 0; list-style: none; font-size: .78rem; color: var(--texto-suave); text-align: center; }
+.floracion__etiquetas li.activo { color: var(--verde-tinta); font-weight: 700; box-shadow: inset 0 3px 0 var(--rosa); padding-top: 3px; }
+.floracion__titular { font-size: clamp(1.2rem, 2.6vw, 1.5rem); margin-bottom: 1rem; }
+.floracion__lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.especie { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1rem 1.1rem; box-shadow: var(--sombra); display: flex; flex-direction: column; gap: .45rem; animation: entrar .5s cubic-bezier(.2,.7,.2,1) both; }
+.especie h3 { margin: 0; font-size: 1.08rem; }
+.especie__cientifico { margin: 0; font-style: italic; font-size: .88rem; color: var(--texto-suave); }
+.especie__etiquetas { display: flex; flex-wrap: wrap; gap: .35rem; }
+.especie__etiquetas span { font-size: .72rem; font-weight: 600; letter-spacing: .04em; padding: .15em .6em; border-radius: 999px; background: var(--salvia-suave); color: var(--verde-tinta); }
+.especie__etiquetas .amenaza { background: #fde8eb; color: var(--rosa-tinta); }
+.especie__meses { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; margin-top: .2rem; }
+.especie__meses i { height: 8px; border-radius: 2px; background: var(--linea); }
+.especie__meses i.si { background: var(--verde); }
+.especie__meses i.hoy { outline: 2px solid var(--rosa); outline-offset: 1px; }
+.especie__nota { margin: 0; font-size: .88rem; color: var(--verde-tinta); }
+.especie__fuente { margin: auto 0 0; font-size: .8rem; color: var(--texto-suave); }
+.floracion__vacio { padding: 1.2rem; border-radius: var(--radio); background: var(--papel-2); }
+.floracion__aviso { margin-top: 1.5rem; font-size: .88rem; color: var(--texto-suave); max-width: 80ch; }
+@media (max-width: 600px) {
+  .floracion__grafico { height: 150px; }
+  .floracion__etiquetas { font-size: .68rem; }
+}
+@media (prefers-reduced-motion: reduce) { .floracion__barra, .especie { transition: none; animation: none; } }
+#contenido { overflow-x: clip; }

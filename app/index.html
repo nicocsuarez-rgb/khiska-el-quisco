@@ -212,6 +212,18 @@ p { margin: 0 0 .8em; }
 .meses b { color: var(--verde-tinta); }
 .meses p { margin: .2em 0 0; }
 .agenda-form { margin-top: 18px; }
+.flora { margin-top: 22px; }
+.flora__titulo { font-size: 1.25rem; }
+.flora__meses .filtro b { font-weight: 700; color: var(--verde); margin-left: 2px; }
+.flora__meses .filtro[aria-pressed="true"] b { color: var(--amarillo); }
+.flora__lista { list-style: none; margin: 8px 0 12px; padding: 0; display: grid; gap: 8px; }
+.flora__lista li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 14px; background: var(--tarjeta); border: 1px solid var(--linea); animation: entrar .4s both; }
+.flora__lista img { width: 30px; height: 30px; object-fit: contain; flex: none; margin-top: 2px; }
+.flora__lista b { color: var(--verde-tinta); }
+.flora__lista i { display: block; color: var(--suave); font-size: .85rem; }
+.flora__lista p { margin: 4px 0 0; font-size: .85rem; color: var(--verde-tinta); }
+.flora__lista a { display: block; margin-top: 4px; font-size: .78rem; color: var(--suave); }
+.flora__amenaza { display: inline-block; font-size: .68rem; font-weight: 600; padding: .1em .5em; border-radius: 999px; background: #fde8eb; color: var(--rosa-tinta); }
 
 /* ---------- P10 Propón ---------- */
 .campo { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
@@ -297,6 +309,7 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
   <p class="credito">Proyecto académico de Agencia C.C.C. · Duoc UC · <a href="../index.html">Volver al portal</a></p>
 </div>
 
+<script src="../js/floracion.js"></script>
 <script>
 (function () {
   "use strict";
@@ -469,8 +482,18 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
       '<div class="caja agenda-form"><h3>Agenda tu próxima visita</h3><p class="suave chico">Elige un lugar y un día. Lo sumamos a tu calendario.</p>' +
       '<div class="campo"><label for="lugar-visita">Lugar</label><select id="lugar-visita">' + ordenadas().map(function (r) { return '<option value="' + r.id + '"' + (r.id === E.ruta ? " selected" : "") + '>' + esc(r.nombre) + (estado(r.id) === "abierta" ? " · flor abierta" : "") + '</option>'; }).join("") + '</select></div>' +
       '<div class="campo"><label for="fecha">Día</label><input id="fecha" type="date" min="' + hoy + '"></div>' +
-      '<p class="error" id="error-agenda" aria-live="polite"></p><button class="btn btn--bloque" type="button" id="agendar">Agregar a mi calendario</button></div></section>';
+      '<p class="error" id="error-agenda" aria-live="polite"></p><button class="btn btn--bloque" type="button" id="agendar">Agregar a mi calendario</button></div>' + floracionHTML() + '</section>';
   } };
+  var mesApp = new Date().getMonth();
+  function floracionHTML() {
+    var F = window.KHISKA_FLORACION; if (!F) return "";
+    var lista = F.especies.filter(function (e) { return e.m[mesApp]; });
+    return '<div class="flora" id="flora"><span class="rotulo">Calendario de floración</span><h3 class="flora__titulo">¿Qué florece en ' + F.meses[mesApp].toLowerCase() + '?</h3>' +
+      '<div class="filtros flora__meses" role="group" aria-label="Elige un mes">' + F.meses.map(function (m, i) { var c = F.especies.filter(function (e) { return e.m[i]; }).length; return '<button class="filtro" type="button" data-mes="' + i + '" aria-pressed="' + (i === mesApp) + '" aria-label="' + m + ': ' + c + ' especies en flor">' + m.slice(0, 3) + ' <b>' + c + '</b></button>'; }).join("") + '</div>' +
+      (lista.length ? '<ul class="flora__lista">' + lista.map(function (e) { return '<li><img src="' + flor("abierta") + '" alt=""><div><b>' + esc(e.n) + '</b> <i>' + esc(e.c) + '</i>' + (e.k && e.k !== "Preocupación menor" ? ' <span class="flora__amenaza">' + esc(e.k) + '</span>' : "") + (e.t ? '<p>' + esc(e.t) + '</p>' : "") + '<a href="' + esc(e.u) + '" target="_blank" rel="noopener">Fuente: ' + esc(e.f) + '</a></div></li>'; }).join("") + '</ul>'
+        : '<p class="suave chico">En ' + F.meses[mesApp].toLowerCase() + ' casi nada florece. Entre septiembre y noviembre está la mayor floración.</p>') +
+      '<p class="suave chico">' + esc(F.aviso) + ' <b>Mirar, no cortar.</b></p></div>';
+  }
   V.propon = { titulo: "Propón un lugar", html: function () {
     return '<section class="pantalla"><span class="rotulo rotulo--rosa">Cada ruta tiene algo que contar</span><h2>¿Qué lugar de El Quisco debería tener su flor?</h2>' +
       '<p class="suave">Cuéntanos qué se ve, qué se escucha o qué historia tiene.</p>' +
@@ -561,6 +584,7 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
     }
     if (t.id === "menu-boton") { menu(t.getAttribute("aria-expanded") !== "true"); return; }
     if (t.id === "agendar") { agendar(); return; }
+    if (t.hasAttribute("data-mes")) { mesApp = +t.getAttribute("data-mes"); var fl = $("#flora"); fl.outerHTML = floracionHTML(); var b = $('[data-mes="' + mesApp + '"]'); if (b) { b.focus(); b.scrollIntoView({ inline: "center", block: "nearest" }); } return; }
     if (t.hasAttribute("data-ir")) { ir(t.getAttribute("data-ir")); return; }
     if (t.hasAttribute("data-ruta")) { E.ruta = t.getAttribute("data-ruta"); guardar(); ir("ficha"); return; }
     if (t.hasAttribute("data-interes")) {

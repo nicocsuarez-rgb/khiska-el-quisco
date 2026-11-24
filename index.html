@@ -382,8 +382,22 @@
           <summary><img src="assets/icons/icono-calendario.webp" alt="" width="32" height="32">Septiembre · Florecer y volver</summary>
           <div class="mes__cuerpo"><p>Con la primavera, una razón para volver: tu cactus todavía tiene capullos por abrir.</p></div>
         </details></div>
+      <p class="mt-2"><a class="btn btn--secundario" href="#floracion">Mira qué florece cada mes</a></p>
     </div>
   </section>
+
+  <section class="seccion" id="floracion" aria-labelledby="titulo-floracion">
+    <div class="contenedor">
+      <div class="seccion__cabecera">
+        <span class="rotulo">Calendario de floración</span>
+        <h2 id="titulo-floracion">¿Qué florece en El Quisco?</h2>
+        <p>Flora nativa registrada en El Quisco y los meses en que suele florecer. Elige un mes y planea tu visita.</p>
+      </div>
+      <div class="floracion" data-floracion></div>
+      <p class="floracion__aviso" data-floracion-aviso></p>
+    </div>
+  </section>
+
 </main>
 <div class="franja-color decorativa" aria-hidden="true"></div>
 <footer class="pie">
@@ -415,6 +429,7 @@
   </div>
 </footer>
 <script src="js/videos.js" defer></script>
+<script src="js/floracion.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>
