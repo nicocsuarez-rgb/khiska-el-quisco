@@ -16,7 +16,8 @@ Las fuentes completas del proyecto están en `_proyecto/fuentes/`.
 |---|---|---|
 | `index.html`, `rutas.html`, `experiencia-khiska.html`, `territorios/`, `privacidad.html` | **Portal** para el visitante | Sí (GitHub Pages) |
 | `css/styles.css`, `js/main.js`, `assets/` | Estilos, interacciones, ilustraciones, íconos y fuentes Rubik | Sí |
-| `app/index.html` | **App Khiska** (Mi Khiska, pantallas P1–P10). Un solo archivo con imágenes incrustadas | Sí |
+| `app/index.html` | **App Khiska** (Inicio, intereses, rutas, ficha, en ruta, ¡florece!, Mi Khiska, próxima experiencia, propón). Usa los recursos de `assets/` | Sí |
+| `app/prototipo.html` | Prototipo anterior con **modo prueba** (equipo). Se abre tocando 3 veces la flor del cactus en el inicio de la app. No se enlaza | Sí, oculto |
 | `_proyecto/dossier.html` | **Dossier** de respaldo (datos con fuente, journey, personas, aliados, riesgos). **Privado del equipo** | **No.** Nunca enlazarlo ni publicarlo desde el portal ni la app |
 | `assets/video/` | Videos de la campaña (reel manifiesto) | Sí |
 | `_proyecto/` | Contexto, fuentes (propuesta, grilla, documento central, brandbook), registro de decisiones, guía de lenguaje, herramientas | No (Jekyll ignora carpetas con `_`) |
