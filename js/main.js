@@ -445,4 +445,39 @@
       } else { window.prompt("Copia el enlace:", url); }
     });
   });
+
+  /* ---------- Calendario de floración (js/floracion.js) ---------- */
+  var cajaFlor = document.querySelector("[data-floracion]");
+  var F = window.KHISKA_FLORACION;
+  if (cajaFlor && F) {
+    var escF = function (t) { return String(t || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+    var cuentas = F.meses.map(function (_, i) { return F.especies.filter(function (e) { return e.m[i]; }).length; });
+    var maxF = Math.max.apply(null, cuentas);
+    var corto = function (m) { return m.slice(0, 3); };
+    var mesF = new Date().getMonth();
+    var pintarF = function (i) {
+      mesF = i;
+      cajaFlor.querySelectorAll(".floracion__mes button").forEach(function (b, k) { b.setAttribute("aria-pressed", String(k === i)); });
+      cajaFlor.querySelectorAll(".floracion__etiquetas li").forEach(function (l, k) { l.classList.toggle("activo", k === i); });
+      var lista = F.especies.filter(function (e) { return e.m[i]; });
+      var t = cajaFlor.querySelector(".floracion__titular");
+      t.textContent = lista.length ? "En " + F.meses[i].toLowerCase() + ", " + lista.length + (lista.length === 1 ? " especie suele estar en flor" : " especies suelen estar en flor") : "En " + F.meses[i].toLowerCase() + " casi nada florece";
+      cajaFlor.querySelector(".floracion__lista").innerHTML = lista.length ? lista.map(function (e, n) {
+        var et = '<span>' + escF(e.o) + '</span>' + (e.k && e.k !== "Preocupación menor" ? '<span class="amenaza">' + escF(e.k) + '</span>' : "");
+        return '<li class="especie" style="animation-delay:' + Math.min(n, 8) * 40 + 'ms"><h3>' + escF(e.n) + '</h3><p class="especie__cientifico">' + escF(e.c) + '</p>' +
+          '<div class="especie__etiquetas">' + et + '</div>' +
+          '<div class="especie__meses" role="img" aria-label="Florece en ' + F.meses.filter(function (_, k) { return e.m[k]; }).join(", ").toLowerCase() + '">' + e.m.map(function (v, k) { return '<i class="' + (v ? "si" : "") + (k === i ? " hoy" : "") + '"></i>'; }).join("") + '</div>' +
+          (e.t ? '<p class="especie__nota">' + escF(e.t) + '</p>' : "") +
+          '<p class="especie__fuente">Fuente: <a href="' + escF(e.u) + '" target="_blank" rel="noopener">' + escF(e.f) + '<span class="visually-hidden"> (se abre en otra pestaña)</span></a></p></li>';
+      }).join("") : '<li class="floracion__vacio">Ninguna especie de esta lista florece en ' + F.meses[i].toLowerCase() + '. Desde junio vuelven las primeras flores, y entre septiembre y noviembre está la mayor floración.</li>';
+    };
+    cajaFlor.innerHTML = '<ul class="floracion__grafico" aria-label="Especies en flor por mes. Elige un mes para ver cuáles.">' +
+      cuentas.map(function (c, i) { return '<li class="floracion__mes"><button type="button" aria-pressed="false" aria-label="' + F.meses[i] + ': ' + c + (c === 1 ? " especie" : " especies") + ' en flor"><span class="floracion__valor">' + c + '</span><span class="floracion__barra" style="--h:' + (maxF ? c / maxF * 100 : 0) + '%"></span></button></li>'; }).join("") +
+      '</ul><ul class="floracion__etiquetas" aria-hidden="true">' + F.meses.map(function (m) { return "<li>" + corto(m) + "</li>"; }).join("") + '</ul>' +
+      '<h3 class="floracion__titular" aria-live="polite"></h3><ul class="floracion__lista"></ul>';
+    cajaFlor.querySelectorAll(".floracion__mes button").forEach(function (b, i) { b.addEventListener("click", function () { pintarF(i); }); });
+    pintarF(mesF);
+    var avisoF = document.querySelector("[data-floracion-aviso]");
+    if (avisoF) avisoF.innerHTML = escF(F.aviso) + ' Presencia en El Quisco: <a href="' + escF(F.presencia.url) + '" target="_blank" rel="noopener">' + escF(F.presencia.texto) + '<span class="visually-hidden"> (se abre en otra pestaña)</span></a>. <strong>Mirar, no cortar:</strong> varias de estas especies tienen categoría de conservación; disfrútalas donde crecen.';
+  }
 })();
