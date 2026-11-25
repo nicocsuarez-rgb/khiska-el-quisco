@@ -32,7 +32,7 @@ El informe de Medios usó segmentos y el de estrategia usó personas. Son los mi
 |---|---|---|---|
 | **1. La espina** | **Paraderos y Metro sonoros** (Santiago y Valparaíso): mupi con el sonido real de El Quisco contra el ruido de la ciudad + QR | Reels/TikTok (V01 tráiler, V00), landing **"Escucha El Quisco"** a la que lleva el QR del paradero | **Paisaje sonoro**: mar en las rocas, aves de quebrada y humedal, brisa |
 | **2. El camino** | Señalética con QR en los hitos, ficha imprimible, Pasaporte de papel, Punto Khiska | Portal (lugares y fichas), app: rutas, ficha, en ruta | **Relatos en voz local**: pescadores de la caleta, vecinos y oficios, con transcripción |
-| **3. La flor** | Sello en el Pasaporte, **cartel fotográfico con RA** (cactus con una flor por ruta completada) | App: la flor se abre, Mi Khiska, próxima experiencia, agenda | **Sonido de la flor al abrirse** (con opción de silenciarlo) |
+| **3. La flor** | Sello en el Pasaporte, **cartel fotográfico con RA junto a las letras de El Quisco**: el QR abre la cámara en el navegador y detrás de las letras aparecen cactus con una flor por ruta completada y capullos por las que faltan | App: la flor se abre, Mi Khiska, próxima experiencia, agenda | **Sonido de la flor al abrirse** (con opción de silenciarlo) |
 
 Reglas que no cambian: una flor = una ruta completa · escanear un QR acompaña, no completa · sin rankings · sin registro para consultar · beneficios y comercios solo con acuerdo escrito.
 
@@ -85,3 +85,7 @@ Instalación, permisos y estructuras: aporte en especie del municipio.
 - "Descarga o registro inicial en el Pasaporte" → **sin descarga ni registro para consultar rutas**.
 - Agregar la **capa sonora** a toda la arquitectura (no solo paraderos): relatos en hitos y sonido de la flor.
 - Etiquetar cada soporte con su **acto** (espina, camino, flor).
+
+## 8. Bocetos originales
+
+Los dibujos a mano del equipo (portada con "Sácate la espina", cactus donde cada flor es una ruta, agenda de eventos) están en `_proyecto/entregas/ev3-innovacion/bocetos/`. Son la evidencia de origen del diseño del portal y la app.
