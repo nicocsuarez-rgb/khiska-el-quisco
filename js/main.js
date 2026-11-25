@@ -357,7 +357,7 @@
     var grupos = [
       [".personas-grid > *, .grid-tarjetas > *, .videos > *, .estados > *, .agenda > *, .pie__grid > *", ""],
       [".pasos > li, .formulario > .campo, .formulario > .acciones", "izq"],
-      [".seccion__cabecera, .cabecera-pagina > *, .ficha-hero > *, .ficha-cuerpo > *, .curiosidad > *, .comunidad > *, .pasaporte > *, .seccion > .contenedor > .aviso", ""],
+      [".acto__fila, .seccion__cabecera, .cabecera-pagina > *, .ficha-hero > *, .ficha-cuerpo > *, .curiosidad > *, .comunidad > *, .pasaporte > *, .seccion > .contenedor > .aviso", ""],
       [".khiska__ilustracion, .ficha-hero__media, .propon__img, .estado-form, .app-telefonos, .muestra-flor", "zoom"],
       [".app-promo__lista > li", "izq"],
       [".khiska > div:not(.khiska__ilustracion)", "der"]

@@ -11,6 +11,7 @@
 <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
 <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
 <link rel="preload" as="image" href="../assets/img/logo-el-quisco.webp">
+<link rel="stylesheet" href="../css/escucha.css">
 <style>
 @font-face { font-family: "Rubik"; src: url("../assets/fonts/rubik-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Rubik"; src: url("../assets/fonts/rubik-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
@@ -62,6 +63,21 @@ p { margin: 0 0 .8em; }
 /* ---------- Barra superior ---------- */
 .barra { display: flex; align-items: center; gap: 8px; padding: calc(10px + env(safe-area-inset-top, 0px)) 14px 10px; background: rgba(250,247,238,.92); backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color .3s; z-index: 5; }
 .barra--borde { border-bottom-color: var(--linea); }
+.icono .mudo { display: none; }
+#sonido[aria-pressed="false"] .onda { display: none; }
+#sonido[aria-pressed="false"] .mudo { display: inline; }
+#sonido[aria-pressed="true"] { background: var(--tarjeta); color: var(--verde-tinta); border-color: var(--linea); }
+.acto-app { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0; padding: 4px 12px 6px; font-family: var(--mono); font-size: .68rem; letter-spacing: .03em; color: var(--verde-tinta); background: rgba(250,247,238,.92); border-bottom: 1px solid var(--linea); z-index: 5; }
+.acto-app img { width: 22px; height: 22px; object-fit: contain; }
+.acto-app[data-acto="2"] { color: var(--teja); }
+.acto-app[data-acto="3"] { color: var(--rosa-tinta); }
+.transicion { position: absolute; inset: 0; z-index: 28; display: grid; place-items: center; text-align: center; padding: 24px; background: rgba(250,247,238,.97); cursor: pointer; animation: transicion 1.6s ease both; }
+.transicion img { width: 96px; height: 96px; object-fit: contain; margin: 0 auto 10px; animation: entrar .6s .1s both; }
+.transicion b { display: block; font-family: var(--mono); font-weight: 400; font-size: 1.3rem; color: var(--verde-tinta); animation: entrar .6s .2s both; }
+.transicion[data-acto="2"] b { color: var(--teja); }
+.transicion[data-acto="3"] b { color: var(--rosa-tinta); }
+.transicion span { display: block; margin-top: 6px; color: var(--suave); font-style: italic; animation: entrar .6s .3s both; }
+@keyframes transicion { 0% { opacity: 0; } 12%, 78% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
 .barra__titulo { flex: 1; font-weight: 600; color: var(--verde-tinta); font-size: 1rem; text-align: center; }
 .icono { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--linea); background: var(--tarjeta); display: grid; place-items: center; cursor: pointer; color: var(--verde-tinta); font-weight: 700; }
 .icono svg { width: 20px; height: 20px; }
@@ -104,7 +120,8 @@ p { margin: 0 0 .8em; }
 @keyframes mecer { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(1.6deg); } }
 .secreto { position: absolute; left: 4%; top: 43%; width: 34%; height: 18%; border-radius: 50%; cursor: default; }
 .inicio h1 { font-size: 1.55rem; margin-top: 12px; }
-.inicio__lema { color: var(--suave); }
+.inicio__frase { font-size: 1.05rem; color: var(--verde-tinta); font-weight: 500; margin-bottom: .3em; }
+.inicio__lema { color: var(--suave); font-size: .95rem; }
 .progreso { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding: 12px 14px; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: var(--radio); box-shadow: var(--sombra); text-align: left; cursor: pointer; width: 100%; }
 .progreso__flores { display: flex; gap: 2px; flex: none; }
 .progreso__flores img { width: 22px; height: 22px; object-fit: contain; }
@@ -168,17 +185,17 @@ p { margin: 0 0 .8em; }
 .escaner--listo .escaner__marco::before { display: none; }
 @keyframes barrer { to { top: calc(100% - 15px); } }
 
-/* ---------- P6 ¡Florece! ---------- */
-.florece { text-align: center; padding-top: 10px; }
-.florece__escena { position: relative; width: 250px; height: 250px; margin: 6px auto 4px; }
-.florece__halo { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, rgba(255,208,0,.35) 0%, rgba(238,127,142,.18) 45%, transparent 70%); transform: scale(.4); opacity: 0; transition: all 1.2s cubic-bezier(.2,.8,.2,1); }
-.florece__escena img.f { position: absolute; inset: 15%; width: 70%; height: 70%; object-fit: contain; opacity: 0; transform: scale(.5) rotate(-15deg); transition: opacity .5s, transform 1s cubic-bezier(.25,1.5,.5,1); }
-.florece__escena[data-e="capullo"] .f1, .florece__escena[data-e="parcial"] .f2, .florece__escena[data-e="abierta"] .f3 { opacity: 1; transform: none; }
-.florece__escena[data-e="abierta"] .florece__halo { opacity: 1; transform: scale(1.15); animation: girar 14s linear infinite; }
+/* ---------- P6 Tu flor se abrió ---------- */
+.abre { text-align: center; padding-top: 10px; }
+.abre__escena { position: relative; width: 250px; height: 250px; margin: 6px auto 4px; }
+.abre__halo { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, rgba(255,208,0,.35) 0%, rgba(238,127,142,.18) 45%, transparent 70%); transform: scale(.4); opacity: 0; transition: all 1.2s cubic-bezier(.2,.8,.2,1); }
+.abre__escena img.f { position: absolute; inset: 15%; width: 70%; height: 70%; object-fit: contain; opacity: 0; transform: scale(.5) rotate(-15deg); transition: opacity .5s, transform 1s cubic-bezier(.25,1.5,.5,1); }
+.abre__escena[data-e="capullo"] .f1, .abre__escena[data-e="parcial"] .f2, .abre__escena[data-e="abierta"] .f3 { opacity: 1; transform: none; }
+.abre__escena[data-e="abierta"] .abre__halo { opacity: 1; transform: scale(1.15); animation: girar 14s linear infinite; }
 @keyframes girar { to { rotate: 360deg; } }
-.florece__sello { position: absolute; right: -6px; bottom: 0; width: 92px; opacity: 0; transform: scale(2.4) rotate(-30deg); transition: opacity .2s, transform .45s cubic-bezier(.3,1.4,.5,1); }
-.florece__escena[data-e="abierta"] .florece__sello { opacity: 1; transform: rotate(-12deg); transition-delay: 1s; }
-.florece__titulo { font-family: var(--mono); font-weight: 400; font-size: 1.5rem; letter-spacing: .01em; line-height: 1.15; }
+.abre__sello { position: absolute; right: -6px; bottom: 0; width: 92px; opacity: 0; transform: scale(2.4) rotate(-30deg); transition: opacity .2s, transform .45s cubic-bezier(.3,1.4,.5,1); }
+.abre__escena[data-e="abierta"] .abre__sello { opacity: 1; transform: rotate(-12deg); transition-delay: 1s; }
+.abre__titulo { font-family: var(--mono); font-weight: 400; font-size: 1.5rem; letter-spacing: .01em; line-height: 1.15; }
 .revela { opacity: 0; transform: translateY(12px); transition: all .6s cubic-bezier(.2,.7,.2,1); }
 .revela.si { opacity: 1; transform: none; }
 
@@ -287,8 +304,10 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
     <header class="barra" id="barra">
       <button class="icono" id="volver" type="button" aria-label="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
       <h1 class="barra__titulo" id="titulo">Khiska</h1>
+      <button class="icono" id="sonido" type="button" aria-pressed="true" aria-label="Sonido de la flor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="onda" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="mudo" d="M16 9l5 6M21 9l-5 6"/></svg></button>
       <button class="icono" id="facil" type="button" aria-pressed="false" aria-label="Lectura fácil">Aa</button>
     </header>
+    <p class="acto-app" id="acto-app" hidden><img id="acto-app-icono" src="" alt="" width="96" height="96"><span id="acto-app-texto"></span></p>
     <div class="pantallas" id="pantallas" aria-live="polite"></div>
     <div class="menu-velo" id="menu-velo" hidden></div>
     <nav class="menu-flor" aria-label="Menú de la app">
@@ -310,6 +329,8 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
 </div>
 
 <script src="../js/floracion.js"></script>
+<script src="../js/audios.js"></script>
+<script src="../js/escucha.js"></script>
 <script>
 (function () {
   "use strict";
@@ -333,7 +354,7 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
   /* ---------- Estado (solo en este teléfono) ---------- */
   var CLAVE = "khiska-app-v2";
   var E = cargar();
-  function nuevo() { return { intereses: [], progreso: {}, facil: false, ruta: null }; }
+  function nuevo() { return { intereses: [], progreso: {}, facil: false, sonido: true, ruta: null }; }
   function cargar() { try { var v = JSON.parse(localStorage.getItem(CLAVE)); return v ? Object.assign(nuevo(), v) : nuevo(); } catch (e) { return nuevo(); } }
   function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(E)); } catch (e) {} }
   function prog(id) { return E.progreso[id] || { paso: 0, hecha: false }; }
@@ -371,6 +392,7 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
   }
   var actx = null;
   function acorde() {
+    if (E.sonido === false) return;
     try {
       actx = actx || new (window.AudioContext || window.webkitAudioContext)(); var t = actx.currentTime;
       [523.25, 659.25, 783.99, 1046.5].forEach(function (f, i) {
@@ -399,7 +421,8 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
       '<path class="trazo trazo--1" pathLength="1" d="M-30 -30 L-8 400 L14 -30 L36 400 L58 -30 L80 400 L102 -30 L124 400 L146 -30 L168 400 L190 -30 L212 400 L234 -30 L256 400"/><path class="trazo trazo--2" pathLength="1" d="M250 -30 L272 400 L294 -30 L316 400 L338 -30 L360 400 L382 -30 L404 400 L426 -30 L448 400 L470 -30 L492 400 L514 -30 L536 400 L558 -30 L580 400 L602 -30 L624 400 L646 -30 L668 400 L690 -30 L712 400 L734 -30 L756 400 L778 -30 L800 400 L822 -30 L844 400 L866 -30 L888 400 L910 -30 L932 400"/></g></mask></defs><image href="' + IMG + 'logo-el-quisco.webp" width="900" height="370" mask="url(#escritura)"/></svg>' +
       '<div class="inicio__cactus"><img src="' + IMG + 'cactus-khiska-una-flor.webp" alt="Khiska, un cactus ilustrado con una flor abierta" width="458" height="730"><span class="secreto" data-secreto></span></div>' +
       '<div class="cascada"><h2 class="inicio__h1" style="font-size:1.5rem;margin-top:10px">Donde la naturaleza tiene nombre.</h2>' +
-      '<p class="inicio__lema">Khiska es tu cactus. Cada ruta que completas en El Quisco abre una de sus flores.</p>' +
+      '<p class="inicio__frase">Una espina que pincha tu curiosidad, un camino por El Quisco y una flor que guarda lo que viviste.</p>' +
+      '<p class="inicio__lema">Khiska es tu cactus: cada ruta que completas abre una de sus flores.</p>' +
       '<div class="acciones"><button class="btn btn--bloque btn--brillo" type="button" data-ir="intereses">Comienza a explorar</button>' +
       '<button class="btn btn--sec btn--bloque" type="button" data-ir="rutas">Ver todas las rutas</button></div>' +
       '<button class="progreso" type="button" data-ir="mi"><span class="progreso__flores">' +
@@ -443,14 +466,14 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
       (listo ? '<h3>Recorriste la ruta completa</h3><p class="suave">Solo falta un toque para abrir tu flor.</p><button class="btn btn--bloque btn--rosa btn--brillo" type="button" data-completar>Abrir mi flor</button>'
         : '<h3>' + paso.t + '</h3><p class="' + (paso.d ? "suave" : "invitacion") + '">' + (paso.d || DIM[r.dim].invitacion) + '</p>' +
           '<button class="btn btn--bloque" type="button" data-escanear>' + (i === 1 ? "Escanear el código del camino" : i === 0 ? "Escanear el código del inicio" : "Escanear el código del cierre") + '</button>') +
-      '</div><p class="suave chico centro" style="margin-top:14px">Tu avance se guarda en este teléfono, sin crear cuenta.</p></section>';
+      '</div><section class="escucha" id="escucha-ruta" hidden></section><p class="suave chico centro" style="margin-top:14px">Tu avance se guarda en este teléfono, sin crear cuenta.</p></section>';
   } };
-  V.florece = { titulo: "¡Florece!", html: function () {
+  V.flor = { titulo: "Tu flor se abrió", html: function () {
     var r = ruta(E.ruta);
-    return '<section class="pantalla florece"><div class="florece__escena" id="escena" data-e="capullo"><span class="florece__halo"></span>' +
+    return '<section class="pantalla abre"><div class="abre__escena" id="escena" data-e="capullo"><span class="abre__halo"></span>' +
       '<img class="f f1" src="' + flor("capullo") + '" alt=""><img class="f f2" src="' + flor("parcial") + '" alt=""><img class="f f3" src="' + flor("abierta") + '" alt="">' +
-      '<img class="florece__sello" src="' + IMG + 'sello-ruta-completada.webp" alt=""></div>' +
-      '<div class="revela" id="mensaje"><p class="rotulo rotulo--rosa">' + esc(r.nombre) + '</p><h2 class="florece__titulo">Una ruta.<br>Una flor.</h2>' +
+      '<img class="abre__sello" src="' + IMG + 'sello-ruta-completada.webp" alt=""></div>' +
+      '<div class="revela" id="mensaje"><p class="rotulo rotulo--rosa">' + esc(r.nombre) + '</p><h2 class="abre__titulo">Una ruta.<br>Una flor.</h2>' +
       '<p>Completaste la ruta y tu Khiska floreció. Sumaste un sello a tu Pasaporte.</p>' +
       '<div class="acciones"><button class="btn btn--bloque" type="button" data-ir="mi">Ver Mi Khiska</button><button class="btn btn--sec btn--bloque" type="button" data-ir="proxima">¿Qué sigue?</button></div></div></section>';
   } };
@@ -504,23 +527,52 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
   } };
 
   /* ---------- Navegación ---------- */
+  /* ---------- Los tres actos: la espina, el camino, la flor ---------- */
+  var ACTOS = {
+    1: { nombre: "1 · La espina", icono: "icono-espina", frase: "Algo te pincha: El Quisco no termina en la playa." },
+    2: { nombre: "2 · El camino", icono: "icono-sendero", frase: "Elige, prepara y comienza." },
+    3: { nombre: "3 · La flor", icono: "icono-flor", frase: "Lo que viviste queda como una flor." }
+  };
+  var ACTO_DE = { intereses: 1, rutas: 2, ficha: 2, enruta: 2, propon: 2, flor: 3, mi: 3, proxima: 3, agenda: 3 };
+  var actoVisto = 0;
+  function marcarActo(id) {
+    var n = ACTO_DE[id], el = $("#acto-app");
+    if (!n) { el.hidden = true; return; }
+    el.hidden = false; el.setAttribute("data-acto", n);
+    $("#acto-app-icono").src = "../assets/icons/" + ACTOS[n].icono + ".webp";
+    $("#acto-app-texto").textContent = ACTOS[n].nombre;
+    /* Al entrar a un acto nuevo, una pausa breve que lo presenta (salvo en la flor, que tiene su propio momento) */
+    if (n > actoVisto && id !== "flor" && !quieto) {
+      var tr = document.createElement("div");
+      tr.className = "transicion"; tr.setAttribute("data-acto", n); tr.setAttribute("role", "status");
+      tr.innerHTML = '<div><img src="../assets/icons/' + ACTOS[n].icono + '.webp" alt=""><b>' + ACTOS[n].nombre + "</b><span>" + ACTOS[n].frase + "</span></div>";
+      tr.addEventListener("click", function () { tr.remove(); });
+      app.appendChild(tr); setTimeout(function () { tr.remove(); }, 1700);
+    }
+    actoVisto = Math.max(actoVisto, n);
+  }
+
   var actual = "inicio", hist = [];
   function ir(id, atras) {
     if (!V[id]) id = "inicio";
     if (!atras && id !== actual) hist.push(actual);
     actual = id;
+    if (window.KhiskaEscucha) KhiskaEscucha.detener();
     cont.innerHTML = V[id].html();
+    marcarActo(id);
+    var esc2 = $("#escucha-ruta");
+    if (esc2 && window.KhiskaEscucha) KhiskaEscucha.montar(esc2, { lugar: E.ruta, base: "../" });
     $("#titulo").textContent = V[id].titulo;
     $("#volver").classList.toggle("icono--fantasma", id === "inicio");
     menu(false);
     var n = hechas(), cuenta = $("#menu-cuenta"); cuenta.hidden = !n; cuenta.textContent = n;
     document.querySelectorAll(".menu-flor__lista button").forEach(function (b) {
-      var activo = b.getAttribute("data-ir") === id || (id === "ficha" || id === "enruta" || id === "intereses" ? b.getAttribute("data-ir") === "rutas" : false) || ((id === "florece" || id === "proxima") && b.getAttribute("data-ir") === "mi");
+      var activo = b.getAttribute("data-ir") === id || (id === "ficha" || id === "enruta" || id === "intereses" ? b.getAttribute("data-ir") === "rutas" : false) || ((id === "flor" || id === "proxima") && b.getAttribute("data-ir") === "mi");
       if (activo) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
     cont.scrollTop = 0;
     try { history.replaceState(null, "", "#" + id); } catch (e) {}
-    if (id === "florece") florecer();
+    if (id === "flor") florecer();
   }
   function florecer() {
     var esc2 = $("#escena"), msg = $("#mensaje");
@@ -595,8 +647,9 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
     if (t.hasAttribute("data-filtro")) { filtro = t.getAttribute("data-filtro"); ir("rutas", true); return; }
     if (t.hasAttribute("data-comenzar")) { ir(estado(E.ruta) === "abierta" ? "mi" : "enruta"); return; }
     if (t.hasAttribute("data-escanear")) { escanear(); return; }
-    if (t.hasAttribute("data-completar")) { var p = prog(E.ruta); p.hecha = true; E.progreso[E.ruta] = p; guardar(); ir("florece"); return; }
+    if (t.hasAttribute("data-completar")) { var p = prog(E.ruta); p.hecha = true; E.progreso[E.ruta] = p; guardar(); ir("flor"); return; }
     if (t.id === "volver") { var a = hist.pop(); ir(a || "inicio", true); return; }
+    if (t.id === "sonido") { E.sonido = E.sonido === false; guardar(); aplicarSonido(); aviso(E.sonido ? "Sonido de la flor activado" : "Sonido de la flor silenciado"); return; }
     if (t.id === "facil") { E.facil = !E.facil; guardar(); aplicarFacil(); aviso(E.facil ? "Lectura fácil activada" : "Lectura fácil desactivada"); }
   });
   document.addEventListener("submit", function (ev) {
@@ -615,9 +668,10 @@ html.facil .jardin { grid-template-columns: repeat(2, 1fr); }
     lluvia(45);
   });
   function aplicarFacil() { document.documentElement.classList.toggle("facil", E.facil); $("#facil").setAttribute("aria-pressed", String(E.facil)); }
-  aplicarFacil();
+  function aplicarSonido() { $("#sonido").setAttribute("aria-pressed", String(E.sonido !== false)); }
+  aplicarFacil(); aplicarSonido();
   var h = location.hash.slice(1);
-  ir(V[h] && h !== "florece" && h !== "enruta" ? h : "inicio", true);
+  ir(V[h] && h !== "flor" && h !== "enruta" ? h : "inicio", true);
 })();
 </script>
 </body>

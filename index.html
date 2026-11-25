@@ -64,48 +64,25 @@
         </svg>
       </div>
       <h1 id="titulo-hero" class="hero__entrada" style="--retardo:2.6s">Donde la naturaleza tiene nombre.</h1>
-      <p class="hero__bajada hero__entrada" style="--retardo:2.85s">El Quisco no termina en la playa. Hay humedales, miradores, memoria y sabores que se descubren por capas.</p>
+      <p class="hero__bajada hero__entrada" style="--retardo:2.85s">Una espina que pincha tu curiosidad, un camino por El Quisco y una flor que guarda lo que viviste.</p>
       <div class="hero__acciones hero__entrada" style="--retardo:3.1s">
         <a class="btn" href="rutas.html">Descubre las rutas</a>
         <a class="btn btn--secundario" href="#mira">Mira el video</a>
       </div>
     </div>
     <a class="hero__cactus decorativa" href="#curiosidad" data-pinchar aria-label="Khiska, el cactus. Pínchalo para descubrir qué te da curiosidad de El Quisco"><img class="ilustracion" src="assets/img/cactus-khiska-una-flor.webp" alt="" width="458" height="730"></a>
-    <a class="hero__bajar decorativa" href="#para-ti"><span class="visually-hidden">Ir a la siguiente sección</span><span class="hero__bajar-flecha" aria-hidden="true"></span></a>
+    <a class="hero__bajar decorativa" href="#acto-espina"><span class="visually-hidden">Ir a la siguiente sección</span><span class="hero__bajar-flecha" aria-hidden="true"></span></a>
     <button class="hero__pausa decorativa" type="button" aria-pressed="false">Pausar movimiento</button>
   </section>
 
   <div class="franja-color decorativa" aria-hidden="true"></div>
 
-  <section class="seccion" id="para-ti" aria-labelledby="titulo-para-ti">
-    <div class="contenedor">
-      <div class="seccion__cabecera">
-        <span class="rotulo">Para ti</span>
-        <h2 id="titulo-para-ti">¿Cómo quieres vivir El Quisco?</h2>
-      </div>
-      <ul class="personas-grid"><li class="persona-card">
-          <img src="assets/icons/icono-sendero.webp" alt="" width="44" height="44">
-          <h3>Vengo de escapada</h3><p>Elige una ruta en minutos, sin crear cuenta, y prepárala antes de salir.</p>
-          <a class="btn btn--chico btn--secundario" href="rutas.html">Ver rutas</a>
-        </li><li class="persona-card">
-          <img src="assets/icons/icono-calendario.webp" alt="" width="44" height="44">
-          <h3>Quiero volver fuera del verano</h3><p>Cada mes tiene algo distinto. Revisa la agenda y tu próxima ruta.</p>
-          <a class="btn btn--chico btn--secundario" href="#agenda">Ver agenda</a>
-        </li><li class="persona-card">
-          <img src="assets/icons/icono-hoja.webp" alt="" width="44" height="44">
-          <h3>Prefiero leer con calma</h3><p>Activa la lectura fácil: letra grande y menos elementos. Cada ficha se puede imprimir.</p>
-          <a class="btn btn--chico btn--secundario" href="#" data-activar-lectura>Activar lectura fácil</a>
-        </li><li class="persona-card">
-          <img src="assets/icons/icono-ubicacion.webp" alt="" width="44" height="44">
-          <h3>Vivo en El Quisco</h3><p>¿Conoces un rincón que merece una ruta? Propónlo y súmalo a la experiencia.</p>
-          <a class="btn btn--chico btn--secundario" href="#propon">Propón un lugar</a>
-        </li><li class="persona-card">
-          <img src="assets/icons/icono-flor.webp" alt="" width="44" height="44">
-          <h3>Tengo un oficio local</h3><p>La caleta y sus oficios son parte de Memoria y sabores.</p>
-          <a class="btn btn--chico btn--secundario" href="territorios/caleta.html">Ver la caleta</a>
-        </li></ul>
+  <div class="acto acto--1" id="acto-espina">
+    <div class="contenedor acto__fila">
+      <img class="acto__icono" src="assets/icons/icono-espina.webp" alt="" width="96" height="96">
+      <p class="acto__texto"><span class="acto__nombre">1 · La espina</span> <span class="acto__frase">El Quisco no termina en la playa.</span></p>
     </div>
-  </section>
+  </div>
 
   <section class="seccion seccion--papel2" id="mira" aria-labelledby="titulo-mira">
     <div class="contenedor">
@@ -136,6 +113,13 @@
       </div>
     </div>
   </section>
+
+  <div class="acto acto--2" id="acto-camino">
+    <div class="contenedor acto__fila">
+      <img class="acto__icono" src="assets/icons/icono-sendero.webp" alt="" width="96" height="96">
+      <p class="acto__texto"><span class="acto__nombre">2 · El camino</span> <span class="acto__frase">Elige, prepara y comienza.</span></p>
+    </div>
+  </div>
 
   <section class="seccion" id="panoramas" aria-labelledby="titulo-panoramas">
     <div class="contenedor">
@@ -249,6 +233,87 @@
     </div>
   </section>
 
+  <section class="seccion seccion--papel2" id="para-ti" aria-labelledby="titulo-para-ti">
+    <div class="contenedor">
+      <div class="seccion__cabecera">
+        <span class="rotulo">Para ti</span>
+        <h2 id="titulo-para-ti">¿Cómo quieres vivir El Quisco?</h2>
+      </div>
+      <ul class="personas-grid"><li class="persona-card">
+          <img src="assets/icons/icono-sendero.webp" alt="" width="44" height="44">
+          <h3>Vengo de escapada</h3><p>Elige una ruta en minutos, sin crear cuenta, y prepárala antes de salir.</p>
+          <a class="btn btn--chico btn--secundario" href="rutas.html">Ver rutas</a>
+        </li><li class="persona-card">
+          <img src="assets/icons/icono-calendario.webp" alt="" width="44" height="44">
+          <h3>Quiero volver fuera del verano</h3><p>Cada mes tiene algo distinto. Revisa la agenda y tu próxima ruta.</p>
+          <a class="btn btn--chico btn--secundario" href="#agenda">Ver agenda</a>
+        </li><li class="persona-card">
+          <img src="assets/icons/icono-hoja.webp" alt="" width="44" height="44">
+          <h3>Prefiero leer con calma</h3><p>Activa la lectura fácil: letra grande y menos elementos. Cada ficha se puede imprimir.</p>
+          <a class="btn btn--chico btn--secundario" href="#" data-activar-lectura>Activar lectura fácil</a>
+        </li><li class="persona-card">
+          <img src="assets/icons/icono-ubicacion.webp" alt="" width="44" height="44">
+          <h3>Vivo en El Quisco</h3><p>¿Conoces un rincón que merece una ruta? Propónlo y súmalo a la experiencia.</p>
+          <a class="btn btn--chico btn--secundario" href="#propon">Propón un lugar</a>
+        </li><li class="persona-card">
+          <img src="assets/icons/icono-flor.webp" alt="" width="44" height="44">
+          <h3>Tengo un oficio local</h3><p>La caleta y sus oficios son parte de Memoria y sabores.</p>
+          <a class="btn btn--chico btn--secundario" href="territorios/caleta.html">Ver la caleta</a>
+        </li></ul>
+    </div>
+  </section>
+
+  <section class="seccion" id="propon" aria-labelledby="titulo-propon">
+    <div class="contenedor comunidad">
+      <div>
+        <span class="rotulo">Comunidad</span>
+        <h2 id="titulo-propon">Cada ruta tiene algo que contar.</h2>
+        <p>Las historias de El Quisco las cuentan sus vecinos, sus oficios y quienes lo visitan. ¿Conoces un rincón que merece una ruta?</p>
+        <img class="ilustracion decorativa propon__img" src="assets/img/sello-ruta-completada.webp" alt="" width="220" height="220" loading="lazy">
+      </div>
+      <form class="formulario" id="form-propuesta" novalidate data-endpoint="">
+        <h3>Propón un lugar</h3>
+        <div class="campo">
+          <label for="lugar">Lugar <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatorio)</span></label>
+          <input type="text" id="lugar" name="lugar" autocomplete="off" required aria-describedby="error-lugar">
+          <p class="error" id="error-lugar" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="motivo">¿Por qué vale la pena descubrirlo? <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatorio)</span></label>
+          <textarea id="motivo" name="motivo" required aria-describedby="ayuda-motivo error-motivo"></textarea>
+          <span class="ayuda" id="ayuda-motivo">Una historia, un oficio o un paisaje.</span>
+          <p class="error" id="error-motivo" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="nombre">Tu nombre (opcional)</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name">
+        </div>
+        <div class="campo">
+          <label for="correo">Correo (opcional)</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="error-correo">
+          <p class="error" id="error-correo" aria-live="polite"></p>
+        </div>
+        <div class="campo campo--check">
+          <input type="checkbox" id="consentimiento" name="consentimiento" required aria-describedby="error-consentimiento">
+          <label for="consentimiento">Autorizo que el equipo revise esta propuesta. <a href="privacidad.html">Uso y privacidad</a></label>
+        </div>
+        <p class="error" id="error-consentimiento" aria-live="polite"></p>
+        <div class="acciones">
+          <button class="btn" type="submit">Enviar propuesta</button>
+          <button class="btn btn--secundario" type="button" id="copiar-propuesta" hidden>Copiar texto</button>
+        </div>
+        <div class="estado-form" id="form-estado" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <div class="acto acto--3" id="acto-flor">
+    <div class="contenedor acto__fila">
+      <img class="acto__icono" src="assets/icons/icono-flor.webp" alt="" width="96" height="96">
+      <p class="acto__texto"><span class="acto__nombre">3 · La flor</span> <span class="acto__frase">Lo que viviste queda como una flor, y te da una razón para volver.</span></p>
+    </div>
+  </div>
+
   <section class="seccion seccion--papel2" id="khiska" aria-labelledby="titulo-khiska">
     <div class="contenedor">
       <div class="khiska">
@@ -318,50 +383,6 @@
         <div class="telefono telefono--der"><img src="assets/img/app/app-p2.webp" alt="" width="390" height="844" loading="lazy"></div>
         <div class="telefono telefono--centro"><img src="assets/img/app/app-p7.webp" alt="" width="390" height="844" loading="lazy"></div>
       </div>
-    </div>
-  </section>
-
-  <section class="seccion" id="propon" aria-labelledby="titulo-propon">
-    <div class="contenedor comunidad">
-      <div>
-        <span class="rotulo">Comunidad</span>
-        <h2 id="titulo-propon">Cada ruta tiene algo que contar.</h2>
-        <p>Las historias de El Quisco las cuentan sus vecinos, sus oficios y quienes lo visitan. ¿Conoces un rincón que merece una ruta?</p>
-        <img class="ilustracion decorativa propon__img" src="assets/img/sello-ruta-completada.webp" alt="" width="220" height="220" loading="lazy">
-      </div>
-      <form class="formulario" id="form-propuesta" novalidate data-endpoint="">
-        <h3>Propón un lugar</h3>
-        <div class="campo">
-          <label for="lugar">Lugar <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatorio)</span></label>
-          <input type="text" id="lugar" name="lugar" autocomplete="off" required aria-describedby="error-lugar">
-          <p class="error" id="error-lugar" aria-live="polite"></p>
-        </div>
-        <div class="campo">
-          <label for="motivo">¿Por qué vale la pena descubrirlo? <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatorio)</span></label>
-          <textarea id="motivo" name="motivo" required aria-describedby="ayuda-motivo error-motivo"></textarea>
-          <span class="ayuda" id="ayuda-motivo">Una historia, un oficio o un paisaje.</span>
-          <p class="error" id="error-motivo" aria-live="polite"></p>
-        </div>
-        <div class="campo">
-          <label for="nombre">Tu nombre (opcional)</label>
-          <input type="text" id="nombre" name="nombre" autocomplete="name">
-        </div>
-        <div class="campo">
-          <label for="correo">Correo (opcional)</label>
-          <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="error-correo">
-          <p class="error" id="error-correo" aria-live="polite"></p>
-        </div>
-        <div class="campo campo--check">
-          <input type="checkbox" id="consentimiento" name="consentimiento" required aria-describedby="error-consentimiento">
-          <label for="consentimiento">Autorizo que el equipo revise esta propuesta. <a href="privacidad.html">Uso y privacidad</a></label>
-        </div>
-        <p class="error" id="error-consentimiento" aria-live="polite"></p>
-        <div class="acciones">
-          <button class="btn" type="submit">Enviar propuesta</button>
-          <button class="btn btn--secundario" type="button" id="copiar-propuesta" hidden>Copiar texto</button>
-        </div>
-        <div class="estado-form" id="form-estado" role="status" aria-live="polite"></div>
-      </form>
     </div>
   </section>
 

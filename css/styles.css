@@ -854,3 +854,25 @@ html.lectura-facil .app-promo { grid-template-columns: 1fr; }
   .videos:hover .video-card:hover, .videos.videos--reproduciendo .video-card--activo { max-width: calc(72vh * 9 / 16); flex-grow: 3; opacity: 1; transform: none; box-shadow: 0 2px 0 rgba(30,30,30,.03), 0 26px 50px -24px rgba(52,80,31,.55); }
 }
 @media (prefers-reduced-motion: reduce) { .videos .video-card { transition: none; } }
+
+/* ==========================================================================
+   Narrativa en tres actos: la espina, el camino, la flor
+   ========================================================================== */
+.acto { padding: clamp(2.2rem, 5vw, 3.4rem) 0 clamp(.4rem, 2vw, 1rem); background: var(--papel); }
+.acto__fila { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.2rem); }
+.acto__icono { width: clamp(48px, 7vw, 64px); height: auto; flex: none; }
+.acto__texto { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .9rem; }
+.acto__nombre { font-family: var(--fuente-activacion); font-size: clamp(.95rem, 2.2vw, 1.15rem); color: var(--verde-tinta); letter-spacing: .02em; }
+.acto__frase { font-size: clamp(1rem, 2.2vw, 1.15rem); color: var(--texto-suave); font-style: italic; }
+.acto--1 .acto__nombre { color: var(--verde-tinta); }
+.acto--2 .acto__nombre { color: var(--teja); }
+.acto--3 .acto__nombre { color: var(--rosa-tinta); }
+.acto::after { content: ""; display: block; width: min(100% - 2 * var(--gutter), var(--ancho)); margin: clamp(1rem, 3vw, 1.6rem) auto 0; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--salvia), transparent); }
+.acto--2::after { background: linear-gradient(90deg, var(--naranja), transparent); }
+.acto--3::after { background: linear-gradient(90deg, var(--rosa), transparent); }
+/* Marcador compacto en páginas interiores */
+.acto-marca { display: flex; width: fit-content; align-items: center; gap: .5rem; margin-bottom: .8rem; font-family: var(--fuente-activacion); font-size: .82rem; letter-spacing: .02em; color: var(--verde-tinta); text-decoration: none; }
+.acto-marca img { width: 32px; height: 32px; }
+.acto-marca--2 { color: var(--teja); }
+.acto-marca--3 { color: var(--rosa-tinta); }
+@media print { .acto, .acto-marca { display: none !important; } }

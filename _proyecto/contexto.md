@@ -79,3 +79,14 @@ Mi Khiska · Tu próxima experiencia · Lectura fácil · Propón un lugar. La a
 - Cuenta oficial de Instagram por confirmar (la propuesta menciona `@miodestinoelquisco`; una historia muestra `destinoelquisco`).
 - Botón "Leer la propuesta completa" del dossier apunta a un artifact privado de claude.ai.
 - Confirmar con Fernanda y Benjamín la regla de "Haz florecer tu Khiska".
+
+## Narrativa y sonido (25/11/2026)
+
+- **Tres actos en portal y app** (`sistema-khiska.md`, punto 1): portada con la frase "Una espina que pincha tu curiosidad, un camino por El Quisco y una flor que guarda lo que viviste."
+  Portal: **1 · La espina** (videos, Pincha tu curiosidad) → **2 · El camino** (lugares, ¿Cómo quieres vivir El Quisco?, Propón un lugar) → **3 · La flor** (Khiska, Lleva Khiska contigo, agenda, floración).
+  Rutas y fichas llevan el marcador "2 · El camino"; Experiencia Khiska, "3 · La flor". En la app hay un indicador de acto bajo la barra y una pausa breve al entrar a un acto nuevo.
+- La pantalla "¡Florece!" de la app ahora se llama **"Tu flor se abrió"** (regla 3 de lenguaje).
+- **Sonido:** componente "Escucha este lugar" en las 7 fichas y en En ruta (app), landing `escucha.html` para el QR de los paraderos y botón de sonido sí/no para la flor de la app.
+  Todo está construido y **oculto hasta que existan los audios**. Para activarlo: dejar los mp3 (128 kbps) en `assets/audio/` y registrarlos en `js/audios.js`.
+- **Audios que faltan:** `paisaje-el-quisco.mp3` (landing del QR), `paisaje-punta-de-tralca.mp3`, `paisaje-el-batro.mp3`, `paisaje-las-petras.mp3`, `paisaje-caleta.mp3` (y `paisaje-<lugar>.mp3` para los demás);
+  relatos `relato-<lugar>-<nombre>.mp3` (60–90 s) con transcripción, crédito "Nombre, oficio" y autorización firmada. Nunca voces de IA para relatos.

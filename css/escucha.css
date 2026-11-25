@@ -1,0 +1,32 @@
+/* "Escucha este lugar" · compartido por el portal, escucha.html y la app */
+.escucha { --e-verde: var(--verde, #55763a); --e-tinta: var(--verde-tinta, #263b17); --e-rosa: var(--rosa, #ee7f8e); --e-borde: var(--linea, #e3ddd0); --e-fondo: var(--tarjeta, #fffdf8); --e-suave: var(--texto-suave, #4a4a42);
+  margin: 1.5rem 0; }
+.escucha[hidden] { display: none !important; }
+.escucha__encabezado { display: flex; align-items: center; gap: .5rem; font-size: 1.2rem; margin: 0 0 .8rem; color: var(--e-tinta); }
+.escucha__encabezado svg { width: 24px; height: 24px; color: var(--e-rosa); }
+.escucha__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.escucha__item { display: flex; gap: .9rem; align-items: flex-start; padding: .9rem 1rem; border-radius: 16px; background: var(--e-fondo); border: 1px solid var(--e-borde); }
+.escucha__item--sonando { border-color: var(--e-verde); box-shadow: 0 0 0 2px rgba(85,118,58,.18); }
+.escucha__play { flex: none; width: 52px; height: 52px; border-radius: 50%; border: 0; background: var(--e-verde); color: #fff; display: grid; place-items: center; cursor: pointer; transition: transform .2s; }
+.escucha__play:hover { transform: scale(1.06); }
+.escucha__play:active { transform: scale(.95); }
+.escucha__play svg { width: 24px; height: 24px; }
+.escucha__item--sonando .escucha__play { background: var(--e-tinta); }
+.escucha__cuerpo { flex: 1; min-width: 0; }
+.escucha__titulo { margin: 0; font-weight: 600; color: var(--e-tinta); }
+.escucha__credito { margin: .1rem 0 0; font-size: .88rem; color: var(--e-suave); }
+.escucha__avance { display: flex; align-items: center; gap: .6rem; margin-top: .4rem; }
+.escucha__barra { flex: 1; min-width: 0; accent-color: var(--e-verde); height: 24px; }
+.escucha__tiempo { font-size: .8rem; color: var(--e-suave); font-variant-numeric: tabular-nums; }
+.escucha__transcripcion { margin-top: .5rem; font-size: .92rem; }
+.escucha__transcripcion summary { cursor: pointer; color: var(--e-tinta); font-weight: 500; min-height: 32px; display: flex; align-items: center; }
+.escucha__transcripcion p { margin: .4rem 0 0; white-space: pre-line; }
+/* Versión grande (landing del QR) */
+.escucha__item--grande { flex-direction: column; align-items: center; text-align: center; padding: 1.4rem; background: rgba(255,253,248,.92); }
+.escucha__item--grande .escucha__play { width: 112px; height: 112px; box-shadow: 0 16px 34px -14px rgba(38,59,23,.7); }
+.escucha__item--grande .escucha__play svg { width: 48px; height: 48px; }
+.escucha__item--grande .escucha__cuerpo { width: 100%; }
+.escucha__item--grande.escucha__item--sonando .escucha__play { animation: escucha-latir 1.6s ease-in-out infinite; }
+@keyframes escucha-latir { 50% { box-shadow: 0 0 0 14px rgba(85,118,58,.12), 0 16px 34px -14px rgba(38,59,23,.7); } }
+@media (prefers-reduced-motion: reduce) { .escucha__play, .escucha__item--grande.escucha__item--sonando .escucha__play { transition: none; animation: none; } }
+@media print { .escucha { display: none !important; } }

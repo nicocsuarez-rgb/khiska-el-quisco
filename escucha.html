@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escucha El Quisco · Experiencia Khiska</title>
+<meta name="description" content="Esto también es El Quisco: el mar en las rocas, las aves de quebrada y la brisa. Escúchalo y descubre los lugares para recorrerlo.">
+<meta name="theme-color" content="#faf7ee">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Escucha El Quisco">
+<meta property="og:description" content="Esto también es El Quisco. Escúchalo y descubre los lugares para recorrerlo.">
+<meta property="og:image" content="assets/img/og-el-quisco.jpg">
+<link rel="icon" type="image/png" href="assets/icons/favicon.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/img/hero-fondo-mirador-neptuno.webp">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/escucha.css">
+<style>
+  .qr { min-height: 100svh; display: flex; flex-direction: column; position: relative; isolation: isolate; overflow: hidden; }
+  .qr__fondo { position: absolute; inset: 0; z-index: -2; background: url("assets/img/hero-fondo-mirador-neptuno.webp") center / cover no-repeat; opacity: .55; animation: qr-acercar 30s ease-in-out infinite alternate; }
+  .qr::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(250,247,238,.7) 0%, rgba(250,247,238,.9) 55%, var(--papel) 100%); }
+  @keyframes qr-acercar { to { transform: scale(1.12); } }
+  .qr__barra { display: flex; justify-content: center; padding: 1rem var(--gutter) 0; }
+  .qr__barra img { width: 150px; }
+  .qr__centro { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1rem; padding: 1.5rem var(--gutter) 2rem; width: min(100%, 520px); margin: 0 auto; }
+  .qr__acto { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--fuente-activacion); font-size: .85rem; color: var(--verde-tinta); }
+  .qr__acto img { width: 40px; height: 40px; }
+  .qr h1 { font-size: clamp(2rem, 9vw, 3rem); margin: 0; }
+  .qr__bajada { font-size: 1.1rem; color: var(--texto-suave); margin: 0; max-width: 32ch; }
+  .qr .escucha { width: 100%; margin: .5rem 0; }
+  .qr__acciones { display: flex; flex-direction: column; gap: .6rem; width: 100%; max-width: 360px; }
+  .qr__acciones .btn { width: 100%; }
+  .qr__pie { text-align: center; font-size: .8rem; color: var(--texto-suave); padding: 0 var(--gutter) 1.2rem; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { .qr__fondo { animation: none; } }
+</style>
+</head>
+<body>
+<main class="qr">
+  <div class="qr__fondo" aria-hidden="true"></div>
+  <div class="qr__barra"><a href="index.html"><img src="assets/img/logo-el-quisco.webp" alt="El Quisco, ir al inicio" width="900" height="370"></a></div>
+  <div class="qr__centro">
+    <span class="qr__acto"><img src="assets/icons/icono-espina.webp" alt="" width="96" height="96">1 · La espina</span>
+    <h1>Esto también es El Quisco.</h1>
+    <p class="qr__bajada">El mar en las rocas, las aves de quebrada y la brisa. El Quisco no termina en la playa.</p>
+    <section class="escucha" data-escucha="el-quisco" data-grande data-sin-titulo hidden aria-label="Escucha El Quisco"></section>
+    <div class="qr__acciones">
+      <a class="btn" href="rutas.html">Descubre los lugares</a>
+      <a class="btn btn--secundario" href="index.html">Conoce la Experiencia Khiska</a>
+    </div>
+  </div>
+  <p class="qr__pie">Proyecto académico de Agencia C.C.C. · Duoc UC</p>
+</main>
+<script src="js/audios.js" defer></script>
+<script src="js/escucha.js" defer></script>
+</body>
+</html>
