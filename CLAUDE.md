@@ -7,7 +7,7 @@ Publicidad, Duoc UC Viña del Mar. Campaña **"El Quisco: donde la naturaleza ti
 Trabajamos como compañeros, paso a paso: antes de un cambio grande, resume lo que entendiste y
 espera confirmación. Responde en español de Chile, claro y cercano.
 
-**Antes de cualquier tarea grande, lee `_proyecto/contexto.md`** (estado, personas, plan de mejora, videos).
+**Antes de cualquier tarea grande, lee `_proyecto/sistema-khiska.md` (documento base: narrativa, públicos, puntos de contacto, sonido, alianzas, costos) y `_proyecto/contexto.md`** (estado, personas, plan de mejora, videos).
 Las fuentes completas del proyecto están en `_proyecto/fuentes/`.
 
 ## Qué hay en el repositorio
